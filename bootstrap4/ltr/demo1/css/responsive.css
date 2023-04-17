@@ -1,22 +1,36 @@
-/* Media Queries */
+@media (max-width: 767px) {
+    
+    .breadcrumb {
+        font-size: 10px
+    }
+
+    .fa {
+        font-size: 9px !important
+    }
+
+    .breadcrumb {
+        letter-spacing: 1px !important
+    }
+
+    .breadcrumb>* div {
+        max-width: 60px
+    }
+
+    .fa-angles-right {
+        font-size: 16px !important;
+    }
+}
 
 @media screen and (min-width: 768px) {
+
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;
-        padding-left: calc(var(--nav-width) + 188px);
+        padding-left: calc(var(--nav-width) + 2rem);
     }
 
     .header {
         height: calc(var(--header-height) + 1rem);
-    }
-
-    .header_img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .header_img img {
-        width: 45px;
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
     }
 
     .l-navbar {
@@ -25,11 +39,11 @@
     }
 
     .nav-show {
-        width: var(--nav-width);
+        width: calc(var(--nav-width) + 156px);
     }
 
     .body-pd {
-        padding-left: calc(var(--nav-width) + 1rem);
+        padding-left: calc(var(--nav-width) + 188px);
     }
 
     .main-content {
@@ -38,6 +52,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
     .icon-logo {
         display: block;
     }
@@ -95,33 +110,6 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    body {
-        margin: calc(var(--header-height) + 1rem) 0 0 0;
-        padding-left: calc(var(--nav-width) + 2rem)
-    }
-
-    .header {
-        height: calc(var(--header-height) + 1rem);
-        padding: 0 0 0 calc(var(--nav-width) + 2rem)
-    }
-
-    .header_img {
-        width: 40px;
-        height: 40px
-    }
-
-    .header_img img {
-        width: 45px
-    }
-
-    .l-navbar {
-        left: 0;
-        padding: 1rem 1rem 0 1rem;
-    }
-
-    .nav-show {
-        width: calc(var(--nav-width) + 156px)
-    }
 
     .myStyle {
         padding-left: calc(var(--nav-width) + 5rem)
@@ -180,33 +168,6 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1399px) {
-    body {
-        margin: calc(var(--header-height) + 1rem) 0 0 0;
-        padding-left: calc(var(--nav-width) + 2rem)
-    }
-
-    .header {
-        height: calc(var(--header-height) + 1rem);
-        padding: 0 0 0 calc(var(--nav-width) + 2rem)
-    }
-
-    .header_img {
-        width: 40px;
-        height: 40px
-    }
-
-    .header_img img {
-        width: 45px
-    }
-
-    .l-navbar {
-        left: 0;
-        padding: 1rem 1rem 0 1rem;
-    }
-
-    .nav-show {
-        width: var(--nav-width);
-    }
 
     .myStyle {
         padding-left: calc(var(--nav-width) + 5rem)
@@ -244,6 +205,7 @@
 }
 
 @media screen and (min-width: 1400px) {
+    
     .myStyle {
         padding-left: 150px;
     }

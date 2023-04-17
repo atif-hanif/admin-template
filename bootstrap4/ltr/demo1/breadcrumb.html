@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Badges | Nova Admin Template</title>
+	<title>Breadcrumb | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -97,9 +97,14 @@
 										Alerts
 									</a>
 								</li>
-								<li class="nav-item current-menu-item">
+								<li class="nav-item">
 									<a class="nav-link submenu" href="badges.html">
 										Badges
+									</a>
+								</li>
+                                <li class="nav-item current-menu-item">
+									<a class="nav-link submenu" href="breadcrumb.html">
+										Breadcrumb
 									</a>
 								</li>
 							</ul>
@@ -126,8 +131,8 @@
 									<i class="fa-solid fa-angles-right"></i>
 								</li>
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="badges.html">
-										<span class="align-middle">Badges</span>
+									<a class="text-uppercase active-2" href="breadcrumb.html">
+										<span class="align-middle">Breadcrumb</span>
 									</a>
 								</li>
 							</ol>
@@ -140,154 +145,34 @@
 				<div class="col-sm-12 col-md-6">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header">
-							<h5 class="mb-0">Badges</h5>
+							<h5 class="mb-0">Breadcrumb</h5>
 						</div>
 						<div class="card-body">
-							<h1>Example heading <span class="badge badge-secondary">New</span></h1>
-                            <h2>Example heading <span class="badge badge-secondary">New</span></h2>
-                            <h3>Example heading <span class="badge badge-secondary">New</span></h3>
-                            <h4>Example heading <span class="badge badge-secondary">New</span></h4>
-                            <h5>Example heading <span class="badge badge-secondary">New</span></h5>
-                            <h6>Example heading <span class="badge badge-secondary">New</span></h6>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-6">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header">
-							<h5 class="mb-0">Badges with Counter</h5>
-						</div>
-						<div class="card-body">
-							<button type="button" class="btn btn-primary">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-secondary">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-success">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-danger mt-3">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-warning mt-3">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-info mt-3">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-dark mt-3">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
+							<nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item active" aria-current="page">Home</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                            </nav>
+                              
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
 						</div>
 					</div>
 				</div>
 			</div>
 			
-			<div class="row mt-sm-40 mt-md-40 mt-lg-50 mt-xl-50">
-				<div class="col-sm-12 col-md-6">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header">
-							<h5 class="mb-0">Closing Alerts</h5>
-						</div>
-						<div class="card-body">
-							<div class="alert alert-success alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Success!</strong> This alert box could indicate a successful or positive action.
-                            </div>
-                            <div class="alert alert-info alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
-                            </div>
-                            <div class="alert alert-warning alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
-                            </div>
-                            <div class="alert alert-danger alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
-                            </div>
-                            <div class="alert alert-primary alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Primary!</strong> Indicates an important action.
-                            </div>
-                            <div class="alert alert-secondary alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Secondary!</strong> Indicates a slightly less important action.
-                            </div>
-                            <div class="alert alert-dark alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Dark!</strong> Dark grey alert.
-                            </div>
-                            <div class="alert alert-light alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Light!</strong> Light grey alert.
-                            </div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-6">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header">
-							<h5 class="mb-0">Animated Alerts</h5>
-						</div>
-						<div class="card-body">
-							<div class="alert alert-success alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Success!</strong> This alert box could indicate a successful or positive action.
-                            </div>
-                            <div class="alert alert-info alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
-                            </div>
-                            <div class="alert alert-warning alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
-                            </div>
-                            <div class="alert alert-danger alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
-                            </div>
-                            <div class="alert alert-primary alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Primary!</strong> Indicates an important action.
-                            </div>
-                            <div class="alert alert-secondary alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Secondary!</strong> Indicates a slightly less important action.
-                            </div>
-                            <div class="alert alert-dark alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Dark!</strong> Dark grey alert.
-                            </div>
-                            <div class="alert alert-light alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Light!</strong> Light grey alert.
-                            </div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row mt-sm-40 mt-md-40 mt-lg-50 mt-xl-50">
-				<div class="col-sm-12">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header">
-							<h5 class="mb-0">Additional Content</h5>
-						</div>
-						<div class="card-body">
-							<div class="alert alert-success" role="alert">
-								<h4 class="alert-heading">Well done!</h4>
-								<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-								<hr>
-								<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</section>
 	<!-- End Main -->
