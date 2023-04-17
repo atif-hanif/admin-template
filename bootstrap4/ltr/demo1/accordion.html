@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Accordion | Nova Admin Template</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body id="body-pd">
+	<!-- Start Header -->
+	<header class="header" id="header">
+		<div class="header_toggle">
+			<i class="bx bx-menu" id="header-toggle"></i>
+		</div>
+		<nav class="navbar navbar-expand-md navbar-dark top-nav">
+			<ul class="navbar-nav d-none d-md-flex align-items-center">
+				<li class="nav-item">
+					<div class="searchbar">
+						<input class="search_input" type="text" name="" placeholder="Search">
+						<a href="#" class="search_icon">
+							<i class="fa-solid fa-magnifying-glass search-icon"></i>
+						</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="toggleFullScreen();">
+						<i class="fa-solid fa-expand full-screen-icon" id="fullscreen"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Email">
+						<i class="fa-solid fa-envelope envelope-icon"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="fa-solid fa-circle-half-stroke mode-icon"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal2">
+						<i class="fa-solid fa-message chat-icon"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal1">
+						<i class="fa-solid fa-bell notification-icon"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Start Header -->
+
+	<!-- Start Side Nav -->
+	<div class="l-navbar" id="nav-bar">
+		<nav class="nav sidemenu">
+			<div>
+				<a href="index.html" class="nav_logo">
+					<img src="images/icon-logo.png" alt="logo" class="icon-logo">
+					<img src="images/nova-logo.png" alt="logo" class="main-logo nav_logo-name">
+				</a>
+				<ul class="nav-list">
+					<li class="nav-item">
+						<a class="nav_link" href="index.html" title="Dashboard">
+							<i class='bx bxs-dashboard'></i>
+							<span class="nav_name">Dashboard</span>
+						</a>
+					</li>
+					<li class="nav-item current-menu-parent">
+						<a class="nav_link dropdown-toggle active dropdown-toggle" title="Bootstrap" data-toggle="collapse" href="#bootstrap" role="button" aria-expanded="false" aria-controls="bootstrap">
+							<i class='bx bxl-bootstrap'></i>
+							<span class="nav_name">Bootstrap</span>
+						</a>
+						<div class="collapse navbar-collapse" id="bootstrap">
+							<ul class="navbar-nav">
+								<li class="nav-item current-menu-item">
+									<a class="nav-link submenu" href="accordion.html">
+										Accordion
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- End Side Nav -->
+
+	<!-- Start Main -->
+	<section class="main">
+		<div class="container-fluid main-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card">
+						<nav aria-label="breadcrumb" class="second">
+							<ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4 mb-0">
+								<li class="breadcrumb-item font-weight-bold">
+									<a class="black-text text-uppercase " href="javascript:void(0)">
+										<span class="align-middle">Bootstrap</span>
+									</a>
+									<i class="fa-solid fa-angles-right"></i>
+								</li>
+								<li class="breadcrumb-item font-weight-bold">
+									<a class="text-uppercase active-2" href="accordion.html">
+										<span class="align-middle">Accordion</span>
+									</a>
+								</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Default Accordion</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-one">
+								<div class="card border-0">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseOne">Collapsible Group Item #1</a>
+								  	</div>
+								  	<div id="collapseOne" class="collapse show" data-parent="#accordion-one">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTwo">Collapsible Group Item #2</a>
+								  	</div>
+								  	<div id="collapseTwo" class="collapse" data-parent="#accordion-one">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseThree">Collapsible Group Item #3</a>
+								  	</div>
+								  	<div id="collapseThree" class="collapse" data-parent="#accordion-one">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Bordered Accordion</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-two">
+								<div class="card border-purple">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseFour">Collapsible Group Item #1</a>
+								  	</div>
+								  	<div id="collapseFour" class="collapse show" data-parent="#accordion-two">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-purple">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseFive">Collapsible Group Item #2</a>
+								  	</div>
+								  	<div id="collapseFive" class="collapse" data-parent="#accordion-two">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-purple">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseSix">Collapsible Group Item #3</a>
+								  	</div>
+								  	<div id="collapseSix" class="collapse" data-parent="#accordion-two">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Default Accordion with Rotate Icon</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-three">
+								<div class="card border-0">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseSeven" aria-expanded="true">
+											Collapsible Group Item #1
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i></a>
+								  	</div>
+								  	<div id="collapseSeven" class="collapse show" data-parent="#accordion-three">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseEight" aria-expanded="true">
+											Collapsible Group Item #2
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseEight" class="collapse" data-parent="#accordion-three">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseNine" aria-expanded="true">
+											Collapsible Group Item #3
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseNine" class="collapse" data-parent="#accordion-three">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Bordered Accordion with Rotate Icon</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-four">
+								<div class="card border-purple">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTen" aria-expanded="true">
+											Collapsible Group Item #1
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseTen" class="collapse show" data-parent="#accordion-four">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-purple">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseEleven" aria-expanded="true">
+											Collapsible Group Item #2
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseEleven" class="collapse" data-parent="#accordion-four">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-purple">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTwelve" aria-expanded="true">
+											Collapsible Group Item #3
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseTwelve" class="collapse" data-parent="#accordion-four">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Accordion with Gradient Header</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-five">
+								<div class="card border-0">
+									<div class="card-header border bg-gradient">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseThirteen" aria-expanded="true">
+											Collapsible Group Item #1
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i></a>
+								  	</div>
+								  	<div id="collapseThirteen" class="collapse show" data-parent="#accordion-five">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-gradient">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseFourteen" aria-expanded="true">
+											Collapsible Group Item #2
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseFourteen" class="collapse" data-parent="#accordion-five">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-gradient">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseFifteen" aria-expanded="true">
+											Collapsible Group Item #3
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseFifteen" class="collapse" data-parent="#accordion-five">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Accordion with Gradient Background</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-six">
+								<div class="card border-0">
+									<div class="card-header border bg-gradient">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseSixteen" aria-expanded="true">
+											Collapsible Group Item #1
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseSixteen" class="collapse show" data-parent="#accordion-six">
+										<div class="card-body bg-gradient text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-gradient">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseSeventeen" aria-expanded="true">
+											Collapsible Group Item #2
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseSeventeen" class="collapse" data-parent="#accordion-six">
+										<div class="card-body bg-gradient text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-gradient">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseEighteen" aria-expanded="true">
+											Collapsible Group Item #3
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseEighteen" class="collapse" data-parent="#accordion-six">
+										<div class="card-body bg-gradient text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Default Accordion with Space</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-seven">
+								<div class="card border-0 mb-2">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseNineteen" aria-expanded="true">
+											Collapsible Group Item #1
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i></a>
+								  	</div>
+								  	<div id="collapseNineteen" class="collapse show" data-parent="#accordion-seven">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0 mb-2">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTwenty" aria-expanded="true">
+											Collapsible Group Item #2
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseTwenty" class="collapse" data-parent="#accordion-seven">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-0">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTwentyone" aria-expanded="true">
+											Collapsible Group Item #3
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseTwentyone" class="collapse" data-parent="#accordion-seven">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-6">
+					<div class="card accordion-card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header">
+							<h5 class="mb-0">Bordered Accordion with Space</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion-eight">
+								<div class="card border-purple mb-2">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTwentytwo" aria-expanded="true">
+											Collapsible Group Item #1
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseTwentytow" class="collapse show" data-parent="#accordion-eight">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-purple mb-2">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTwentythree" aria-expanded="true">
+											Collapsible Group Item #2
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseTwentythree" class="collapse" data-parent="#accordion-eight">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+								<div class="card border-purple">
+									<div class="card-header border bg-purple">
+										<a class="card-link text-white" data-toggle="collapse" href="#collapseTwentyfour" aria-expanded="true">
+											Collapsible Group Item #3
+											<i class="fa-solid fa-angle-down float-right"></i>
+											<i class="fa-solid fa-angle-up float-right"></i>
+										</a>
+								  	</div>
+								  	<div id="collapseTwentyfour" class="collapse" data-parent="#accordion-eight">
+										<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+								  	</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<!-- End Main -->
+
+	<!-- Start Footer -->
+	<footer class="footer">
+		<div class="copyrights">
+			<p class="text-white text-center">© Copyrights 2022. All Rights Reserved</p>
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<!-- Chat Modal -->
+	<div class="modal right fade chat-modal" id="myModal2">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Chat</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<ul class="contacts">
+						<li class="name-first-letter">A</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/2.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Archie Parker</span>
+									<p>Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/3.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Alfie Mason</span>
+									<p>Taherah left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/7.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Aharlie Kane</span>
+									<p>Sami is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/9.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Athan Jacoby</span>
+									<p>Nargis left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">B</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/1.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Bashid Samim</span>
+									<p>Rashid left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/4.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Breddie Ronan</span>
+									<p>Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Ceorge Carson</span>
+									<p>Taherah left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">D</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/6.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Darry Parker</span>
+									<p>Sami is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/8.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Denry Hunter</span>
+									<p>Nargis left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">J</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Jack Ronan</span>
+									<p>Rashid left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/1.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Jacob Tucker</span>
+									<p>Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/8.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>James Logan</span>
+									<p>Taherah left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/3.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Joshua Weston</span>
+									<p>Sami is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">O</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/4.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Oliver Acker</span>
+									<p>Nargis left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Oscar Weston</span>
+									<p>Rashid left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Notification Modal -->
+	<div class="modal right fade" id="myModal1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header notification-header">
+					<h4 class="modal-title notification-title">Notification</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<ul class="notification-nav">
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6> <small class="d-block date-time">01 October 2021 - 02:26 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6> <small class="d-block date-time">01 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6> <small class="d-block date-time">02 October 2021 - 10:00 AM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6> <small class="d-block date-time">02 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> JC </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jackie send you photo</h6> <small class="d-block date-time">03 October 2021 - 02:30 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> SB </div>
+									<div class="media-body">
+										<h6 class="mb-0">Shane created task</h6> <small class="d-block date-time">03 October 2021 - 08:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> AD </div>
+									<div class="media-body">
+										<h6 class="mb-0">Alexa sent an email</h6> <small class="d-block date-time">04 October 2021 - 10:00 AM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> ZS </div>
+									<div class="media-body">
+										<h6 class="mb-0">Zoe added a photo</h6> <small class="d-block date-time">04 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6> <small class="d-block date-time">01 October 2021 - 02:26 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6> <small class="d-block date-time">01 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6> <small class="d-block date-time">02 October 2021 - 10:00 AM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6> <small class="d-block date-time">02 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer"> <a href="#" class="btn btn-danger btn-lg d-block mx-auto notification-btn">View all notifications</a> </div>
+			</div>
+		</div>
+	</div>
+	<!--Task List Disk-->
+	<div class="modal" id="tasklistModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+		  
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Add Todo List</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+			
+				<!-- Modal body -->
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<label>Team Member</label>
+								<input type="text" class="form-control" id="team-member" placeholder="Team Member" name="team-member">
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<label>Task</label>
+								<input type="text" class="form-control" id="task" placeholder="Task" name="task">
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<label>Priority</label>
+								<input type="text" class="form-control" id="priority" placeholder="Priority" name="priority">
+							</div>
+						</div>
+					</form>
+				</div>
+			
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-purple" data-dismiss="modal">Add</button>
+				</div>
+			
+		  	</div>
+		</div>
+	  </div>
+
+	<!-- Scripts -->  
+	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="js/style.js"></script>
+
+</body>
+
+</html>
