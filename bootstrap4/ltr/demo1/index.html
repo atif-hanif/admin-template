@@ -125,6 +125,11 @@
 										Cards
 									</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link submenu" href="carousel.html">
+										Carousel
+									</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -215,7 +220,7 @@
 			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
 				<!--Start Chart-->
 				<div class="col-sm-12 col-md-12 col-lg-7">
-					<div class="card">
+					<div class="card custom-card">
 						<div class="card-header">
 							<h5 class="card-title mb-0">Total Transactions</h5>
 						</div>
@@ -225,16 +230,25 @@
 					</div>
 				</div>
 				<!--End Chart-->
+
 				<!--Start Calendar-->
 				<div class="col-sm-12 col-md-12 col-lg-5 mb-sm-30 mt-md-30 mt-lg-0">
-					<div id="calendar"></div>
+					<div class="card custom-card h-100">
+						<div class="card-header">
+							<h5 class="card-title mb-0">Calendar</h5>
+						</div>
+						<div class="card-body p-0">
+							<div id="calendar"></div>
+						</div>
+					</div>
 				</div>
 				<!--End Calendar-->
 			</div>
+
 			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
 				<!--Start Activity-->
 				<div class="col-sm-12 col-md-12 col-lg-5">
-					<div class="main-card card">
+					<div class="main-card card custom-card">
 						<div class="card-header">
 							<h5 class="card-title mb-0">Daily Activity</h5>
 						</div>
@@ -344,7 +358,7 @@
 	
 				<!--Start Task List-->
 				<div class="col-sm-12 col-md-12 col-lg-7 mb-sm-30 mt-md-30 mt-lg-0">
-					<div class="card">
+					<div class="card custom-card">
 						<div class="card-header">
 							<h5 class="mb-0 d-inline-block float-left">Todo List</h5>
 							<a href="" class="d-inline-block float-right text-purple" data-toggle="modal" data-target="#tasklistModal">Add Task</a>
@@ -605,12 +619,13 @@
 						</div>
 					</div>
 				</div>
-				<!--End Task List-->
 			</div>
+			<!--End Task List-->
+
 			<!--Start Table-->
 			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
 				<div class="col-sm-12">
-					<div class="card">
+					<div class="card custom-card">
 						<div class="card-header">
 							<h5 class="card-title mb-0">Product Sales</h5>
 						</div>
@@ -652,7 +667,7 @@
 											<td>
 												<p class="text-success rounded-pill mb-0">Shipped</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
@@ -676,7 +691,7 @@
 											<td>
 												<p class="text-warning rounded-pill mb-0">Pending</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i><i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
@@ -700,7 +715,7 @@
 											<td>
 												<p class="ttext-danger rounded-pill mb-0">Cancelled</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
@@ -724,7 +739,7 @@
 											<td>
 												<p class="text-warning rounded-pill mb-0">Pending</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
@@ -748,7 +763,7 @@
 											<td>
 												<p class="text-success rounded-pill mb-0">Shipped</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
@@ -772,7 +787,7 @@
 											<td>
 												<p class="text-warning rounded-pill mb-0">Pending</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
@@ -796,7 +811,7 @@
 											<td>
 												<p class="text-danger rounded-pill mb-0">Cancelled</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
@@ -820,7 +835,7 @@
 											<td>
 												<p class="text-success rounded-pill mb-0">Shipped</p>
 											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2"></i> <i class="fa-solid fa-trash text-danger"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 									</tbody>
 								</table>
@@ -1154,7 +1169,7 @@
 	<!-- Scripts -->  
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="vendor/highcharts/code/highcharts.js"></script>
+	<script src="vendor/highcharts/highcharts.js"></script>
 	<script src="vendor/highcharts/modules/exporting.js"></script>
 	<script src="vendor/highcharts/modules/export-data.js"></script>
 	<script src="vendor/highcharts/modules/accessibility.js"></script>
@@ -1168,119 +1183,8 @@
 	<script src="vendor/datatables/pdfmake/pdfmake.min.js"></script>
 	<script src="vendor/datatables/pdfmake/vfs_fonts.js"></script>
 	<script src="js/style.js"></script>
-	<script>
-	$(document).ready(function() {
-		Highcharts.chart('container', {
-			chart: {
-				type: 'column',
-				height: 405
-			},
-			title: {
-				text: ''
-			},
-			subtitle: {
-				text: ''
-			},
-			credits: {
-				enabled: false
-			},
-			xAxis: {
-				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-				crosshair: true
-			},
-			yAxis: {
-				min: 0,
-				title: {
-					text: 'K'
-				}
-			},
-			tooltip: {
-				headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-				pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f} k</b></td></tr>',
-				footerFormat: '</table>',
-				shared: true,
-				useHTML: true
-			},
-			plotOptions: {
-				column: {
-					pointPadding: 0.2,
-					borderWidth: 0
-				}
-			},
-			series: [{
-				name: 'Sales',
-				data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 95.6, 148.5, 126.4, 194.1, 95.6, 54.4]
-			}, {
-				name: 'Revenue',
-				data: [83.6, 78.8, 128.5, 149.4, 184.0, 234.5, 105.0, 174.3, 191.2, 213.5, 106.6, 92.3]
-			}, {
-				name: 'Products',
-				data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-			}, {
-				name: 'Orders',
-				data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-			}]
-		});
-	});
-	</script>
-	<script>
-	$(document).ready(function() {
-		$(function() {
-			$("#calendar").simpleCalendar({
-				// displays events
-				displayEvent: true,
-				// event dates
-				events: [
-					// generate new event after tomorrow for one hour
-					{
-						startDate: new Date(new Date().setHours(new Date().getHours() + 24)).toDateString(),
-						endDate: new Date(new Date().setHours(new Date().getHours() + 25)).toISOString(),
-						summary: 'Visit of the Eiffel Tower'
-					},
-					// generate new event for yesterday at noon
-					{
-						startDate: new Date(new Date().setHours(new Date().getHours() - new Date().getHours() - 12, 0)).toISOString(),
-						endDate: new Date(new Date().setHours(new Date().getHours() - new Date().getHours() - 11)).getTime(),
-						summary: 'Restaurant'
-					},
-					// generate new event for the last two days
-					{
-						startDate: new Date(new Date().setHours(new Date().getHours() - 48)).toISOString(),
-						endDate: new Date(new Date().setHours(new Date().getHours() - 24)).getTime(),
-						summary: 'Visit of the Louvre'
-					}
-				],
-				// disable showing event details
-				disableEventDetails: false,
-				// disable showing empty date details
-				disableEmptyDetails: false
-			});
-		});
-	});
-	</script>
-	<script>
-	$(document).ready(function() {
-		$('#myTable').DataTable({
-			dom: "<'row'<'col-sm-12 col-md-12 col-lg-3 enteries'l><'col-sm-12 col-md-12 col-lg-5 cust-btn'B><'col-sm-12 col-md-12 col-lg-4 dt-search-bar mt-2 pl-0'f>>" + "<'row'<'col-sm-12'rt>>" + "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-			buttons: [{
-				extend: 'copy',
-				title: 'Product Sales'
-			}, {
-				extend: 'csv',
-				title: 'Product Sales'
-			}, {
-				extend: 'excel',
-				title: 'Product Sales'
-			}, {
-				extend: 'pdf',
-				title: 'Product Sales'
-			}, {
-				extend: 'print',
-				title: 'Product Sales'
-			}, ]
-		});
-	});
-	</script>
+	<script src="js/home.js"></script>
+
 </body>
 
 </html>

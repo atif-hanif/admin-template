@@ -781,11 +781,29 @@ a:hover {
     clear: both
 }
 
+.custom-card .card-header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.custom-card .card-body .card-header {
+    background-color: inherit;
+    color: inherit;
+}
+
 /* End Activity */
 
 .task-body {
     padding: 1.25rem 1.25rem 1rem;
 }
+
+/* Start Calendar */
+
+#calendar .calendar {
+    border: 1px solid transparent;
+}
+
+/* End Calendar */
 
 /* Start Breadcrumb */
 
@@ -859,6 +877,14 @@ a[aria-expanded=false] .fa-angle-down {
 
 /* End Accordion */
 
+/* Start Breadcrumb */
+
+.breadcrumbs-card .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--white-color);
+}
+
+/* End Breadcrumb */
+
 /* Start Footer */
 
 .footer {
@@ -872,6 +898,11 @@ a[aria-expanded=false] .fa-angle-down {
     opacity: 0.9;
     z-index: var(--z-fixed);
     transition: .5s;
+    height: 50px;
+}
+
+.footer p {
+    margin-bottom: 0px;
 }
 
 /* End Footer */
