@@ -2,7 +2,7 @@
 
 :root {
     --header-height: 3rem;
-    --nav-width: 68px;
+    --nav-width: 224px;
     --primary-color: #2b1c40;
     --secondary-color: #3399FF;
     --active-color: #3399FF;
@@ -89,7 +89,7 @@ a:hover {
 .l-navbar {
     position: fixed;
     top: 0;
-    left: -30%;
+    left: -100%;
     width: var(--nav-width);
     height: 100vh;
     background-color: var(--primary-color);
@@ -153,9 +153,9 @@ a:hover {
     left: 0;
 }
 
-.body-pd {
+/* .body-pd {
     padding: 0 1rem 0 calc(var(--nav-width) + 2rem);
-}
+} */
 
 .nav_link.active {
     background-color: var(--active-color);
@@ -678,6 +678,7 @@ a:hover {
 
 .main {
     padding-bottom: 50px;
+    position: relative;
 }
 
 .main-content{
@@ -781,14 +782,9 @@ a:hover {
     clear: both
 }
 
-.custom-card .card-header {
+.custom-card-header {
     background-color: var(--primary-color);
     color: var(--white-color);
-}
-
-.custom-card .card-body .card-header {
-    background-color: inherit;
-    color: inherit;
 }
 
 /* End Activity */
