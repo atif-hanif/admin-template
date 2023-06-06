@@ -1,45 +1,70 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-   
-    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-        const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId),
-        bodypd = document.getElementById(bodyId),
-        headerpd = document.getElementById(headerId)
+$(function () {
+    // Sidebar links
+    $('.sidebar .sidebar-menu li a').on('click', function () {
+      const $this = $(this);
+  
+      if ($this.parent().hasClass('open')) {
+        $this
+          .parent()
+          .children('.dropdown-menu')
+          .slideUp(200, () => {
+            $this.parent().removeClass('open');
+          });
+      } else {
+        $this
+          .parent()
+          .parent()
+          .children('li.open')
+          .children('.dropdown-menu')
+          .slideUp(200);
+  
+        $this
+          .parent()
+          .parent()
+          .children('li.open')
+          .children('a')
+          .removeClass('open');
+  
+        $this
+          .parent()
+          .parent()
+          .children('li.open')
+          .removeClass('open');
+  
+        $this
+          .parent()
+          .children('.dropdown-menu')
+          .slideDown(200, () => {
+            $this.parent().addClass('open');
+          });
+      }
+    });
 
-        // Validate that all variables exist
-        if(toggle && nav && bodypd && headerpd){
-            toggle.addEventListener('click', ()=>{
-            // show navbar
-            nav.classList.toggle('nav-show')
-            // change icon
-            //toggle.classList.toggle('bx-x')
-            // add padding to body
-            bodypd.classList.toggle('body-pd')
-            // add padding to header
-            headerpd.classList.toggle('body-pd')
-            })
-        }
-    }
+    $('.offcanvas-toggle').click(function(e) {
+        e.preventDefault();
+        $('.offcanvas-menu').toggleClass('open');
+    });
 
-    showNavbar('header-toggle','nav-bar','body-pd','header')
-
-    /*===== LINK ACTIVE =====*/
-    const linkColor = document.querySelectorAll('.nav_link')
-
-    function colorLink(){
-        if(linkColor){
-        linkColor.forEach(l=> l.classList.remove('active'))
-        this.classList.add('active')
-        }
-    }
-    linkColor.forEach(l=> l.addEventListener('click', colorLink))
-
-     // Your code to run since DOM is loaded and ready
-});
-
-$('.main').click(function(e) {
-    $('.l-navbar').removeClass('nav-show')
-});
+    // Sidebar Activity Class
+    const sidebarLinks = $('.sidebar').find('.sidebar-link');
+  
+    sidebarLinks
+      .each((index, el) => {
+        $(el).removeClass('active');
+      })
+      .filter(function () {
+        const href = $(this).attr('href');
+        const pattern = href[0] === '/' ? href.substr(1) : href;
+        return pattern === (window.location.pathname).substr(1);
+      })
+      .addClass('active');
+  
+    // ٍSidebar Toggle
+    $('.sidebar-toggle').on('click', e => {
+      $('.app').toggleClass('is-collapsed');
+      e.preventDefault();
+    });
+}());
 
 function toggleFullScreen() {
     if ((document.fullScreenElement && document.fullScreenElement !== null) ||

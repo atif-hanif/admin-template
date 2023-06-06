@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="vendor/font-awesome-pro/css/all.min.css" rel="stylesheet">
 	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<link href="vendor/animated-event-calendar/dist/simple-calendar.css" rel="stylesheet">
 	<link href="vendor/datatables/datatables.min.css" rel="stylesheet">
@@ -17,130 +18,102 @@
 	<link href="css/responsive.css" rel="stylesheet">
 </head>
 
-<body id="body-pd">
-	<!-- Start Header -->
-	<header class="header" id="header">
-		<div class="header-toggle">
-			<i class="bx bx-menu" id="header-toggle"></i>
-		</div>
-		<nav class="navbar navbar-expand-md navbar-dark top-nav">
-			<ul class="navbar-nav d-none d-md-flex align-items-center">
-				<li class="nav-item">
-					<div class="searchbar">
-						<input class="search_input" type="text" name="" placeholder="Search">
-						<a href="#" class="search_icon">
-							<i class="fa-solid fa-magnifying-glass search-icon"></i>
-						</a>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" onclick="toggleFullScreen();">
-						<i class="fa-solid fa-expand full-screen-icon" id="fullscreen"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Email">
-						<i class="fa-solid fa-envelope envelope-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<i class="fa-solid fa-circle-half-stroke mode-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal2">
-						<i class="fa-solid fa-message chat-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal1">
-						<i class="fa-solid fa-bell notification-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<!-- Start Header -->
+<body class="app">
 
 	<!-- Start Side Nav -->
-	<div class="l-navbar" id="nav-bar">
-		<nav class="nav sidemenu">
-			<div>
-				<a href="index.html" class="nav_logo">
+	<div class="sidebar">
+		<div class="sidebar-inner">
+			<div class="sidebar-logo">
+				<a href="index.html" class="nav-logo">
 					<img src="images/icon-logo.png" alt="logo" class="icon-logo">
-					<img src="images/nova-logo.png" alt="logo" class="main-logo nav_logo-name">
+					<img src="images/nova-logo.png" alt="logo" class="main-logo">
 				</a>
-				<ul class="nav-list">
-					<li class="nav-item">
-						<a class="nav_link active" href="index.html" title="Dashboard">
-							<i class='bx bxs-dashboard'></i>
-							<span class="nav_name">Dashboard</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav_link" title="Bootstrap" data-toggle="collapse" href="#bootstrap" role="button" aria-expanded="false" aria-controls="bootstrap">
-							<i class='bx bxl-bootstrap'></i>
-							<span class="nav_name">Bootstrap</span>
-						</a>
-						<div class="collapse navbar-collapse" id="bootstrap">
-							<ul class="navbar-nav">
-								<li class="nav-item">
-									<a class="nav-link submenu" href="accordion.html" title="Accordion">
-										<i class="fa-solid fa-minus pr-3"></i>Accordion
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link submenu" href="alerts.html">
-										Alerts
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link submenu" href="badges.html">
-										Badges
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link submenu" href="breadcrumb.html">
-										Breadcrumb
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link submenu" href="buttons.html">
-										Buttons
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link submenu" href="button-group.html">
-										Button Group
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link submenu" href="cards.html">
-										Cards
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link submenu" href="carousel.html">
-										Carousel
-									</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-				</ul>
+				<div class="mobile-toggle sidebar-toggle">
+					<a href="#" class="text-decoration-none">
+						<i class="far fa-times-circle"></i>
+					</a>
+				</div>
 			</div>
-		</nav>
+			<ul class="sidebar-menu scrollable position-relative">
+				<li class="nav-item">
+					<a class="nav-link active" href="index.html">
+						<i class='bx bxs-dashboard'></i>
+						<span class="title">Dashboard</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#">
+						<i class='bx bxl-bootstrap'></i>
+						<span class="title">Bootstrap</span>
+						<span class="arrow">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="sidebar-link" href="alerts.html">Alerts</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 	</div>
 	<!-- End Side Nav -->
 
 	<!-- Start Main -->
-	<section class="main" id="main">
+	<div class="container-wide">
+		<header class="header">
+			<nav class="navbar navbar-expand-md navbar-dark top-nav">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item active">
+						<a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
+							<i class="fa-solid fa-chevrons-left"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav d-none d-md-flex align-items-center ml-auto">
+					<li class="nav-item">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="" placeholder="Search">
+							<a href="#" class="search_icon">
+								<i class="fa-solid fa-magnifying-glass search-icon"></i>
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="toggleFullScreen();">
+							<i class="fa-solid fa-expand full-screen-icon" id="fullscreen"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Email">
+							<i class="fa-solid fa-envelope envelope-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-circle-half-stroke mode-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal2">
+							<i class="fa-solid fa-message chat-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal1">
+							<i class="fa-solid fa-bell notification-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		
 		<div class="container-fluid main-content">
 			<!--Start Total-->
 			<div class="row">
@@ -361,7 +334,7 @@
 					<div class="card">
 						<div class="card-header custom-card-header">
 							<h5 class="mb-0 d-inline-block float-left">Todo List</h5>
-							<a href="" class="d-inline-block float-right text-purple" data-toggle="modal" data-target="#tasklistModal">Add Task</a>
+							<a href="" class="d-inline-block float-right text-white" data-toggle="modal" data-target="#tasklistModal">Add Task</a>
 						</div>
 						<div class="card-body task-body">
 							<div class="table-responsive">
@@ -846,7 +819,7 @@
 			</div>
 			<!--End Table-->
 		</div>
-	</section>
+	</div>
 	<!-- End Main -->
 
 	<!-- Start Footer -->
@@ -1126,9 +1099,10 @@
 			</div>
 		</div>
 	</div>
+
 	<!--Task List Disk-->
 	<div class="modal" id="tasklistModal">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
 			<div class="modal-content">
 		  
 				<!-- Modal Header -->
@@ -1159,7 +1133,7 @@
 			
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<button type="button" class="btn btn-purple" data-dismiss="modal">Add</button>
+					<button type="button" class="btn btn-purple" data-dismiss="modal"><i class="fa-regular fa-square-plus pr-2"></i>Add</button>
 				</div>
 			
 		  	</div>
