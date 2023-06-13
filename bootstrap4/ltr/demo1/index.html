@@ -7,8 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-	<link href="vendor/font-awesome-pro/css/all.min.css" rel="stylesheet">
+	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
 	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<link href="vendor/animated-event-calendar/dist/simple-calendar.css" rel="stylesheet">
 	<link href="vendor/datatables/datatables.min.css" rel="stylesheet">
@@ -19,19 +18,22 @@
 </head>
 
 <body class="app">
-
 	<!-- Start Side Nav -->
 	<div class="sidebar">
 		<div class="sidebar-inner">
 			<div class="sidebar-logo">
-				<a href="index.html" class="nav-logo">
-					<img src="images/icon-logo.png" alt="logo" class="icon-logo">
-					<img src="images/nova-logo.png" alt="logo" class="main-logo">
-				</a>
-				<div class="mobile-toggle sidebar-toggle">
-					<a href="#" class="text-decoration-none">
-						<i class="far fa-times-circle"></i>
+				<div class="d-flex align-items-center flex-nowrap">
+					<a class="sidebar-link text-decoration-none nav-logo" href="index.html">
+						<div class="d-flex align-items-center flex-nowrap">
+							<div class="logo-sm">
+								<img src="images/icon-logo.png" alt="logo" class="icon-logo">
+							</div>
+							<img src="images/nova-logo.png" alt="logo" class="main-logo">
+						</div>
 					</a>
+					<div class="mobile-toggle sidebar-toggle mt-n2">
+						<a href="#" class="text-decoration-none"> <i class="far fa-times-circle"></i> </a>
+					</div>
 				</div>
 			</div>
 			<ul class="sidebar-menu scrollable position-relative">
@@ -51,7 +53,28 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="sidebar-link" href="alerts.html">Alerts</a>
+							<a class="sidebar-link dropdown-item" href="accordion.html">Accordion</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="alerts.html">Alerts</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="badges.html">Badges</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="breadcrumb.html">Breadcrumb</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="buttons.html">Buttons</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="button-group.html">Button Group</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="cards.html">Cards</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="carousel.html">Carousel</a>
 						</li>
 					</ul>
 				</li>
@@ -331,7 +354,7 @@
 	
 				<!--Start Task List-->
 				<div class="col-sm-12 col-md-12 col-lg-7 mb-sm-30 mt-md-30 mt-lg-0">
-					<div class="card">
+					<div class="card h-100">
 						<div class="card-header custom-card-header">
 							<h5 class="mb-0 d-inline-block float-left">Todo List</h5>
 							<a href="" class="d-inline-block float-right text-white" data-toggle="modal" data-target="#tasklistModal">Add Task</a>
@@ -1119,11 +1142,11 @@
 								<label>Team Member</label>
 								<input type="text" class="form-control" id="team-member" placeholder="Team Member" name="team-member">
 							</div>
-							<div class="col-sm-12 col-md-4">
+							<div class="col-sm-12 col-md-4 mt-3 mt-md-0">
 								<label>Task</label>
 								<input type="text" class="form-control" id="task" placeholder="Task" name="task">
 							</div>
-							<div class="col-sm-12 col-md-4">
+							<div class="col-sm-12 col-md-4 mt-3 mt-md-0">
 								<label>Priority</label>
 								<input type="text" class="form-control" id="priority" placeholder="Priority" name="priority">
 							</div>
