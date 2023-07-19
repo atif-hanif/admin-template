@@ -357,6 +357,14 @@ a:hover {
     background-color: var(--submenu-active);
 }
 
+/* .sidebar-menu > li.dropdown.open > .dropdown-menu, .sidebar-menu > li.dropdown.active > .dropdown-menu, .sidebar-menu > li.dropdown.open.active > .dropdown-menu {
+	display: block;
+}
+
+.sidebar-menu > li.dropdown.hover > .dropdown-menu {
+	display: block;
+	z-index: 9999;
+} */
 
 /* End Side Menu */
 
