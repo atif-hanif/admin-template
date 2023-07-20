@@ -1031,6 +1031,14 @@ a[aria-expanded=false] .fa-angle-down {
 
 /* End Breadcrumb */
 
+/* Start Modal */
+
+.myModal6 {
+    z-index: 10500;
+}
+
+/* End Modal */
+
 /* Start Footer */
 
 .footer {

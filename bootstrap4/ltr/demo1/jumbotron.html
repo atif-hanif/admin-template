@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Collapse | Nova Admin Template</title>
+	<title>Jumbotron | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -74,7 +74,13 @@
 							<a class="sidebar-link dropdown-item" href="carousel.html">Carousel</a>
 						</li>
 						<li>
-							<a class="sidebar-link sub-menu dropdown-item" href="collapse.html">Collapse</a>
+							<a class="sidebar-link dropdown-item" href="collapse.html">Collapse</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="dropdown.html">Dropdown</a>
+						</li>
+                        <li>
+							<a class="sidebar-link sub-menu dropdown-item" href="jumbotron.html">Jumbotron</a>
 						</li>
 					</ul>
 				</li>
@@ -150,8 +156,8 @@
 									<i class="fa-solid fa-angles-right"></i>
 								</li>
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="collapse.html">
-										<span class="align-middle">Collapse</span>
+									<a class="text-uppercase active-2" href="jumbotron.html">
+										<span class="align-middle">Jumbotron</span>
 									</a>
 								</li>
 							</ol>
@@ -164,64 +170,15 @@
 				<div class="col-sm-12 col-md-12">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Basic Collapse with href</h5>
+							<h5 class="mb-0">Jumbotron</h5>
 						</div>
 						<div class="card-body">
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Link with href
-                            </a>
-							<a class="btn btn-secondary mt-3 mt-md-0" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Link with href
-                            </a>
-							<a class="btn btn-success mt-3 mt-md-0" data-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Link with href
-                            </a>
-							<a class="btn btn-danger mt-3 mt-md-0" data-toggle="collapse" href="#collapseExample14" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Link with href
-                            </a>
-							<a class="btn btn-warning mt-3 mt-md-0" data-toggle="collapse" href="#collapseExample15" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Link with href
-                            </a>
-							<a class="btn btn-dark mt-3 mt-xl-0" data-toggle="collapse" href="#collapseExample16" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Link with href
-                            </a>
-							<a class="btn btn-light mt-3 mt-xl-0" data-toggle="collapse" href="#collapseExample17" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Link with href
-                            </a>
-                            <div class="collapse mt-3" id="collapseExample11">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample12">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample13">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample14">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample15">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample16">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample17">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
+                            <div class="jumbotron">
+                                <h1 class="display-4">Jumbotron</h1>
+                                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                                <hr class="my-4">
+                                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                             </div>
 						</div>
 					</div>
@@ -230,125 +187,13 @@
                 <div class="col-sm-12 col-md-12 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Basic Collapse with data-target</h5>
+							<h5 class="mb-0">Full-width Jumbotron</h5>
 						</div>
 						<div class="card-body">
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample21" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-target
-                            </button>
-							<button class="btn btn-secondary mt-3 mt-md-0" type="button" data-toggle="collapse" data-target="#collapseExample22" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-target
-                            </button>
-							<button class="btn btn-success mt-3 mt-md-0" type="button" data-toggle="collapse" data-target="#collapseExample23" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-target
-                            </button>
-							<button class="btn btn-danger mt-3 mt-xl-0" type="button" data-toggle="collapse" data-target="#collapseExample24" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-target
-                            </button>
-							<button class="btn btn-warning mt-3 mt-xl-0" type="button" data-toggle="collapse" data-target="#collapseExample25" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-target
-                            </button>
-							<button class="btn btn-dark mt-3" type="button" data-toggle="collapse" data-target="#collapseExample26" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-target
-                            </button>
-							<button class="btn btn-light mt-3" type="button" data-toggle="collapse" data-target="#collapseExample27" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-target
-                            </button>
-                            <div class="collapse mt-3" id="collapseExample21">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample22">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample23">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample24">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample25">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample26">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-							<div class="collapse mt-3" id="collapseExample27">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-12 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Multiple Collapse</h5>
-						</div>
-						<div class="card-body">
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample21" role="button" aria-expanded="false" aria-controls="multiCollapseExample21">Toggle first element</button>
-                            <button class="btn btn-secondary mt-3 mt-md-0" type="button" data-toggle="collapse" data-target="#multiCollapseExample22" aria-expanded="false" aria-controls="multiCollapseExample22">Toggle second element</button>
-							<button class="btn btn-success mt-3 mt-md-0" type="button" data-toggle="collapse" href="#multiCollapseExample23" role="button" aria-expanded="false" aria-controls="multiCollapseExample23">Toggle third element</button>
-                            <button class="btn btn-danger mt-3 mt-xl-0" type="button" data-toggle="collapse" href="#multiCollapseExample24" role="button" aria-expanded="false" aria-controls="multiCollapseExample24">Toggle fourth element</button>
-							<button class="btn btn-warning mt-3 mt-xl-0" type="button" data-toggle="collapse" href="#multiCollapseExample25" role="button" aria-expanded="false" aria-controls="multiCollapseExample25">Toggle fifth element</button>
-							<button class="btn btn-dark mt-3 mt-xl-0" type="button" data-toggle="collapse" href="#multiCollapseExample26" role="button" aria-expanded="false" aria-controls="multiCollapseExample26">Toggle sixth element</button>
-                            <button class="btn btn-light mt-3" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample21 multiCollapseExample22 multiCollapseExample23 multiCollapseExample24 multiCollapseExample25 multiCollapseExample26">Toggle all elements</button>
-
-                            <div class="row mt-3">
-                                <div class="col">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample21">
-                                        <div class="card card-body">
-                                            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample22">
-                                        <div class="card card-body">
-                                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                        </div>
-                                    </div>
-                                </div>
-								<div class="col">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample23">
-                                        <div class="card card-body">
-                                            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample24">
-                                        <div class="card card-body">
-                                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                        </div>
-                                    </div>
-                                </div>
-								<div class="col">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample25">
-                                        <div class="card card-body">
-                                            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample26">
-                                        <div class="card card-body">
-                                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                        </div>
-                                    </div>
+                            <div class="jumbotron jumbotron-fluid">
+                                <div class="container">
+                                  <h1 class="display-4">Fluid jumbotron</h1>
+                                  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                                 </div>
                             </div>
 						</div>
