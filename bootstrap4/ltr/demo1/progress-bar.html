@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Progress Bar | Nova Admin Template</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body class="app">
+	<!-- Start Side Nav -->
+	<div class="sidebar">
+		<div class="sidebar-inner">
+			<div class="sidebar-logo">
+				<div class="d-flex align-items-center flex-nowrap">
+					<a class="sidebar-link text-decoration-none nav-logo" href="index.html">
+						<div class="d-flex align-items-center flex-nowrap">
+							<div class="logo-sm">
+								<img src="images/icon-logo.png" alt="logo" class="icon-logo">
+							</div>
+							<img src="images/nova-logo.png" alt="logo" class="main-logo">
+						</div>
+					</a>
+					<div class="mobile-toggle sidebar-toggle mt-n2">
+						<a href="#" class="text-decoration-none"> <i class="far fa-times-circle"></i> </a>
+					</div>
+				</div>
+			</div>
+			<ul class="sidebar-menu scrollable position-relative">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">
+						<i class='bx bxs-dashboard'></i>
+						<span class="title">Dashboard</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown open">
+					<a class="nav-link active" href="#">
+						<i class='bx bxl-bootstrap'></i>
+						<span class="title">Bootstrap</span>
+						<span class="arrow">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="sidebar-link dropdown-item" href="accordion.html">Accordion</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="alerts.html">Alerts</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="badges.html">Badges</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="breadcrumb.html">Breadcrumb</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="buttons.html">Buttons</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="button-group.html">Button Group</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="cards.html">Cards</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="carousel.html">Carousel</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="collapse.html">Collapse</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="dropdown.html">Dropdown</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="jumbotron.html">Jumbotron</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="modal.html">Modal</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="pagination.html">Pagination</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="popover.html">Popover</a>
+						</li>
+                        <li>
+							<a class="sidebar-link sub-menu dropdown-item" href="progress-bar.html">Progress Bar</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- End Side Nav -->
+
+	<!-- Start Main -->
+	<div class="container-wide">
+		<header class="header">
+			<nav class="navbar navbar-expand-md navbar-dark top-nav">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item active">
+						<a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
+							<i class="fa-solid fa-chevrons-left"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav d-none d-md-flex align-items-center ml-auto">
+					<li class="nav-item">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="" placeholder="Search">
+							<a href="#" class="search_icon">
+								<i class="fa-solid fa-magnifying-glass search-icon"></i>
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="toggleFullScreen();">
+							<i class="fa-solid fa-expand full-screen-icon" id="fullscreen"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Email">
+							<i class="fa-solid fa-envelope envelope-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-circle-half-stroke mode-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal2">
+							<i class="fa-solid fa-message chat-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal1">
+							<i class="fa-solid fa-bell notification-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="container-fluid main-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card breadcrumb-card">
+						<nav aria-label="breadcrumb" class="second">
+							<ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4 mb-0">
+								<li class="breadcrumb-item font-weight-bold">
+									<a class="black-text text-uppercase " href="javascript:void(0)">
+										<span class="align-middle">Bootstrap</span>
+									</a>
+									<i class="fa-solid fa-angles-right"></i>
+								</li>
+								<li class="breadcrumb-item font-weight-bold">
+									<a class="text-uppercase active-2" href="progress-bar.html">
+										<span class="align-middle">Progress Bar</span>
+									</a>
+								</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
+				<div class="col-sm-12 col-md-12 col-lg-6">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Basic Progress Bar</h5>
+						</div>
+						<div class="card-body">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                 <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3 mt-md-0">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Progress Bar Labels</h5>
+						</div>
+						<div class="card-body">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                            </div>
+                            <div class="progress mt-3">
+                                 <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Progress Bar Height</h5>
+						</div>
+						<div class="card-body">
+                            <div class="progress" style="height:10px">
+                                <div class="progress-bar" style="width:40%;"></div>
+                            </div>
+                            <div class="progress mt-3" style="height:20px">
+                                <div class="progress-bar" style="width:50%;"></div>
+                            </div>
+                            <div class="progress mt-3" style="height:30px">
+                                <div class="progress-bar" style="width:60%;"></div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Progress Bar Backgrounds</h5>
+						</div>
+						<div class="card-body">
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                            </div>
+                            <div class="progress mt-3">
+                                 <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Striped Progress Bar</h5>
+						</div>
+						<div class="card-body">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                 <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Animated Progress Bar</h5>
+						</div>
+						<div class="card-body">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-secondary progress-bar-animated" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                 <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Multiple Progress Bars</h5>
+						</div>
+						<div class="card-body">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Main -->
+
+	<!-- Start Footer -->
+	<footer class="footer">
+		<div class="copyrights">
+			<p class="text-white text-center">© Copyrights 2023. All Rights Reserved.</p>
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<!-- Chat Modal -->
+	<div class="modal right fade chat-modal" id="myModal2">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Chat</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<ul class="contacts">
+						<li class="name-first-letter">A</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/2.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Archie Parker</span>
+									<p>Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/3.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Alfie Mason</span>
+									<p>Taherah left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/7.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Aharlie Kane</span>
+									<p>Sami is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/9.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Athan Jacoby</span>
+									<p>Nargis left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">B</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/1.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Bashid Samim</span>
+									<p>Rashid left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/4.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Breddie Ronan</span>
+									<p>Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Ceorge Carson</span>
+									<p>Taherah left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">D</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/6.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Darry Parker</span>
+									<p>Sami is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/8.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Denry Hunter</span>
+									<p>Nargis left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">J</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Jack Ronan</span>
+									<p>Rashid left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/1.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Jacob Tucker</span>
+									<p>Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/8.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>James Logan</span>
+									<p>Taherah left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/3.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon"></span> </div>
+								<div class="user_info"> <span>Joshua Weston</span>
+									<p>Sami is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">O</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/4.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Oliver Acker</span>
+									<p>Nargis left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont"> <img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""> <span class="online_icon offline"></span> </div>
+								<div class="user_info"> <span>Oscar Weston</span>
+									<p>Rashid left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Notification Modal -->
+	<div class="modal right fade" id="myModal1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header notification-header">
+					<h4 class="modal-title notification-title">Notification</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<ul class="notification-nav">
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6> <small class="d-block date-time">01 October 2021 - 02:26 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6> <small class="d-block date-time">01 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6> <small class="d-block date-time">02 October 2021 - 10:00 AM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6> <small class="d-block date-time">02 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> JC </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jackie send you photo</h6> <small class="d-block date-time">03 October 2021 - 02:30 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> SB </div>
+									<div class="media-body">
+										<h6 class="mb-0">Shane created task</h6> <small class="d-block date-time">03 October 2021 - 08:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> AD </div>
+									<div class="media-body">
+										<h6 class="mb-0">Alexa sent an email</h6> <small class="d-block date-time">04 October 2021 - 10:00 AM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> ZS </div>
+									<div class="media-body">
+										<h6 class="mb-0">Zoe added a photo</h6> <small class="d-block date-time">04 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6> <small class="d-block date-time">01 October 2021 - 02:26 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6> <small class="d-block date-time">01 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6> <small class="d-block date-time">02 October 2021 - 10:00 AM</small> </div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6> <small class="d-block date-time">02 October 2021 - 05:00 PM</small> </div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer"> <a href="#" class="btn btn-danger btn-lg d-block mx-auto notification-btn">View all notifications</a> </div>
+			</div>
+		</div>
+	</div>
+
+	<!--Task List Disk-->
+	<div class="modal" id="tasklistModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+		  
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Add Todo List</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+			
+				<!-- Modal body -->
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<label>Team Member</label>
+								<input type="text" class="form-control" id="team-member" placeholder="Team Member" name="team-member">
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<label>Task</label>
+								<input type="text" class="form-control" id="task" placeholder="Task" name="task">
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<label>Priority</label>
+								<input type="text" class="form-control" id="priority" placeholder="Priority" name="priority">
+							</div>
+						</div>
+					</form>
+				</div>
+			
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-purple" data-dismiss="modal">Add</button>
+				</div>
+			
+		  	</div>
+		</div>
+	  </div>
+
+	<!-- Scripts -->  
+	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="js/script.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();   
+        });
+    </script>
+
+</body>
+
+</html>
