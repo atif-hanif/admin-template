@@ -65,10 +65,16 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--active-color);
 }
 
 a:hover {
     text-decoration: none;
+}
+
+.list-group-item.active {
+    border-color: var(--active-color);
+    background-color: var(--active-color);
 }
 
 .header {
@@ -156,7 +162,8 @@ a:hover {
 }
 
 .sidebar-menu {
-	height: calc(100vh - 65px);
+	/* height: calc(100vh - 65px); */
+    height: 650px;
 	list-style: none;
 	margin: 0;
 	overflow: auto;
@@ -801,22 +808,42 @@ a:hover {
 /* Firefox */
 * {
     scrollbar-width: auto;
-    scrollbar-color: #2B1C40 #ffffff;
+    scrollbar-color: var(--primary-color) var(--white-color);
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
 }
 
 *::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: var(--white-color);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #2B1C40;
+    background-color: var(--primary-color);
     border-radius: 10px;
-    border: 3px solid #ffffff;
+    border: 3px solid var(--white-color);
+}
+
+.menu-scroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: var(--primary-color);
+	border-radius: 10px;
+}
+
+.menu-scroll::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+}
+
+.menu-scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 0px;
+	background-color: transparent;
+	background-color: var(--white-color);
 }
 
 /* End Top Nav */
@@ -1038,6 +1065,49 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 /* End Modal */
+
+/* Start Tabs */
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-color: var(--primary-color) var(--primary-color) #fff;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: var(--btn-purple-light);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.vertical-tabs .nav-item.show .nav-link, .vertical-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-color: var(--primary-color) var(--primary-color);
+    border-radius: .25rem;
+}
+
+.vertical-tabs .nav-link:focus, .vertical-tabs .nav-link:hover {
+    border-color: var(--primary-color);
+    margin-top: 3px;
+    border-radius: .25rem;
+}
+
+.vertical-tabs {
+    border-bottom: 1px solid transparent;
+}
+
+.vertical-pills .nav-link.active, .vertical-pills .show>.nav-link {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+/* End Tabs */
 
 /* Start Footer */
 

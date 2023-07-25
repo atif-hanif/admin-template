@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Progress Bar | Nova Admin Template</title>
+	<title>Toast | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -95,7 +95,16 @@
 							<a class="sidebar-link dropdown-item" href="popover.html">Popover</a>
 						</li>
                         <li>
-							<a class="sidebar-link sub-menu dropdown-item" href="progress-bar.html">Progress Bar</a>
+							<a class="sidebar-link dropdown-item" href="progress-bar.html">Progress Bar</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="spinner.html">Spinner</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="tabs.html">Tabs</a>
+						</li>
+                        <li>
+							<a class="sidebar-link sub-menu dropdown-item" href="toast.html">Toast</a>
 						</li>
 					</ul>
 				</li>
@@ -171,8 +180,8 @@
 									<i class="fa-solid fa-angles-right"></i>
 								</li>
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="progress-bar.html">
-										<span class="align-middle">Progress Bar</span>
+									<a class="text-uppercase active-2" href="toast.html">
+										<span class="align-middle">Toast</span>
 									</a>
 								</li>
 							</ol>
@@ -185,157 +194,96 @@
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Basic Progress Bar</h5>
+							<h5 class="mb-0">Top Left Toast</h5>
 						</div>
 						<div class="card-body">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                 <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            <button type="button" class="btn btn-purple" id="btn1">Top Left</button>
+                            <div class="position-fixed top-0 left-0 p-3" style="z-index: 10005; left: 0; top: 0;">
+                                <div class="toast hide toast1" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                                    <div class="toast-header bg-primary text-white">
+                                        <strong class="mr-auto">Top Left</strong>
+                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="toast-body bg-primary text-white">
+                                        This is a toast message.
+                                    </div>
+                                </div>
                             </div>
 						</div>
 					</div>
 				</div>
 
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3 mt-md-0">
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3 mt-lg-0">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Progress Bar Labels</h5>
+							<h5 class="mb-0">Top Right Toast</h5>
 						</div>
 						<div class="card-body">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            <button type="button" class="btn btn-purple" id="btn2">Top Right</button>
+                            <div class="position-fixed top-0 right-0 p-3" style="z-index: 10005; right: 0; top: 0;">
+                                <div class="toast hide toast2" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                                    <div class="toast-header bg-success text-white">
+                                        <strong class="mr-auto">Top Right</strong>
+                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="toast-body bg-success text-white">
+                                        This is a toast message.
+                                    </div>
+                                </div>
                             </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                            </div>
-                            <div class="progress mt-3">
-                                 <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                            </div>
-                        </div>
-					</div>
-				</div>
-
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Progress Bar Height</h5>
 						</div>
-						<div class="card-body">
-                            <div class="progress" style="height:10px">
-                                <div class="progress-bar" style="width:40%;"></div>
-                            </div>
-                            <div class="progress mt-3" style="height:20px">
-                                <div class="progress-bar" style="width:50%;"></div>
-                            </div>
-                            <div class="progress mt-3" style="height:30px">
-                                <div class="progress-bar" style="width:60%;"></div>
-                            </div>
-                        </div>
 					</div>
 				</div>
 
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Progress Bar Backgrounds</h5>
+							<h5 class="mb-0">Bottom Left Toast</h5>
 						</div>
 						<div class="card-body">
-                            <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            <button type="button" class="btn btn-purple" id="btn3">Bottom Left</button>
+                            <div class="position-fixed bottom-0 left-0 p-3" style="z-index: 10005; left: 0; bottom: 0;">
+                                <div class="toast hide toast3" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                                    <div class="toast-header bg-secondary text-white">
+                                        <strong class="mr-auto">Bottom Left</strong>
+                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="toast-body bg-secondary text-white">
+                                        This is a toast message.
+                                    </div>
+                                </div>
                             </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                            </div>
-                            <div class="progress mt-3">
-                                 <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                            </div>
-                        </div>
+						</div>
 					</div>
 				</div>
 
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Striped Progress Bar</h5>
+							<h5 class="mb-0">Bottom Right Toast</h5>
 						</div>
 						<div class="card-body">
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            <button type="button" class="btn btn-purple" id="btn4">Bottom Right</button>
+                            <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 10005; right: 0; bottom: 0;">
+                                <div class="toast hide toast4" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                                    <div class="toast-header bg-danger text-white">
+                                        <strong class="mr-auto">Bottom Right</strong>
+                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="toast-body bg-danger text-white">
+                                        This is a toast message.
+                                    </div>
+                                </div>
                             </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                 <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-					</div>
-				</div>
-
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Animated Progress Bar</h5>
 						</div>
-						<div class="card-body">
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-secondary progress-bar-animated" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                 <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress mt-3">
-                                <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-					</div>
-				</div>
-
-                <div class="col-sm-12 col-md-12 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Multiple Progress Bars</h5>
-						</div>
-						<div class="card-body">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
 					</div>
 				</div>
 			</div>
@@ -666,6 +614,26 @@
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="js/script.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $('.toast1').toast('show');
+            });
+
+            $("#btn2").click(function(){
+                $('.toast2').toast('show');
+            });
+
+            $("#btn3").click(function(){
+                $('.toast3').toast('show');
+            });
+
+            $("#btn4").click(function(){
+                $('.toast4').toast('show');
+            });
+        });
+        </script>
 
 </body>
 
