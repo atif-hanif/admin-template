@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Toast | Nova Admin Template</title>
+	<title>Tooltip | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -104,7 +104,10 @@
 							<a class="sidebar-link dropdown-item" href="tabs.html">Tabs</a>
 						</li>
                         <li>
-							<a class="sidebar-link sub-menu dropdown-item" href="toast.html">Toast</a>
+							<a class="sidebar-link dropdown-item" href="toast.html">Toast</a>
+						</li>
+                        <li>
+							<a class="sidebar-link sub-menu dropdown-item" href="tooltip.html">Tooltip</a>
 						</li>
 					</ul>
 				</li>
@@ -180,8 +183,8 @@
 									<i class="fa-solid fa-angles-right"></i>
 								</li>
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="toast.html">
-										<span class="align-middle">Toast</span>
+									<a class="text-uppercase active-2" href="tooltip.html">
+										<span class="align-middle">Tooltip</span>
 									</a>
 								</li>
 							</ol>
@@ -194,23 +197,12 @@
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Top Left Toast</h5>
+							<h5 class="mb-0">Tooltip on Top</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn1">Top Left</button>
-                            <div class="position-fixed top-0 left-0 p-3" style="z-index: 10005; left: 0; top: 0;">
-                                <div class="toast hide toast1" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-primary text-white">
-                                        <strong class="mr-auto">Top Left</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-primary text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                Tooltip on Top
+                            </button>
 						</div>
 					</div>
 				</div>
@@ -218,23 +210,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3 mt-lg-0">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Top Right Toast</h5>
+							<h5 class="mb-0">Tooltip on Right</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn2">Top Right</button>
-                            <div class="position-fixed top-0 right-0 p-3" style="z-index: 10005; right: 0; top: 0;">
-                                <div class="toast hide toast2" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-success text-white">
-                                        <strong class="mr-auto">Top Right</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-success text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                                Tooltip on Right
+                            </button>
 						</div>
 					</div>
 				</div>
@@ -242,23 +223,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Bottom Left Toast</h5>
+							<h5 class="mb-0">Tooltip on Bottom</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn3">Bottom Left</button>
-                            <div class="position-fixed bottom-0 left-0 p-3" style="z-index: 10005; left: 0; bottom: 0;">
-                                <div class="toast hide toast3" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-secondary text-white">
-                                        <strong class="mr-auto">Bottom Left</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-secondary text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                                Tooltip on Bottom
+                            </button>
 						</div>
 					</div>
 				</div>
@@ -266,23 +236,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Bottom Right Toast</h5>
+							<h5 class="mb-0">Tooltip on Left</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn4">Bottom Right</button>
-                            <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 10005; right: 0; bottom: 0;">
-                                <div class="toast hide toast4" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-danger text-white">
-                                        <strong class="mr-auto">Bottom Right</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-danger text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                                Tooltip on Left
+                            </button>
 						</div>
 					</div>
 				</div>
@@ -617,21 +576,7 @@
 
     <script>
         $(document).ready(function(){
-            $("#btn1").click(function(){
-                $('.toast1').toast('show');
-            });
-
-            $("#btn2").click(function(){
-                $('.toast2').toast('show');
-            });
-
-            $("#btn3").click(function(){
-                $('.toast3').toast('show');
-            });
-
-            $("#btn4").click(function(){
-                $('.toast4').toast('show');
-            });
+          $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
 

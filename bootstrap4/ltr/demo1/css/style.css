@@ -32,6 +32,16 @@ body {
     background: var(--background-color);
 }
 
+input[type=checkbox], input[type=radio] {
+    accent-color: var(--primary-color);
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
 .text-blue {
     color: var(--active-color);
 }
@@ -1108,6 +1118,28 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 /* End Tabs */
+
+/* Start Scrollspy */
+
+.scrollspy .nav-link.active::before {
+    display: none;
+}
+
+.scrollspy .navbar-nav .nav-link.active {
+    color: rgba(255,255,255,.5) !important;
+}
+
+.scrollspy.vertical-nav .nav {
+    position: sticky;
+    top: 0;
+}
+
+.scrollspy.vertical-nav .nav-pills .nav-link.active {
+    color: #007bff;
+    background-color: transparent;
+}
+
+/* End Scrollspy */
 
 /* Start Footer */
 

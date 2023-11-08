@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Toast | Nova Admin Template</title>
+	<title>Form Elements | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -80,31 +80,7 @@
 							<a class="sidebar-link dropdown-item" href="dropdown.html">Dropdown</a>
 						</li>
                         <li>
-							<a class="sidebar-link dropdown-item" href="jumbotron.html">Jumbotron</a>
-						</li>
-						<li>
-							<a class="sidebar-link dropdown-item" href="list-group.html">List Group</a>
-						</li>
-                        <li>
-							<a class="sidebar-link dropdown-item" href="modal.html">Modal</a>
-						</li>
-                        <li>
-							<a class="sidebar-link dropdown-item" href="pagination.html">Pagination</a>
-						</li>
-                        <li>
-							<a class="sidebar-link dropdown-item" href="popover.html">Popover</a>
-						</li>
-                        <li>
-							<a class="sidebar-link dropdown-item" href="progress-bar.html">Progress Bar</a>
-						</li>
-                        <li>
-							<a class="sidebar-link dropdown-item" href="spinner.html">Spinner</a>
-						</li>
-                        <li>
-							<a class="sidebar-link dropdown-item" href="tabs.html">Tabs</a>
-						</li>
-                        <li>
-							<a class="sidebar-link sub-menu dropdown-item" href="toast.html">Toast</a>
+							<a class="sidebar-link sub-menu dropdown-item" href="forms.html">Forms</a>
 						</li>
 					</ul>
 				</li>
@@ -180,8 +156,8 @@
 									<i class="fa-solid fa-angles-right"></i>
 								</li>
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="toast.html">
-										<span class="align-middle">Toast</span>
+									<a class="text-uppercase active-2" href="form-elements.html">
+										<span class="align-middle">Form Elements</span>
 									</a>
 								</li>
 							</ol>
@@ -194,23 +170,13 @@
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Top Left Toast</h5>
+							<h5 class="mb-0">Input</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn1">Top Left</button>
-                            <div class="position-fixed top-0 left-0 p-3" style="z-index: 10005; left: 0; top: 0;">
-                                <div class="toast hide toast1" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-primary text-white">
-                                        <strong class="mr-auto">Top Left</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-primary text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="form-group">
+								<label for="name">Name:</label>
+								<input type="text" class="form-control" id="name">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -218,23 +184,13 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3 mt-lg-0">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Top Right Toast</h5>
+							<h5 class="mb-0">Textarea</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn2">Top Right</button>
-                            <div class="position-fixed top-0 right-0 p-3" style="z-index: 10005; right: 0; top: 0;">
-                                <div class="toast hide toast2" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-success text-white">
-                                        <strong class="mr-auto">Top Right</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-success text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="form-group">
+								<label for="comment">Comment:</label>
+								<textarea class="form-control" rows="3" id="comment"></textarea>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -242,23 +198,24 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Bottom Left Toast</h5>
+							<h5 class="mb-0">Checkboxes</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn3">Bottom Left</button>
-                            <div class="position-fixed bottom-0 left-0 p-3" style="z-index: 10005; left: 0; bottom: 0;">
-                                <div class="toast hide toast3" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-secondary text-white">
-                                        <strong class="mr-auto">Bottom Left</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-secondary text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="form-check">
+								<label class="form-check-label">
+								  	<input type="checkbox" class="form-check-input" value="" checked>Option 1
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+								  	<input type="checkbox" class="form-check-input" value="">Option 2
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+								  	<input type="checkbox" class="form-check-input" value="" disabled>Option 3
+								</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -266,23 +223,293 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Bottom Right Toast</h5>
+							<h5 class="mb-0">Inline Checkboxes</h5>
 						</div>
 						<div class="card-body">
-                            <button type="button" class="btn btn-purple" id="btn4">Bottom Right</button>
-                            <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 10005; right: 0; bottom: 0;">
-                                <div class="toast hide toast4" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                                    <div class="toast-header bg-danger text-white">
-                                        <strong class="mr-auto">Bottom Right</strong>
-                                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body bg-danger text-white">
-                                        This is a toast message.
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="form-check-inline">
+								<label class="form-check-label">
+								  	<input type="checkbox" class="form-check-input" value="" checked>Option 1
+								</label>
+							</div>
+							<div class="form-check-inline">
+								<label class="form-check-label">
+								  	<input type="checkbox" class="form-check-input" value="">Option 2
+								</label>
+							</div>
+							<div class="form-check-inline">
+								<label class="form-check-label">
+								  	<input type="checkbox" class="form-check-input" value="" disabled>Option 3
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Radio Buttons</h5>
+						</div>
+						<div class="card-body">
+                            <div class="form-check">
+								<label class="form-check-label">
+								  	<input type="radio" class="form-check-input" value="" checked>Option 1
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+								  	<input type="radio" class="form-check-input" value="">Option 2
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+								  	<input type="radio" class="form-check-input" value="" disabled>Option 3
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Inline Radio Buttons</h5>
+						</div>
+						<div class="card-body">
+                            <div class="form-check-inline">
+								<label class="form-check-label">
+								  	<input type="radio" class="form-check-input" value="" checked>Option 1
+								</label>
+							</div>
+							<div class="form-check-inline">
+								<label class="form-check-label">
+								  	<input type="radio" class="form-check-input" value="">Option 2
+								</label>
+							</div>
+							<div class="form-check-inline">
+								<label class="form-check-label">
+								  	<input type="radio" class="form-check-input" value="" disabled>Option 3
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Select</h5>
+						</div>
+						<div class="card-body">
+							<label for="sel1">Select list (select one):</label>
+                            <select class="form-control" id="sel1" name="sellist1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+							</select>
+							<br>
+							<label for="sel2">Mutiple select list (hold shift to select more than one):</label>
+							<select multiple class="form-control" id="sel2" name="sellist2">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Input Size</h5>
+						</div>
+						<div class="card-body">
+                            <div class="form-group">
+								<input type="text" class="form-control form-control-sm" placeholder="Small form control" name="text1">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Default form control" name="text2">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control form-control-lg" placeholder="Large form control" name="text3">
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Select Size</h5>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<select class="form-control form-control-sm">
+									<option>Large select</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<select class="form-control">
+									<option>Default select</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<select class="form-control form-control-lg">
+									<option>Small select</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Form Control with Plain Text</h5>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Default form control" name="text1">
+							</div>
+                            <div class="form-group">
+								<input type="text" class="form-control-plaintext" placeholder="Form control with plain text" name="text2">
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Readonly</h5>
+						</div>
+						<div class="card-body">
+                            <input class="form-control" type="text" placeholder="Readonly" readonly>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Readonly with Plain Text</h5>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Default form control" name="text3" readonly>
+							</div>
+                            <div class="form-group">
+								<input type="text" class="form-control-plaintext" placeholder="Form control with plain text" name="text4" readonly>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">File Input</h5>
+						</div>
+						<div class="card-body">
+                            <div class="custom-file mb-3">
+								<input type="file" class="custom-file-input" id="customFile1">
+								<label class="custom-file-label" for="customFile1">Choose file</label>
+							</div>
+							<div class="custom-file mb-3">
+								<input type="file" class="custom-file-input" id="customFile2" name="filename">
+								<label class="custom-file-label form-control-sm" for="customFile2">Choose file</label>
+							</div>
+							<div class="custom-file mb-3">
+								<input type="file" class="custom-file-input" id="customFile3" name="filename">
+								<label class="custom-file-label form-control-lg" for="customFile3">Choose file</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Range</h5>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="customRange1">Example range</label>
+								<input type="range" class="custom-range" id="customRange1">
+							</div>
+							<div class="form-group">
+								<label for="defaultRange">Default range</label>
+    							<input type="range" id="defaultRange" name="points2">
+							</div>
+							<div class="form-group">
+								<label for="customRange2">Example range</label>
+								<input type="range" class="custom-range" min="0" max="5" id="customRange2">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Date</h5>
+						</div>
+						<div class="card-body">
+							<label for="date">Date Picker:</label>
+							<input type="date" class="form-control" id="date">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Time Picker</h5>
+						</div>
+						<div class="card-body">
+							<label for="time">Time:</label>
+							<input type="time" class="form-control" id="time">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">DateTime Picker</h5>
+						</div>
+						<div class="card-body">
+							<label for="datetime">Date Time:</label>
+							<input type="datetime-local" class="form-control" id="datetime">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Color</h5>
+						</div>
+						<div class="card-body">
+							<label for="color">Color:</label>
+							<input type="color" class="form-control" id="color">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Switch</h5>
+						</div>
+						<div class="card-body">
+							<div class="custom-control custom-switch">
+								<input type="checkbox" class="custom-control-input" id="switch1" name="example">
+								<label class="custom-control-label" for="switch1">Toggle me</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -614,26 +841,6 @@
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="js/script.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            $("#btn1").click(function(){
-                $('.toast1').toast('show');
-            });
-
-            $("#btn2").click(function(){
-                $('.toast2').toast('show');
-            });
-
-            $("#btn3").click(function(){
-                $('.toast3').toast('show');
-            });
-
-            $("#btn4").click(function(){
-                $('.toast4').toast('show');
-            });
-        });
-    </script>
 
 </body>
 
