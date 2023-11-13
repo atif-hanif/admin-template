@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Badges | Nova Admin Template</title>
+	<title>Form Validation | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -41,7 +41,7 @@
 					</a>
 				</li>
 				<li class="nav-item dropdown open">
-					<a class="nav-link active dropdown-toggle" href="#">
+					<a class="nav-link active" href="#">
 						<i class='bx bxl-bootstrap'></i>
 						<span class="title">Bootstrap</span>
 						<span class="arrow">
@@ -56,7 +56,7 @@
 							<a class="sidebar-link dropdown-item" href="alerts.html">Alerts</a>
 						</li>
 						<li>
-							<a class="sidebar-link sub-menu dropdown-item" href="badges.html">Badges</a>
+							<a class="sidebar-link dropdown-item" href="badges.html">Badges</a>
 						</li>
 						<li>
 							<a class="sidebar-link dropdown-item" href="breadcrumb.html">Breadcrumb</a>
@@ -72,6 +72,15 @@
 						</li>
 						<li>
 							<a class="sidebar-link dropdown-item" href="carousel.html">Carousel</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="collapse.html">Collapse</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="dropdown.html">Dropdown</a>
+						</li>
+                        <li>
+							<a class="sidebar-link sub-menu dropdown-item" href="forms.html">Forms</a>
 						</li>
 					</ul>
 				</li>
@@ -142,13 +151,13 @@
 							<ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4 mb-0">
 								<li class="breadcrumb-item font-weight-bold">
 									<a class="black-text text-uppercase " href="javascript:void(0)">
-										<span class="align-middle">Bootstrap</span>
+										<span class="align-middle">Forms</span>
 									</a>
 									<i class="fa-solid fa-angles-right"></i>
 								</li>
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="badges.html">
-										<span class="align-middle">Badges</span>
+									<a class="text-uppercase active-2" href="form-validation.html">
+										<span class="align-middle">Form Validation</span>
 									</a>
 								</li>
 							</ol>
@@ -158,121 +167,323 @@
 			</div>
 
 			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
-				<div class="col-sm-12 col-md-12 col-lg-6">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0 ">
+				<div class="col-sm-12 col-md-12">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Badges</h5>
+							<h5 class="mb-0">Form Validation</h5>
 						</div>
 						<div class="card-body">
-							<h1>Example heading <span class="badge badge-secondary">New</span></h1>
-                            <h2>Example heading <span class="badge badge-secondary">New</span></h2>
-                            <h3>Example heading <span class="badge badge-secondary">New</span></h3>
-                            <h4>Example heading <span class="badge badge-secondary">New</span></h4>
-                            <h5>Example heading <span class="badge badge-secondary">New</span></h5>
-                            <h6>Example heading <span class="badge badge-secondary">New</span></h6>
+                            <form action="" class="needs-validation" novalidate>
+								<div class="form-group">
+									<label for="uname">Username:</label>
+									<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Please fill out this field.</div>
+								</div>
+								<div class="form-group">
+									<label for="pwd">Password:</label>
+									<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Please fill out this field.</div>
+								</div>
+								<div class="form-group form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+										<div class="valid-feedback">Valid.</div>
+										<div class="invalid-feedback">Check this checkbox to continue.</div>
+									</label>
+								</div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-sm-12 col-md-12 col-lg-6 mt-3 mt-lg-0">
+                <div class="col-sm-12 col-md-12 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Badges with Counter</h5>
+							<h5 class="mb-0">Form Validation</h5>
 						</div>
 						<div class="card-body">
-							<button type="button" class="btn btn-primary">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-secondary mt-3 mt-md-0">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-success mt-3 mt-md-0 mt-lg-3 mt-xl-0">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-danger mt-3 mt-md-0 mt-lg-3 mt-xl-0">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-warning mt-3">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-info mt-3">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
-                            <button type="button" class="btn btn-dark mt-3">
-                                Notifications <span class="badge badge-light">4</span>
-                            </button>
+                            <form action="" class="was-validated">
+								<div class="form-group">
+									<label for="uname">Username:</label>
+									<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Please fill out this field.</div>
+								</div>
+								<div class="form-group">
+									<label for="pwd">Password:</label>
+									<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Please fill out this field.</div>
+								</div>
+								<div class="form-group form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+										<div class="valid-feedback">Valid.</div>
+										<div class="invalid-feedback">Check this checkbox to continue.</div>
+									</label>
+								</div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+                <div class="col-sm-12 col-md-12 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Contextual Badges</h5>
+							<h5 class="mb-0">Supported Elements</h5>
 						</div>
 						<div class="card-body">
-							<span class="badge badge-primary">Primary</span>
-							<span class="badge badge-secondary">Secondary</span>
-							<span class="badge badge-success">Success</span>
-							<span class="badge badge-danger">Danger</span>
-							<span class="badge badge-warning">Warning</span>
-							<span class="badge badge-info">Info</span>
-							<span class="badge badge-light">Light</span>
-							<span class="badge badge-dark">Dark</span>
+                            <form class="was-validated">
+								<div class="mb-3">
+									<label for="validationTextarea">Textarea</label>
+									<textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+									<div class="invalid-feedback"> Please enter a message in the textarea. </div>
+								</div>
+								<div class="custom-control custom-checkbox mb-3">
+									<input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+									<label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
+									<div class="invalid-feedback">Example invalid feedback text</div>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+									<label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
+								</div>
+								<div class="custom-control custom-radio mb-3">
+									<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+									<label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
+									<div class="invalid-feedback">More example invalid feedback text</div>
+								</div>
+								<div class="mb-3">
+									<select class="custom-select" required>
+										<option value="">Choose...</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<div class="invalid-feedback">Example invalid custom select feedback</div>
+								</div>
+								<div class="custom-file mb-3">
+									<input type="file" class="custom-file-input" id="validatedCustomFile" required>
+									<label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+									<div class="invalid-feedback">Example invalid custom file feedback</div>
+								</div>
+								<div class="mb-3">
+									<div class="input-group is-invalid">
+										<div class="input-group-prepend"> <span class="input-group-text" id="validatedInputGroupPrepend">@</span> </div>
+										<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required> </div>
+									<div class="invalid-feedback"> Example invalid input group feedback </div>
+								</div>
+								<div class="mb-3">
+									<div class="input-group is-invalid">
+										<div class="input-group-prepend">
+											<label class="input-group-text" for="validatedInputGroupSelect">Options</label>
+										</div>
+										<select class="custom-select" id="validatedInputGroupSelect" required>
+											<option value="">Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+										</select>
+									</div>
+									<div class="invalid-feedback"> Example invalid input group feedback </div>
+								</div>
+								<div class="input-group is-invalid">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+										<label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
+									</div>
+									<div class="input-group-append">
+										<button class="btn btn-outline-secondary" type="button">Button</button>
+									</div>
+								</div>
+								<div class="invalid-feedback"> Example invalid input group feedback </div>
+							</form>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+                <div class="col-sm-12 col-md-12 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Pill Badges</h5>
+							<h5 class="mb-0">Tooltips</h5>
 						</div>
 						<div class="card-body">
-							<span class="badge badge-pill badge-primary">Primary</span>
-							<span class="badge badge-pill badge-secondary">Secondary</span>
-							<span class="badge badge-pill badge-success">Success</span>
-							<span class="badge badge-pill badge-danger">Danger</span>
-							<span class="badge badge-pill badge-warning">Warning</span>
-							<span class="badge badge-pill badge-info">Info</span>
-							<span class="badge badge-pill badge-light">Light</span>
-							<span class="badge badge-pill badge-dark">Dark</span>
+                            <form class="needs-validation" novalidate>
+								<div class="form-row">
+									<div class="col-md-6 mb-3">
+										<label for="validationTooltip01">First name</label>
+										<input type="text" class="form-control" id="validationTooltip01" required>
+										<div class="invalid-tooltip"> Please provide a first name </div>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="validationTooltip02">Last name</label>
+										<input type="text" class="form-control" id="validationTooltip02" required>
+										<div class="invalid-tooltip"> Please provide a last name </div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col-md-6 mb-3">
+										<label for="validationTooltip03">City</label>
+										<input type="text" class="form-control" id="validationTooltip03" required>
+										<div class="invalid-tooltip"> Please provide a valid city. </div>
+									</div>
+									<div class="col-md-3 mb-3">
+										<label for="validationTooltip04">State</label>
+										<select class="custom-select" id="validationTooltip04" required>
+											<option selected disabled value="">Choose...</option>
+											<option>...</option>
+										</select>
+										<div class="invalid-tooltip"> Please select a valid state. </div>
+									</div>
+									<div class="col-md-3 mb-3">
+										<label for="validationTooltip05">Zip</label>
+										<input type="text" class="form-control" id="validationTooltip05" required>
+										<div class="invalid-tooltip"> Please provide a valid zip. </div>
+									</div>
+								</div>
+								<button class="btn btn-primary" type="submit">Submit form</button>
+							</form>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-12 col-lg-6 mt-3">
+                <div class="col-sm-12 col-md-12 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Links Badges</h5>
+							<h5 class="mb-0">Form Grid</h5>
 						</div>
 						<div class="card-body">
-							<a href="#" class="badge badge-primary">Primary</a>
-							<a href="#" class="badge badge-secondary">Secondary</a>
-							<a href="#" class="badge badge-success">Success</a>
-							<a href="#" class="badge badge-danger">Danger</a>
-							<a href="#" class="badge badge-warning">Warning</a>
-							<a href="#" class="badge badge-info">Info</a>
-							<a href="#" class="badge badge-light">Light</a>
-							<a href="#" class="badge badge-dark">Dark</a>
+                            <form action="">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+									</div>
+									<div class="col">
+										<input type="password" class="form-control" placeholder="Enter password" name="pswd">
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary mt-3">Submit</button>
+							</form>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+                <div class="col-sm-12 col-md-12 mt-3">
 					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Border Color Badges</h5>
+							<h5 class="mb-0">Form Row</h5>
 						</div>
 						<div class="card-body">
-							<span class="badge border border-primary">Primary</span>
-							<span class="badge border border-secondary">Secondary</span>
-							<span class="badge border border-success">Success</span>
-							<span class="badge border border-danger">Danger</span>
-							<span class="badge border border-warning">Warning</span>
-							<span class="badge border border-info">Info</span>
-							<span class="badge border border-light">Light</span>
-							<span class="badge border border-dark">Dark</span>
+                            <form action="">
+								<div class="form-row">
+									<div class="col">
+										<input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+									</div>
+									<div class="col">
+										<input type="password" class="form-control" placeholder="Enter password" name="pswd">
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary mt-3">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Column Sizing</h5>
+						</div>
+						<div class="card-body">
+							<form action="">
+								<div class="form-row">
+									<div class="col-7">
+										<input type="text" class="form-control" placeholder="City">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" placeholder="State">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" placeholder="Zip">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Auto Sizing</h5>
+						</div>
+						<div class="card-body">
+                            <form>
+								<div class="form-row align-items-center">
+									<div class="col-auto">
+										<label class="sr-only" for="inlineFormInput">Name</label>
+										<input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+									</div>
+									<div class="col-auto">
+										<label class="sr-only" for="inlineFormInputGroup">Username</label>
+										<div class="input-group mb-2">
+										<div class="input-group-prepend">
+											<div class="input-group-text">@</div>
+										</div>
+										<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+										</div>
+									</div>
+									<div class="col-auto">
+										<div class="form-check mb-2">
+										<input class="form-check-input" type="checkbox" id="autoSizingCheck">
+										<label class="form-check-label" for="autoSizingCheck">
+											Remember me
+										</label>
+										</div>
+									</div>
+									<div class="col-auto">
+										<button type="submit" class="btn btn-primary mb-2">Submit</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Help Block</h5>
+						</div>
+						<div class="card-body">
+							<label for="inputPassword5">Password</label>
+							<input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+							<small id="passwordHelpBlock" class="form-text text-muted">
+							Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+							</small>
+						</div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Help Block</h5>
+						</div>
+						<div class="card-body">
+							<form class="form-inline">
+								<div class="form-group">
+									<label for="inputPassword6">Password</label>
+									<input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+									<small id="passwordHelpInline" class="text-muted">
+										Must be 8-20 characters long.
+									</small>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -603,7 +814,28 @@
 	<!-- Scripts -->  
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="js/style.js"></script>
+	<script src="js/script.js"></script>
+
+	<script>
+		// Disable form submissions if there are invalid fields
+		(function() {
+		  'use strict';
+		  window.addEventListener('load', function() {
+			// Get the forms we want to add validation styles to
+			var forms = document.getElementsByClassName('needs-validation');
+			// Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function(form) {
+			  form.addEventListener('submit', function(event) {
+				if (form.checkValidity() === false) {
+				  event.preventDefault();
+				  event.stopPropagation();
+				}
+				form.classList.add('was-validated');
+			  }, false);
+			});
+		  }, false);
+		})();
+	</script>
 
 </body>
 

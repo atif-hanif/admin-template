@@ -9,6 +9,7 @@
     --btn-purple: #2b1c40;
     --btn-purple-light: #AFA5D9;
     --white-color: #FFFFFF;
+    --black-color: #000000;
     --background-color: #f2f2f2;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
@@ -44,6 +45,30 @@ input[type=checkbox], input[type=radio] {
 
 .text-blue {
     color: var(--active-color);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    border-radius: 50px;
+    width: 50px;
+	height: 50px;
+    padding: 10px;
+    z-index: 200;
+}
+
+.btn-blue {
+    color: var(--white-color);
+    background-color: var(--active-color);
+    border-color: var(--active-color);
+}
+
+.btn-blue:hover {
+    color: var(--active-color);
+    background-color: var(--white-color);
+    border-color: var(--active-color);
 }
 
 .btn-purple {
@@ -88,7 +113,7 @@ a:hover {
 }
 
 .header {
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
     transition: .5s; 
 }
 
@@ -116,7 +141,7 @@ a:hover {
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 	width: var(--nav-width);
-	background-color: var(--primary-color);
+	background-color: var(--white-color);
 	color: var(--white-color);
 	z-index: 9999;
 }
@@ -175,7 +200,7 @@ a:hover {
 	/* height: calc(100vh - 65px); */
     height: 650px;
 	list-style: none;
-	margin: 0;
+	margin: 0 10px;
 	overflow: auto;
 	padding: 0;
 	position: relative;
@@ -234,7 +259,7 @@ a:hover {
 }
 
 .sidebar-menu li a {
-	color: var(--white-color);
+	color: var(--black-color);
 	-webkit-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
@@ -302,6 +327,7 @@ a:hover {
 
 .sidebar-menu .active {
     background-color: var(--active-color);
+    color: var(--white-color);
 }
 
 .sidebar-menu .nav-link {
@@ -322,7 +348,7 @@ a:hover {
     left: 0;
     width: 2px;
     height: 32px;
-    background-color: var(--white-color);
+    background-color: var(--primary-color);
 }
 
 .sidebar-menu > li.dropdown ul.dropdown-menu > li:before {
@@ -372,6 +398,7 @@ a:hover {
 .sub-menu {
     font-weight: 900;
     background-color: var(--submenu-active);
+    color: var(--white-color) !important;
 }
 
 /* .sidebar-menu > li.dropdown.open > .dropdown-menu, .sidebar-menu > li.dropdown.active > .dropdown-menu, .sidebar-menu > li.dropdown.open.active > .dropdown-menu {
@@ -408,7 +435,7 @@ a:hover {
 }
 
 .sidebar-toggle {
-    background-color: var(--submenu-active);
+    color: var(--submenu-active) !important;
     padding: 5px !important;
 }
 
@@ -416,9 +443,14 @@ a:hover {
     transform: rotate(180deg);
 }
 
-.search-icon, .envelope-icon, .calendar-icon, .checked-icon, .mode-icon, .chat-icon, .notification-icon, .full-screen-icon, .logout-icon {
+.search-icon {
     font-size: 16px;
     color: var(--white-color);
+}
+
+.envelope-icon, .calendar-icon, .checked-icon, .mode-icon, .chat-icon, .notification-icon, .full-screen-icon, .logout-icon {
+    font-size: 16px;
+    color: var(--black-color);
 }
 
 .search-icon {
@@ -823,7 +855,7 @@ a:hover {
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 0px;
+    width: 10px;
 }
 
 *::-webkit-scrollbar-track {
@@ -970,8 +1002,13 @@ a:hover {
 }
 
 .custom-card-header {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    /* background-color: var(--primary-color); */
+    /* color: var(--white-color); */
+    color: var(--primary-color);
+}
+
+.custom-card-header h5 {
+    font-weight: 900;
 }
 
 /* End Activity */
@@ -1150,7 +1187,7 @@ a[aria-expanded=false] .fa-angle-down {
     left: 0;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color: #2B1C40;
+    background-color: var(--white-color);
     opacity: 0.9;
     z-index: var(--z-fixed);
     transition: .5s;
@@ -1159,7 +1196,9 @@ a[aria-expanded=false] .fa-angle-down {
 
 .footer p {
     margin-bottom: 0px;
+    color: var(--primary-color);
 }
+
 
 /* End Footer */
 
