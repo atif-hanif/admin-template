@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v10.3.3 (2023-01-20)
+ * @license Highcharts JS v11.2.0 (2023-10-30)
  *
  * (c) 2009-2021 Highsoft AS
  *
@@ -26,12 +26,10 @@
             obj[path] = fn.apply(null, args);
 
             if (typeof CustomEvent === 'function') {
-                window.dispatchEvent(
-                    new CustomEvent(
-                        'HighchartsModuleLoaded',
-                        { detail: { path: path, module: obj[path] }
-                    })
-                );
+                window.dispatchEvent(new CustomEvent(
+                    'HighchartsModuleLoaded',
+                    { detail: { path: path, module: obj[path] } }
+                ));
             }
         }
     }
@@ -51,7 +49,7 @@
          *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
          *
          * */
-        var setOptions = D.setOptions;
+        const { setOptions } = D;
         /* *
          *
          *  Theme
@@ -64,7 +62,7 @@
              *  Constants
              *
              * */
-            var textBright = '#F0F0F3';
+            const textBright = '#F0F0F3';
             HighContrastDarkTheme.options = {
                 colors: [
                     '#67B9EE',
@@ -172,11 +170,6 @@
                 credits: {
                     style: {
                         color: textBright
-                    }
-                },
-                labels: {
-                    style: {
-                        color: '#707073'
                     }
                 },
                 drilldown: {

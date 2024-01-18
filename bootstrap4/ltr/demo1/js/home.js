@@ -4,25 +4,31 @@ $(document).ready(function() {
             type: 'column',
             height: 405
         },
+
         title: {
             text: ''
         },
+
         subtitle: {
             text: ''
         },
+
         credits: {
             enabled: false
         },
+
         xAxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             crosshair: true
         },
+
         yAxis: {
             min: 0,
             title: {
                 text: 'K'
             }
         },
+
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f} k</b></td></tr>',
@@ -30,12 +36,14 @@ $(document).ready(function() {
             shared: true,
             useHTML: true
         },
+
         plotOptions: {
             column: {
                 pointPadding: 0.2,
                 borderWidth: 0
             }
         },
+        
         series: [{
             name: 'Sales',
             data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 95.6, 148.5, 126.4, 194.1, 95.6, 54.4]
@@ -43,7 +51,7 @@ $(document).ready(function() {
             name: 'Revenue',
             data: [83.6, 78.8, 128.5, 149.4, 184.0, 234.5, 105.0, 174.3, 191.2, 213.5, 106.6, 92.3]
         }, {
-            name: 'Products',
+            name: 'Projects',
             data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
         }, {
             name: 'Orders',
@@ -63,19 +71,19 @@ $(document).ready(function() {
                 {
                     startDate: new Date(new Date().setHours(new Date().getHours() + 24)).toDateString(),
                     endDate: new Date(new Date().setHours(new Date().getHours() + 25)).toISOString(),
-                    summary: 'Visit of the Eiffel Tower'
+                    summary: 'MEETING WITH CLIENT'
                 },
                 // generate new event for yesterday at noon
                 {
                     startDate: new Date(new Date().setHours(new Date().getHours() - new Date().getHours() - 12, 0)).toISOString(),
                     endDate: new Date(new Date().setHours(new Date().getHours() - new Date().getHours() - 11)).getTime(),
-                    summary: 'Restaurant'
+                    summary: 'DISCUSSION WITH MARKETING TEAM'
                 },
                 // generate new event for the last two days
                 {
                     startDate: new Date(new Date().setHours(new Date().getHours() - 48)).toISOString(),
                     endDate: new Date(new Date().setHours(new Date().getHours() - 24)).getTime(),
-                    summary: 'Visit of the Louvre'
+                    summary: 'DISCUSSION WITH TEAM ABOUT NEW PRODUCT LAUNCH'
                 }
             ],
             // disable showing event details
@@ -91,19 +99,41 @@ $(document).ready(function() {
         dom: "<'row'<'col-sm-12 col-md-12 col-lg-3 enteries'l><'col-sm-12 col-md-12 col-lg-5 cust-btn'B><'col-sm-12 col-md-12 col-lg-4 dt-search-bar mt-2 pl-0'f>>" + "<'row'<'col-sm-12'rt>>" + "<'row'<'col-sm-5'i><'col-sm-7'p>>",
         buttons: [{
             extend: 'copy',
-            title: 'Product Sales'
+            title: 'Projects'
         }, {
             extend: 'csv',
-            title: 'Product Sales'
+            title: 'Projects'
         }, {
             extend: 'excel',
-            title: 'Product Sales'
+            title: 'Projects'
         }, {
             extend: 'pdf',
-            title: 'Product Sales'
+            title: 'Projects'
         }, {
             extend: 'print',
-            title: 'Product Sales'
+            title: 'Projects'
         }, ]
     });
+});
+
+$(document).ready(function(){
+    $('.fa-trash').click(function(){
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#0766AD",
+            cancelButtonColor: "#29ADB2",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+    });       
 });

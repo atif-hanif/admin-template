@@ -4,33 +4,32 @@
  *
  * To rebuild or modify this file with the latest versions of the included
  * software please visit:
- *   https://datatables.net/download/#bs4/dt-1.11.4
+ *   https://datatables.net/download/#dt/dt-1.13.8
  *
  * Included libraries:
- *   DataTables 1.11.4
+ *   DataTables 1.13.8
  */
 
-/*! DataTables 1.11.4
- * ©2008-2021 SpryMedia Ltd - datatables.net/license
+/*! DataTables 1.13.8
+ * ©2008-2023 SpryMedia Ltd - datatables.net/license
  */
 
 /**
  * @summary     DataTables
  * @description Paginate, search and order HTML tables
- * @version     1.11.4
- * @file        jquery.dataTables.js
+ * @version     1.13.8
  * @author      SpryMedia Ltd
  * @contact     www.datatables.net
- * @copyright   Copyright 2008-2021 SpryMedia Ltd.
+ * @copyright   SpryMedia Ltd.
  *
  * This source file is free software, available under the following license:
- *   MIT license - http://datatables.net/license
+ *   MIT license - https://datatables.net/license
  *
  * This source file is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
  * or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
  *
- * For details please refer to: http://www.datatables.net
+ * For details please refer to: https://www.datatables.net
  */
 
 /*jslint evil: true, undef: true, browser: true */
@@ -47,21 +46,28 @@
 	}
 	else if ( typeof exports === 'object' ) {
 		// CommonJS
-		module.exports = function (root, $) {
-			if ( ! root ) {
-				// CommonJS environments without a window global must pass a
-				// root. This will give an error otherwise
-				root = window;
-			}
+		// jQuery's factory checks for a global window - if it isn't present then it
+		// returns a factory function that expects the window object
+		var jq = require('jquery');
 
-			if ( ! $ ) {
-				$ = typeof window !== 'undefined' ? // jQuery's factory checks for a global window
-					require('jquery') :
-					require('jquery')( root );
-			}
+		if (typeof window === 'undefined') {
+			module.exports = function (root, $) {
+				if ( ! root ) {
+					// CommonJS environments without a window global must pass a
+					// root. This will give an error otherwise
+					root = window;
+				}
 
-			return factory( $, root, root.document );
-		};
+				if ( ! $ ) {
+					$ = jq( root );
+				}
+
+				return factory( $, root, root.document );
+			};
+		}
+		else {
+			module.exports = factory( jq, window, window.document );
+		}
 	}
 	else {
 		// Browser
@@ -71,40 +77,15 @@
 (function( $, window, document, undefined ) {
 	"use strict";
 
-	/**
-	 * DataTables is a plug-in for the jQuery Javascript library. It is a highly
-	 * flexible tool, based upon the foundations of progressive enhancement,
-	 * which will add advanced interaction controls to any HTML table. For a
-	 * full list of features please refer to
-	 * [DataTables.net](href="http://datatables.net).
-	 *
-	 * Note that the `DataTable` object is not a global variable but is aliased
-	 * to `jQuery.fn.DataTable` and `jQuery.fn.dataTable` through which it may
-	 * be  accessed.
-	 *
-	 *  @class
-	 *  @param {object} [init={}] Configuration object for DataTables. Options
-	 *    are defined by {@link DataTable.defaults}
-	 *  @requires jQuery 1.7+
-	 *
-	 *  @example
-	 *    // Basic initialisation
-	 *    $(document).ready( function {
-	 *      $('#example').dataTable();
-	 *    } );
-	 *
-	 *  @example
-	 *    // Initialisation with configuration options - in this case, disable
-	 *    // pagination and sorting.
-	 *    $(document).ready( function {
-	 *      $('#example').dataTable( {
-	 *        "paginate": false,
-	 *        "sort": false
-	 *      } );
-	 *    } );
-	 */
+	
 	var DataTable = function ( selector, options )
 	{
+		// Check if called with a window or jQuery object for DOM less applications
+		// This is for backwards compatibility
+		if (DataTable.factory(selector, options)) {
+			return DataTable;
+		}
+	
 		// When creating with `new`, create a new DataTable, returning the API instance
 		if (this instanceof DataTable) {
 			return $(selector).DataTable(options);
@@ -113,7 +94,7 @@
 			// Argument switching
 			options = selector;
 		}
-
+	
 		/**
 		 * Perform a jQuery selector action on the table's TR elements (from the tbody) and
 		 * return the resulting jQuery object.
@@ -869,24 +850,24 @@
 		 */
 		this.fnVersionCheck = _ext.fnVersionCheck;
 		
-
+	
 		var _that = this;
 		var emptyInit = options === undefined;
 		var len = this.length;
-
+	
 		if ( emptyInit ) {
 			options = {};
 		}
-
+	
 		this.oApi = this.internal = _ext.internal;
-
+	
 		// Extend with old style plug-in API methods
 		for ( var fn in DataTable.ext.internal ) {
 			if ( fn ) {
 				this[fn] = _fnExternApiFunc(fn);
 			}
 		}
-
+	
 		this.each(function() {
 			// For each initialisation we want to give it a clean initialisation
 			// object that can be bashed around
@@ -894,7 +875,7 @@
 			var oInit = len > 1 ? // optimisation for single table case
 				_fnExtend( o, options, true ) :
 				options;
-
+	
 			/*global oInit,_that,emptyInit*/
 			var i=0, iLen, j, jLen, k, kLen;
 			var sId = this.getAttribute( 'id' );
@@ -1108,7 +1089,7 @@
 					success: function ( json ) {
 						_fnCamelToHungarian( defaults.oLanguage, json );
 						_fnLanguageCompat( json );
-						$.extend( true, oLanguage, json );
+						$.extend( true, oLanguage, json, oSettings.oInit.oLanguage );
 			
 						_fnCallbackFire( oSettings, null, 'i18n', [oSettings]);
 						_fnInitialise( oSettings );
@@ -1194,6 +1175,10 @@
 				$( rowOne[0] ).children('th, td').each( function (i, cell) {
 					var col = oSettings.aoColumns[i];
 			
+					if (! col) {
+						_fnLog( oSettings, 0, 'Incorrect column count', 18 );
+					}
+			
 					if ( col.mData === i ) {
 						var sort = a( cell, 'sort' ) || a( cell, 'order' );
 						var filter = a( cell, 'filter' ) || a( cell, 'search' );
@@ -1205,6 +1190,7 @@
 								type:   sort !== null   ? i+'.@data-'+sort   : undefined,
 								filter: filter !== null ? i+'.@data-'+filter : undefined
 							};
+							col._isArrayHost = true;
 			
 							_fnColumnOptions( oSettings, i );
 						}
@@ -1337,7 +1323,7 @@
 		_that = null;
 		return this;
 	};
-
+	
 	
 	/*
 	 * It is useful to have variables which are scoped locally so only the
@@ -1371,7 +1357,7 @@
 	// Escape regular expression special characters
 	var _re_escape_regex = new RegExp( '(\\' + [ '/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\', '$', '^', '-' ].join('|\\') + ')', 'g' );
 	
-	// http://en.wikipedia.org/wiki/Foreign_exchange_market
+	// https://en.wikipedia.org/wiki/Foreign_exchange_market
 	// - \u20BD - Russian ruble.
 	// - \u20a9 - South Korean Won
 	// - \u20BA - Turkish Lira
@@ -1410,7 +1396,12 @@
 	
 	
 	var _isNumber = function ( d, decimalPoint, formatted ) {
-		var strType = typeof d === 'string';
+		var type = typeof d;
+		var strType = type === 'string';
+	
+		if ( type === 'number' || type === 'bigint') {
+			return true;
+		}
 	
 		// If empty return immediately so there must be a number if it is a
 		// formatted string (this stops the string "k", or "kr", etc being detected
@@ -1539,7 +1530,9 @@
 	
 	
 	var _stripHtml = function ( d ) {
-		return d.replace( _re_html, '' );
+		return d
+			.replace( _re_html, '' ) // Complete tags
+			.replace(/<script/i, ''); // Safety for incomplete script tag
 	};
 	
 	
@@ -1913,7 +1906,10 @@
 								continue;
 							}
 		
-							if ( data === null || data[ a[i] ] === undefined ) {
+							if (data === null || data[ a[i] ] === null) {
+								return null;
+							}
+							else if ( data === undefined || data[ a[i] ] === undefined ) {
 								return undefined;
 							}
 	
@@ -2341,8 +2337,16 @@
 				th.addClass( oOptions.sClass );
 			}
 	
+			var origClass = oCol.sClass;
+	
 			$.extend( oCol, oOptions );
 			_fnMap( oCol, oOptions, "sWidth", "sWidthOrig" );
+	
+			// Merge class from previously defined classes with this one, rather than just
+			// overwriting it in the extend above
+			if (origClass !== oCol.sClass) {
+				oCol.sClass = origClass + ' ' + oCol.sClass;
+			}
 	
 			/* iDataSort to be applied (backwards compatibility), but aDataSort will take
 			 * priority if defined
@@ -2352,6 +2356,12 @@
 				oCol.aDataSort = [ oOptions.iDataSort ];
 			}
 			_fnMap( oCol, oOptions, "aDataSort" );
+	
+			// Fall back to the aria-label attribute on the table header if no ariaTitle is
+			// provided.
+			if (! oCol.ariaTitle) {
+				oCol.ariaTitle = th.attr("aria-label");
+			}
 		}
 	
 		/* Cache the data get and set functions for speed */
@@ -2380,7 +2390,7 @@
 	
 		// Indicate if DataTables should read DOM data as an object or array
 		// Used in _fnGetRowElements
-		if ( typeof mDataSrc !== 'number' ) {
+		if ( typeof mDataSrc !== 'number' && ! oCol._isArrayHost ) {
 			oSettings._rowReadObject = true;
 		}
 	
@@ -2616,9 +2626,11 @@
 				def = aoColDefs[i];
 	
 				/* Each definition can target multiple columns, as it is an array */
-				var aTargets = def.targets !== undefined ?
-					def.targets :
-					def.aTargets;
+				var aTargets = def.target !== undefined
+					? def.target
+					: def.targets !== undefined
+						? def.targets
+						: def.aTargets;
 	
 				if ( ! Array.isArray( aTargets ) )
 				{
@@ -3188,6 +3200,11 @@
 				create = nTrIn ? false : true;
 	
 				nTd = create ? document.createElement( oCol.sCellType ) : anTds[i];
+	
+				if (! nTd) {
+					_fnLog( oSettings, 0, 'Incorrect column count', 18 );
+				}
+	
 				nTd._DT_CellIndex = {
 					row: iRow,
 					column: i
@@ -3338,10 +3355,16 @@
 	
 			for ( i=0, ien=cells.length ; i<ien ; i++ ) {
 				column = columns[i];
-				column.nTf = cells[i].cell;
 	
-				if ( column.sClass ) {
-					$(column.nTf).addClass( column.sClass );
+				if (column) {
+					column.nTf = cells[i].cell;
+		
+					if ( column.sClass ) {
+						$(column.nTf).addClass( column.sClass );
+					}
+				}
+				else {
+					_fnLog( oSettings, 0, 'Incorrect column count', 18 );
 				}
 			}
 		}
@@ -4063,11 +4086,16 @@
 		settings.iDraw++;
 		_fnProcessingDisplay( settings, true );
 	
+		// Keep track of drawHold state to handle scrolling after the Ajax call
+		var drawHold = settings._drawHold;
+	
 		_fnBuildAjax(
 			settings,
 			_fnAjaxParameters( settings ),
 			function(json) {
+				settings._drawHold = drawHold;
 				_fnAjaxUpdateDraw( settings, json );
+				settings._drawHold = false;
 			}
 		);
 	}
@@ -4297,7 +4325,7 @@
 			/* Update all other filter input elements for the new display */
 			var n = features.f;
 			var val = !this.value ? "" : this.value; // mental IE8 fix :-(
-			if(previousSearch.return && event.key !== "Enter") {
+			if(previousSearch['return'] && event.key !== "Enter") {
 				return;
 			}
 			/* Now do the filter */
@@ -4307,7 +4335,7 @@
 					"bRegex": previousSearch.bRegex,
 					"bSmart": previousSearch.bSmart ,
 					"bCaseInsensitive": previousSearch.bCaseInsensitive,
-					"return": previousSearch.return
+					"return": previousSearch['return']
 				} );
 	
 				// Need to redraw, without resorting
@@ -4331,7 +4359,7 @@
 					_fnThrottle( searchFn, searchDelay ) :
 					searchFn
 			)
-			.on( 'mouseup', function(e) {
+			.on( 'mouseup.DT', function(e) {
 				// Edge fix! Edge 17 does not trigger anything other than mouse events when clicking
 				// on the clear icon (Edge bug 17584515). This is safe in other browsers as `searchFn`
 				// checks the value to see if it has changed. In other browsers it won't have.
@@ -4382,7 +4410,7 @@
 			oPrevSearch.bRegex = oFilter.bRegex;
 			oPrevSearch.bSmart = oFilter.bSmart;
 			oPrevSearch.bCaseInsensitive = oFilter.bCaseInsensitive;
-			oPrevSearch.return = oFilter.return;
+			oPrevSearch['return'] = oFilter['return'];
 		};
 		var fnRegex = function ( o ) {
 			// Backwards compatibility with the bEscapeRegex option
@@ -4397,7 +4425,7 @@
 		if ( _fnDataSource( oSettings ) != 'ssp' )
 		{
 			/* Global filter */
-			_fnFilter( oSettings, oInput.sSearch, iForce, fnRegex(oInput), oInput.bSmart, oInput.bCaseInsensitive, oInput.return );
+			_fnFilter( oSettings, oInput.sSearch, iForce, fnRegex(oInput), oInput.bSmart, oInput.bCaseInsensitive );
 			fnSaveFilter( oInput );
 	
 			/* Now do the individual column filter */
@@ -4566,9 +4594,13 @@
 			 * 
 			 * ^(?=.*?\bone\b)(?=.*?\btwo three\b)(?=.*?\bfour\b).*$
 			 */
-			var a = $.map( search.match( /"[^"]+"|[^ ]+/g ) || [''], function ( word ) {
+			var a = $.map( search.match( /["\u201C][^"\u201D]+["\u201D]|[^ ]+/g ) || [''], function ( word ) {
 				if ( word.charAt(0) === '"' ) {
 					var m = word.match( /^"(.*)"$/ );
+					word = m ? m[1] : word;
+				}
+				else if ( word.charAt(0) === '\u201C' ) {
+					var m = word.match( /^\u201C(.*)\u201D$/ );
 					word = m ? m[1] : word;
 				}
 	
@@ -4630,7 +4662,7 @@
 					// If it looks like there is an HTML entity in the string,
 					// attempt to decode it so sorting works as expected. Note that
 					// we could use a single line of jQuery to do this, but the DOM
-					// method used here is much faster http://jsperf.com/html-decode
+					// method used here is much faster https://jsperf.com/html-decode
 					if ( cellData.indexOf && cellData.indexOf('&') !== -1 ) {
 						__filter_div.innerHTML = cellData;
 						cellData = __filter_div_textContent ?
@@ -5101,6 +5133,10 @@
 				_fnDraw( settings );
 			}
 		}
+		else {
+			// No change event - paging was called, but no change
+			_fnCallbackFire( settings, null, 'page-nc', [settings] );
+		}
 	
 		return changed;
 	}
@@ -5117,9 +5153,11 @@
 	{
 		return $('<div/>', {
 				'id': ! settings.aanFeatures.r ? settings.sTableId+'_processing' : null,
-				'class': settings.oClasses.sProcessing
+				'class': settings.oClasses.sProcessing,
+				'role': 'status'
 			} )
 			.html( settings.oLanguage.sProcessing )
+			.append('<div><div></div><div></div><div></div><div></div></div>')
 			.insertBefore( settings.nTable )[0];
 	}
 	
@@ -5369,6 +5407,7 @@
 			footerCopy = footer.clone().prependTo( table );
 			footerTrgEls = footer.find('tr'); // the original tfoot is in its own table and must be sized
 			footerSrcEls = footerCopy.find('tr');
+			footerCopy.find('[id]').removeAttr('id');
 		}
 	
 		// Clone the current header and footer elements and then place it into the inner table
@@ -5376,6 +5415,7 @@
 		headerTrgEls = header.find('tr'); // original header is in its own table
 		headerSrcEls = headerCopy.find('tr');
 		headerCopy.find('th, td').removeAttr('tabindex');
+		headerCopy.find('[id]').removeAttr('id');
 	
 	
 		/*
@@ -5449,7 +5489,7 @@
 			nToSize.style.width = headerWidths[i];
 		}, headerTrgEls );
 	
-		$(headerSrcEls).height(0);
+		$(headerSrcEls).css('height', 0);
 	
 		/* Same again with the footer if we have one */
 		if ( footer )
@@ -5647,11 +5687,13 @@
 		}
 	
 		/* Convert any user input sizes into pixel sizes */
+		var sizes = _fnConvertToWidth(_pluck(columns, 'sWidthOrig'), tableContainer);
+	
 		for ( i=0 ; i<visibleColumns.length ; i++ ) {
 			column = columns[ visibleColumns[i] ];
 	
 			if ( column.sWidth !== null ) {
-				column.sWidth = _fnConvertToWidth( column.sWidthOrig, tableContainer );
+				column.sWidth = sizes[i];
 	
 				userInputs = true;
 			}
@@ -5854,26 +5896,40 @@
 	
 	
 	/**
-	 * Convert a CSS unit width to pixels (e.g. 2em)
-	 *  @param {string} width width to be converted
+	 * Convert a set of CSS units width to pixels (e.g. 2em)
+	 *  @param {string[]} widths widths to be converted
 	 *  @param {node} parent parent to get the with for (required for relative widths) - optional
-	 *  @returns {int} width in pixels
+	 *  @returns {int[]} widths in pixels
 	 *  @memberof DataTable#oApi
 	 */
-	function _fnConvertToWidth ( width, parent )
+	function _fnConvertToWidth ( widths, parent )
 	{
-		if ( ! width ) {
-			return 0;
+		var els = [];
+		var results = [];
+	
+		// Add the elements in a single loop so we only need to reflow once
+		for (var i=0 ; i<widths.length ; i++) {
+			if (widths[i]) {
+				els.push(
+					$('<div/>')
+						.css( 'width', _fnStringToCss( widths[i] ) )
+						.appendTo( parent || document.body )
+				)
+			}
+			else {
+				els.push(null);
+			}
 		}
 	
-		var n = $('<div/>')
-			.css( 'width', _fnStringToCss( width ) )
-			.appendTo( parent || document.body );
+		// Get the sizes (will reflow once)
+		for (var i=0 ; i<widths.length ; i++) {
+			results.push(els[i] ? els[i][0].offsetWidth : null);
+		}
 	
-		var val = n[0].offsetWidth;
-		n.remove();
+		// Tidy
+		$(els).remove();
 	
-		return val;
+		return results;
 	}
 	
 	
@@ -6502,6 +6558,17 @@
 		// Store the saved state so it might be accessed at any time
 		settings.oLoadedState = $.extend( true, {}, s );
 	
+		// Page Length
+		if ( s.length !== undefined ) {
+			// If already initialised just set the value directly so that the select element is also updated
+			if (api) {
+				api.page.len(s.length)
+			}
+			else {
+				settings._iDisplayLength   = s.length;
+			}
+		}
+	
 		// Restore key features - todo - for 1.11 this needs to be done by
 		// subscribed events
 		if ( s.start !== undefined ) {
@@ -6510,12 +6577,8 @@
 				settings.iInitDisplayStart = s.start;
 			}
 			else {
-				_fnPageChange(settings, s.start/s.length);
-	
+				_fnPageChange(settings, s.start/settings._iDisplayLength);
 			}
-		}
-		if ( s.length !== undefined ) {
-			settings._iDisplayLength   = s.length;
 		}
 	
 		// Order
@@ -6601,7 +6664,7 @@
 	
 		if ( tn ) {
 			msg += '. For more information about this error, please see '+
-			'http://datatables.net/tn/'+tn;
+			'https://datatables.net/tn/'+tn;
 		}
 	
 		if ( ! level  ) {
@@ -6782,8 +6845,15 @@
 	
 		if ( eventName !== null ) {
 			var e = $.Event( eventName+'.dt' );
+			var table = $(settings.nTable);
 	
-			$(settings.nTable).trigger( e, args );
+			table.trigger( e, args );
+	
+			// If not yet attached to the document, trigger the event
+			// on the body directly to sort of simulate the bubble
+			if (table.parents('body').length === 0) {
+				$('body').trigger( e, args );
+			}
 	
 			ret.push( e.result );
 		}
@@ -6857,7 +6927,7 @@
 		return 'dom';
 	}
 	
-
+	
 	
 	
 	/**
@@ -7249,8 +7319,10 @@
 	
 		pluck: function ( prop )
 		{
+			var fn = DataTable.util.get(prop);
+	
 			return this.map( function ( el ) {
-				return el[ prop ];
+				return fn(el);
 			} );
 		},
 	
@@ -8344,22 +8416,42 @@
 	
 	$(document).on('plugin-init.dt', function (e, context) {
 		var api = new _Api( context );
-		api.on( 'stateSaveParams', function ( e, settings, data ) {
-			var indexes = api.rows().iterator( 'row', function ( settings, idx ) {
-				return settings.aoData[idx]._detailsShow ? idx : undefined;
-			});
+		var namespace = 'on-plugin-init';
+		var stateSaveParamsEvent = 'stateSaveParams.' + namespace;
+		var destroyEvent = 'destroy. ' + namespace;
 	
-			data.childRows = api.rows( indexes ).ids( true ).toArray();
-		})
+		api.on( stateSaveParamsEvent, function ( e, settings, d ) {
+			// This could be more compact with the API, but it is a lot faster as a simple
+			// internal loop
+			var idFn = settings.rowIdFn;
+			var data = settings.aoData;
+			var ids = [];
+	
+			for (var i=0 ; i<data.length ; i++) {
+				if (data[i]._detailsShow) {
+					ids.push( '#' + idFn(data[i]._aData) );
+				}
+			}
+	
+			d.childRows = ids;
+		});
+	
+		api.on( destroyEvent, function () {
+			api.off(stateSaveParamsEvent + ' ' + destroyEvent);
+		});
 	
 		var loaded = api.state.loaded();
 	
 		if ( loaded && loaded.childRows ) {
-			api.rows( loaded.childRows ).every( function () {
-				_fnCallbackFire( context, null, 'requestChild', [ this ] )
-			})
+			api
+				.rows( $.map(loaded.childRows, function (id){
+					return id.replace(/:/g, '\\:')
+				}) )
+				.every( function () {
+					_fnCallbackFire( context, null, 'requestChild', [ this ] )
+				});
 		}
-	})
+	});
 	
 	var __details_add = function ( ctx, row, data, klass )
 	{
@@ -8406,6 +8498,15 @@
 	};
 	
 	
+	// Make state saving of child row details async to allow them to be batch processed
+	var __details_state = DataTable.util.throttle(
+		function (ctx) {
+			_fnSaveState( ctx[0] )
+		},
+		500
+	);
+	
+	
 	var __details_remove = function ( api, idx )
 	{
 		var ctx = api.context;
@@ -8419,7 +8520,7 @@
 				row._detailsShow = undefined;
 				row._details = undefined;
 				$( row.nTr ).removeClass( 'dt-hasChild' );
-				_fnSaveState( ctx[0] );
+				__details_state( ctx );
 			}
 		}
 	};
@@ -8446,7 +8547,7 @@
 				_fnCallbackFire( ctx[0], null, 'childRow', [ show, api.row( api[0] ) ] )
 	
 				__details_events( ctx[0] );
-				_fnSaveState( ctx[0] );
+				__details_state( ctx );
 			}
 		}
 	};
@@ -8457,7 +8558,7 @@
 		var api = new _Api( settings );
 		var namespace = '.dt.DT_details';
 		var drawEvent = 'draw'+namespace;
-		var colvisEvent = 'column-visibility'+namespace;
+		var colvisEvent = 'column-sizing'+namespace;
 		var destroyEvent = 'destroy'+namespace;
 		var data = settings.aoData;
 	
@@ -8494,7 +8595,13 @@
 					row = data[i];
 	
 					if ( row._details ) {
-						row._details.children('td[colspan]').attr('colspan', visible );
+						row._details.each(function () {
+							var el = $(this).children('td');
+	
+							if (el.length == 1) {
+								el.attr('colspan', visible);
+							}
+						});
 					}
 				}
 			} );
@@ -9318,6 +9425,52 @@
 	
 	
 	/**
+	 * Set the jQuery or window object to be used by DataTables
+	 *
+	 * @param {*} module Library / container object
+	 * @param {string} [type] Library or container type `lib`, `win` or `datetime`.
+	 *   If not provided, automatic detection is attempted.
+	 */
+	DataTable.use = function (module, type) {
+		if (type === 'lib' || module.fn) {
+			$ = module;
+		}
+		else if (type == 'win' || module.document) {
+			window = module;
+			document = module.document;
+		}
+		else if (type === 'datetime' || module.type === 'DateTime') {
+			DataTable.DateTime = module;
+		}
+	}
+	
+	/**
+	 * CommonJS factory function pass through. This will check if the arguments
+	 * given are a window object or a jQuery object. If so they are set
+	 * accordingly.
+	 * @param {*} root Window
+	 * @param {*} jq jQUery
+	 * @returns {boolean} Indicator
+	 */
+	DataTable.factory = function (root, jq) {
+		var is = false;
+	
+		// Test if the first parameter is a window object
+		if (root && root.document) {
+			window = root;
+			document = root.document;
+		}
+	
+		// Test if the second parameter is a jQuery object
+		if (jq && jq.fn && jq.fn.jquery) {
+			$ = jq;
+			is = true;
+		}
+	
+		return is;
+	}
+	
+	/**
 	 * Provide a common method for plug-ins to check the version of DataTables being
 	 * used, in order to ensure compatibility.
 	 *
@@ -9509,7 +9662,6 @@
 		remove = remove || false;
 	
 		return this.iterator( 'table', function ( settings ) {
-			var orig      = settings.nTableWrapper.parentNode;
 			var classes   = settings.oClasses;
 			var table     = settings.nTable;
 			var tbody     = settings.nTBody;
@@ -9563,6 +9715,8 @@
 			// Add the TR elements back into the table in their original order
 			jqTbody.children().detach();
 			jqTbody.append( rows );
+	
+			var orig = settings.nTableWrapper.parentNode;
 	
 			// Remove the DataTables generated nodes, events and classes
 			var removedMethod = remove ? 'remove' : 'detach';
@@ -9647,18 +9801,20 @@
 				resolved._;
 		}
 	
-		return resolved.replace( '%d', plural ); // nb: plural might be undefined,
-	} );
+		return typeof resolved === 'string'
+			? resolved.replace( '%d', plural ) // nb: plural might be undefined,
+			: resolved;
+	} );	
 	/**
 	 * Version string for plug-ins to check compatibility. Allowed format is
 	 * `a.b.c-d` where: a:int, b:int, c:int, d:string(dev|beta|alpha). `d` is used
-	 * only for non-release builds. See http://semver.org/ for more information.
+	 * only for non-release builds. See https://semver.org/ for more information.
 	 *  @member
 	 *  @type string
 	 *  @default Version number
 	 */
-	DataTable.version = "1.11.4";
-
+	DataTable.version = "1.13.8";
+	
 	/**
 	 * Private data store, containing all of the settings objects that are
 	 * created for the tables on a given page.
@@ -9672,7 +9828,7 @@
 	 *  @private
 	 */
 	DataTable.settings = [];
-
+	
 	/**
 	 * Object models container, for the various models that DataTables has
 	 * available to it. These models define the objects that are used to hold
@@ -10233,7 +10389,7 @@
 		 * --------
 		 *
 		 * As an object, the parameters in the object are passed to
-		 * [jQuery.ajax](http://api.jquery.com/jQuery.ajax/) allowing fine control
+		 * [jQuery.ajax](https://api.jquery.com/jQuery.ajax/) allowing fine control
 		 * of the Ajax request. DataTables has a number of default parameters which
 		 * you can override using this option. Please refer to the jQuery
 		 * documentation for a full description of the options available, although
@@ -11862,7 +12018,6 @@
 			 * Text which is displayed when the table is processing a user action
 			 * (usually a sort command or similar).
 			 *  @type string
-			 *  @default Processing...
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.processing
@@ -11876,7 +12031,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processing...",
+			"sProcessing": "",
 	
 	
 			/**
@@ -11942,7 +12097,7 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "url": "http://www.sprymedia.co.uk/dataTables/lang.txt"
+			 *          "url": "https://www.sprymedia.co.uk/dataTables/lang.txt"
 			 *        }
 			 *      } );
 			 *    } );
@@ -14030,7 +14185,7 @@
 		 */
 		"rowId": null
 	};
-
+	
 	/**
 	 * Extension object for DataTables that is used to provide all extension
 	 * options.
@@ -14082,7 +14237,7 @@
 		 *
 		 *  @type string
 		 */
-		build:"bs4/dt-1.11.4",
+		build:"dt/dt-1.13.8",
 	
 	
 		/**
@@ -14720,10 +14875,10 @@
 				var classes = settings.oClasses;
 				var lang = settings.oLanguage.oPaginate;
 				var aria = settings.oLanguage.oAria.paginate || {};
-				var btnDisplay, btnClass, counter=0;
+				var btnDisplay, btnClass;
 	
 				var attach = function( container, buttons ) {
-					var i, ien, node, button, tabIndex;
+					var i, ien, node, button;
 					var disabledClass = classes.sPageButtonDisabled;
 					var clickHandler = function ( e ) {
 						_fnPageChange( settings, e.data.action, true );
@@ -14738,9 +14893,10 @@
 							attach( inner, button );
 						}
 						else {
+							var disabled = false;
+	
 							btnDisplay = null;
 							btnClass = button;
-							tabIndex = settings.iTabIndex;
 	
 							switch ( button ) {
 								case 'ellipsis':
@@ -14751,8 +14907,7 @@
 									btnDisplay = lang.sFirst;
 	
 									if ( page === 0 ) {
-										tabIndex = -1;
-										btnClass += ' ' + disabledClass;
+										disabled = true;
 									}
 									break;
 	
@@ -14760,8 +14915,7 @@
 									btnDisplay = lang.sPrevious;
 	
 									if ( page === 0 ) {
-										tabIndex = -1;
-										btnClass += ' ' + disabledClass;
+										disabled = true;
 									}
 									break;
 	
@@ -14769,8 +14923,7 @@
 									btnDisplay = lang.sNext;
 	
 									if ( pages === 0 || page === pages-1 ) {
-										tabIndex = -1;
-										btnClass += ' ' + disabledClass;
+										disabled = true;
 									}
 									break;
 	
@@ -14778,8 +14931,7 @@
 									btnDisplay = lang.sLast;
 	
 									if ( pages === 0 || page === pages-1 ) {
-										tabIndex = -1;
-										btnClass += ' ' + disabledClass;
+										disabled = true;
 									}
 									break;
 	
@@ -14791,12 +14943,21 @@
 							}
 	
 							if ( btnDisplay !== null ) {
-								node = $('<a>', {
+								var tag = settings.oInit.pagingTag || 'a';
+	
+								if (disabled) {
+									btnClass += ' ' + disabledClass;
+								}
+	
+								node = $('<'+tag+'>', {
 										'class': classes.sPageButton+' '+btnClass,
 										'aria-controls': settings.sTableId,
+										'aria-disabled': disabled ? 'true' : null,
 										'aria-label': aria[ button ],
-										'data-dt-idx': counter,
-										'tabindex': tabIndex,
+										'role': 'link',
+										'aria-current': btnClass === classes.sPageButtonActive ? 'page' : null,
+										'data-dt-idx': button,
+										'tabindex': disabled ? -1 : settings.iTabIndex,
 										'id': idx === 0 && typeof button === 'string' ?
 											settings.sTableId +'_'+ button :
 											null
@@ -14807,8 +14968,6 @@
 								_fnBindAction(
 									node, {action: button}, clickHandler
 								);
-	
-								counter++;
 							}
 						}
 					}
@@ -14928,6 +15087,12 @@
 		if ( d !== 0 && (!d || d === '-') ) {
 			return -Infinity;
 		}
+		
+		var type = typeof d;
+	
+		if (type === 'number' || type === 'bigint') {
+			return d;
+		}
 	
 		// If a decimal place other than `.` is used, it needs to be given to the
 		// function so we can detect it and replace with a `.` which is the only
@@ -15009,7 +15174,7 @@
 		// string
 		"string-pre": function ( a ) {
 			// This is a little complex, but faster than always calling toString,
-			// http://jsperf.com/tostring-v-check
+			// https://jsperf.com/tostring-v-check
 			return _empty(a) ?
 				'' :
 				typeof a === 'string' ?
@@ -15128,6 +15293,213 @@
 			d;
 	};
 	
+	// Common logic for moment, luxon or a date action
+	function __mld( dt, momentFn, luxonFn, dateFn, arg1 ) {
+		if (window.moment) {
+			return dt[momentFn]( arg1 );
+		}
+		else if (window.luxon) {
+			return dt[luxonFn]( arg1 );
+		}
+		
+		return dateFn ? dt[dateFn]( arg1 ) : dt;
+	}
+	
+	
+	var __mlWarning = false;
+	function __mldObj (d, format, locale) {
+		var dt;
+	
+		if (window.moment) {
+			dt = window.moment.utc( d, format, locale, true );
+	
+			if (! dt.isValid()) {
+				return null;
+			}
+		}
+		else if (window.luxon) {
+			dt = format && typeof d === 'string'
+				? window.luxon.DateTime.fromFormat( d, format )
+				: window.luxon.DateTime.fromISO( d );
+	
+			if (! dt.isValid) {
+				return null;
+			}
+	
+			dt.setLocale(locale);
+		}
+		else if (! format) {
+			// No format given, must be ISO
+			dt = new Date(d);
+		}
+		else {
+			if (! __mlWarning) {
+				alert('DataTables warning: Formatted date without Moment.js or Luxon - https://datatables.net/tn/17');
+			}
+	
+			__mlWarning = true;
+		}
+	
+		return dt;
+	}
+	
+	// Wrapper for date, datetime and time which all operate the same way with the exception of
+	// the output string for auto locale support
+	function __mlHelper (localeString) {
+		return function ( from, to, locale, def ) {
+			// Luxon and Moment support
+			// Argument shifting
+			if ( arguments.length === 0 ) {
+				locale = 'en';
+				to = null; // means toLocaleString
+				from = null; // means iso8601
+			}
+			else if ( arguments.length === 1 ) {
+				locale = 'en';
+				to = from;
+				from = null;
+			}
+			else if ( arguments.length === 2 ) {
+				locale = to;
+				to = from;
+				from = null;
+			}
+	
+			var typeName = 'datetime-' + to;
+	
+			// Add type detection and sorting specific to this date format - we need to be able to identify
+			// date type columns as such, rather than as numbers in extensions. Hence the need for this.
+			if (! DataTable.ext.type.order[typeName]) {
+				// The renderer will give the value to type detect as the type!
+				DataTable.ext.type.detect.unshift(function (d) {
+					return d === typeName ? typeName : false;
+				});
+	
+				// The renderer gives us Moment, Luxon or Date obects for the sorting, all of which have a
+				// `valueOf` which gives milliseconds epoch
+				DataTable.ext.type.order[typeName + '-asc'] = function (a, b) {
+					var x = a.valueOf();
+					var y = b.valueOf();
+	
+					return x === y
+						? 0
+						: x < y
+							? -1
+							: 1;
+				}
+	
+				DataTable.ext.type.order[typeName + '-desc'] = function (a, b) {
+					var x = a.valueOf();
+					var y = b.valueOf();
+	
+					return x === y
+						? 0
+						: x > y
+							? -1
+							: 1;
+				}
+			}
+		
+			return function ( d, type ) {
+				// Allow for a default value
+				if (d === null || d === undefined) {
+					if (def === '--now') {
+						// We treat everything as UTC further down, so no changes are
+						// made, as such need to get the local date / time as if it were
+						// UTC
+						var local = new Date();
+						d = new Date( Date.UTC(
+							local.getFullYear(), local.getMonth(), local.getDate(),
+							local.getHours(), local.getMinutes(), local.getSeconds()
+						) );
+					}
+					else {
+						d = '';
+					}
+				}
+	
+				if (type === 'type') {
+					// Typing uses the type name for fast matching
+					return typeName;
+				}
+	
+				if (d === '') {
+					return type !== 'sort'
+						? ''
+						: __mldObj('0000-01-01 00:00:00', null, locale);
+				}
+	
+				// Shortcut. If `from` and `to` are the same, we are using the renderer to
+				// format for ordering, not display - its already in the display format.
+				if ( to !== null && from === to && type !== 'sort' && type !== 'type' && ! (d instanceof Date) ) {
+					return d;
+				}
+	
+				var dt = __mldObj(d, from, locale);
+	
+				if (dt === null) {
+					return d;
+				}
+	
+				if (type === 'sort') {
+					return dt;
+				}
+				
+				var formatted = to === null
+					? __mld(dt, 'toDate', 'toJSDate', '')[localeString]()
+					: __mld(dt, 'format', 'toFormat', 'toISOString', to);
+	
+				// XSS protection
+				return type === 'display' ?
+					__htmlEscapeEntities( formatted ) :
+					formatted;
+			};
+		}
+	}
+	
+	// Based on locale, determine standard number formatting
+	// Fallback for legacy browsers is US English
+	var __thousands = ',';
+	var __decimal = '.';
+	
+	if (window.Intl !== undefined) {
+		try {
+			var num = new Intl.NumberFormat().formatToParts(100000.1);
+		
+			for (var i=0 ; i<num.length ; i++) {
+				if (num[i].type === 'group') {
+					__thousands = num[i].value;
+				}
+				else if (num[i].type === 'decimal') {
+					__decimal = num[i].value;
+				}
+			}
+		}
+		catch (e) {
+			// noop
+		}
+	}
+	
+	// Formatted date time detection - use by declaring the formats you are going to use
+	DataTable.datetime = function ( format, locale ) {
+		var typeName = 'datetime-detect-' + format;
+	
+		if (! locale) {
+			locale = 'en';
+		}
+	
+		if (! DataTable.ext.type.order[typeName]) {
+			DataTable.ext.type.detect.unshift(function (d) {
+				var dt = __mldObj(d, format, locale);
+				return d === '' || dt ? typeName : false;
+			});
+	
+			DataTable.ext.type.order[typeName + '-pre'] = function (d) {
+				return __mldObj(d, format, locale) || 0;
+			}
+		}
+	}
+	
 	/**
 	 * Helpers for `columns.render`.
 	 *
@@ -15155,10 +15527,26 @@
 	 * @namespace
 	 */
 	DataTable.render = {
+		date: __mlHelper('toLocaleDateString'),
+		datetime: __mlHelper('toLocaleString'),
+		time: __mlHelper('toLocaleTimeString'),
 		number: function ( thousands, decimal, precision, prefix, postfix ) {
+			// Auto locale detection
+			if (thousands === null || thousands === undefined) {
+				thousands = __thousands;
+			}
+	
+			if (decimal === null || decimal === undefined) {
+				decimal = __decimal;
+			}
+	
 			return {
 				display: function ( d ) {
 					if ( typeof d !== 'number' && typeof d !== 'string' ) {
+						return d;
+					}
+	
+					if (d === '' || d === null) {
 						return d;
 					}
 	
@@ -15330,23 +15718,23 @@
 		                                // added to prevent errors
 	} );
 	
-
+	
 	// jQuery access
 	$.fn.dataTable = DataTable;
-
+	
 	// Provide access to the host jQuery object (circular reference)
 	DataTable.$ = $;
-
+	
 	// Legacy aliases
 	$.fn.dataTableSettings = DataTable.settings;
 	$.fn.dataTableExt = DataTable.ext;
-
+	
 	// With a capital `D` we return a DataTables API instance rather than a
 	// jQuery object
 	$.fn.DataTable = function ( opts ) {
 		return $(this).dataTable( opts ).api();
 	};
-
+	
 	// All properties that are available to $.fn.dataTable should also be
 	// available on $.fn.DataTable
 	$.each( DataTable, function ( prop, val ) {
@@ -15357,18 +15745,10 @@
 }));
 
 
-/*! DataTables Bootstrap 4 integration
- * ©2011-2017 SpryMedia Ltd - datatables.net/license
+/*! DataTables styling integration
+ * ©2018 SpryMedia Ltd - datatables.net/license
  */
 
-/**
- * DataTables integration for Bootstrap 4. This requires Bootstrap 4 and
- * DataTables 1.10 or newer.
- *
- * This file sets the defaults and adds options to DataTables to style its
- * controls using Bootstrap. See http://datatables.net/manual/styling/bootstrap
- * for further information.
- */
 (function( factory ){
 	if ( typeof define === 'function' && define.amd ) {
 		// AMD
@@ -15378,20 +15758,33 @@
 	}
 	else if ( typeof exports === 'object' ) {
 		// CommonJS
-		module.exports = function (root, $) {
-			if ( ! root ) {
-				root = window;
+		var jq = require('jquery');
+		var cjsRequires = function (root, $) {
+			if ( ! $.fn.dataTable ) {
+				require('datatables.net')(root, $);
 			}
-
-			if ( ! $ || ! $.fn.dataTable ) {
-				// Require DataTables, which attaches to jQuery, including
-				// jQuery if needed and have a $ property so we can access the
-				// jQuery object that is used
-				$ = require('datatables.net')(root, $).$;
-			}
-
-			return factory( $, root, root.document );
 		};
+
+		if (typeof window === 'undefined') {
+			module.exports = function (root, $) {
+				if ( ! root ) {
+					// CommonJS environments without a window global must pass a
+					// root. This will give an error otherwise
+					root = window;
+				}
+
+				if ( ! $ ) {
+					$ = jq( root );
+				}
+
+				cjsRequires( root, $ );
+				return factory( $, root, root.document );
+			};
+		}
+		else {
+			cjsRequires( window, jq );
+			module.exports = factory( jq, window, window.document );
+		}
 	}
 	else {
 		// Browser
@@ -15402,141 +15795,7 @@
 var DataTable = $.fn.dataTable;
 
 
-/* Set the defaults for DataTables initialisation */
-$.extend( true, DataTable.defaults, {
-	dom:
-		"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-		"<'row'<'col-sm-12'tr>>" +
-		"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-	renderer: 'bootstrap'
-} );
 
-
-/* Default class modification */
-$.extend( DataTable.ext.classes, {
-	sWrapper:      "dataTables_wrapper dt-bootstrap4",
-	sFilterInput:  "form-control form-control-sm",
-	sLengthSelect: "custom-select custom-select-sm form-control form-control-sm",
-	sProcessing:   "dataTables_processing card",
-	sPageButton:   "paginate_button page-item"
-} );
-
-
-/* Bootstrap paging button renderer */
-DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, buttons, page, pages ) {
-	var api     = new DataTable.Api( settings );
-	var classes = settings.oClasses;
-	var lang    = settings.oLanguage.oPaginate;
-	var aria = settings.oLanguage.oAria.paginate || {};
-	var btnDisplay, btnClass, counter=0;
-
-	var attach = function( container, buttons ) {
-		var i, ien, node, button;
-		var clickHandler = function ( e ) {
-			e.preventDefault();
-			if ( !$(e.currentTarget).hasClass('disabled') && api.page() != e.data.action ) {
-				api.page( e.data.action ).draw( 'page' );
-			}
-		};
-
-		for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
-			button = buttons[i];
-
-			if ( Array.isArray( button ) ) {
-				attach( container, button );
-			}
-			else {
-				btnDisplay = '';
-				btnClass = '';
-
-				switch ( button ) {
-					case 'ellipsis':
-						btnDisplay = '&#x2026;';
-						btnClass = 'disabled';
-						break;
-
-					case 'first':
-						btnDisplay = lang.sFirst;
-						btnClass = button + (page > 0 ?
-							'' : ' disabled');
-						break;
-
-					case 'previous':
-						btnDisplay = lang.sPrevious;
-						btnClass = button + (page > 0 ?
-							'' : ' disabled');
-						break;
-
-					case 'next':
-						btnDisplay = lang.sNext;
-						btnClass = button + (page < pages-1 ?
-							'' : ' disabled');
-						break;
-
-					case 'last':
-						btnDisplay = lang.sLast;
-						btnClass = button + (page < pages-1 ?
-							'' : ' disabled');
-						break;
-
-					default:
-						btnDisplay = button + 1;
-						btnClass = page === button ?
-							'active' : '';
-						break;
-				}
-
-				if ( btnDisplay ) {
-					node = $('<li>', {
-							'class': classes.sPageButton+' '+btnClass,
-							'id': idx === 0 && typeof button === 'string' ?
-								settings.sTableId +'_'+ button :
-								null
-						} )
-						.append( $('<a>', {
-								'href': '#',
-								'aria-controls': settings.sTableId,
-								'aria-label': aria[ button ],
-								'data-dt-idx': counter,
-								'tabindex': settings.iTabIndex,
-								'class': 'page-link'
-							} )
-							.html( btnDisplay )
-						)
-						.appendTo( container );
-
-					settings.oApi._fnBindAction(
-						node, {action: button}, clickHandler
-					);
-
-					counter++;
-				}
-			}
-		}
-	};
-
-	// IE9 throws an 'unknown error' if document.activeElement is used
-	// inside an iframe or frame. 
-	var activeEl;
-
-	try {
-		// Because this approach is destroying and recreating the paging
-		// elements, focus is lost on the select button which is bad for
-		// accessibility. So we want to restore focus once the draw has
-		// completed
-		activeEl = $(host).find(document.activeElement).data('dt-idx');
-	}
-	catch (e) {}
-
-	attach(
-		$(host).empty().html('<ul class="pagination"/>').children('ul'),
-		buttons
-	);
-
-	if ( activeEl !== undefined ) {
-		$(host).find( '[data-dt-idx='+activeEl+']' ).trigger('focus');
-	}
-};
 
 
 return DataTable;

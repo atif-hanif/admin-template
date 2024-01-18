@@ -3,18 +3,16 @@
 :root {
     --header-height: 3rem;
     --nav-width: 224px;
-    --primary-color: #2b1c40;
-    --secondary-color: #3399FF;
-    --active-color: #3399FF;
-    --btn-purple: #2b1c40;
-    --btn-purple-light: #AFA5D9;
+    --primary-color: #0766AD;
+    --secondary-color: #29ADB2;
+    --active-color: #0766AD;
     --white-color: #FFFFFF;
     --black-color: #000000;
     --background-color: #f2f2f2;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100;
-    --submenu-active: #563A7E;
+    --submenu-active: #29ADB2;
 }
 
 *,
@@ -61,35 +59,35 @@ input[type=checkbox], input[type=radio] {
 
 .btn-blue {
     color: var(--white-color);
-    background-color: var(--active-color);
-    border-color: var(--active-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn-blue:hover {
-    color: var(--active-color);
+    color: var(--primary-color);
     background-color: var(--white-color);
-    border-color: var(--active-color);
+    border-color: var(--primary-color);
 }
 
-.btn-purple {
+.btn-green {
     color: var(--white-color);
-    background-color: var(--btn-purple);
-    border-color: var(--btn-purple);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
-.btn-purple:hover {
-    color: var(--btn-purple);
+.btn-green:hover {
+    color: var(--secondary-color);
     background-color: var(--white-color);
-    border-color: var(--btn-purple);
+    border-color: var(--secondary-color);
 }
 
-.bg-purple {
-    background-color: var(--btn-purple);
-    border: 1px solid var(--btn-purple);
+.bg-green {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
 }
 
-.border-purple {
-    border: 1px solid var(--btn-purple);
+.border-green {
+    border: 1px solid var(--secondary-color);
 }
 
 .bg-gradient {
@@ -128,7 +126,7 @@ a:hover {
     grid-template-columns: max-content max-content;
     align-items: center;
     column-gap: 1rem;
-    padding: 0.5rem 0;
+    padding: 0.35rem 0px;
     margin-bottom: 2rem;
 }
 
@@ -193,7 +191,7 @@ a:hover {
 }
 
 .sidebar-logo .mobile-toggle a {
-	color: var(--white-color);
+	color: var(--primary-color);
 }
 
 .sidebar-menu {
@@ -238,6 +236,7 @@ a:hover {
 
 .sidebar-menu li.dropdown.open > a {
 	color: var(--white-color);
+    background-color: var(--secondary-color);
 }
 
 .sidebar-menu li.dropdown.open > a > .arrow {
@@ -325,7 +324,12 @@ a:hover {
 	transition: all 0.3s ease;
 }
 
-.sidebar-menu .active {
+.sidebar-menu .active .nav-link {
+    background-color: var(--active-color);
+    color: var(--white-color);
+}
+
+.sidebar-menu .active .dropdown-toggle {
     background-color: var(--active-color);
     color: var(--white-color);
 }
@@ -395,7 +399,7 @@ a:hover {
     background: var(--submenu-active);
 }
 
-.sub-menu {
+.subactive a {
     font-weight: 900;
     background-color: var(--submenu-active);
     color: var(--white-color) !important;
@@ -431,7 +435,7 @@ a:hover {
 }
 
 .icon-logo {
-    width: 40px;
+    width: 100%;
 }
 
 .sidebar-toggle {
@@ -809,7 +813,7 @@ a:hover {
     list-style-type: none;
 }
 
-.dropdown-menu {
+.sidebar-menu .dropdown-menu {
     border-radius: 0px;
     padding: 0;
     right: 0;
@@ -1125,7 +1129,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    border-color: var(--btn-purple-light);
+    border-color: var(--btn-blue-light);
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {

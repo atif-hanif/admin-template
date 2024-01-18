@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v10.3.3 (2023-01-20)
+ * @license Highcharts JS v11.2.0 (2023-10-30)
  *
  * (c) 2009-2021 Torstein Honsi
  *
@@ -26,12 +26,10 @@
             obj[path] = fn.apply(null, args);
 
             if (typeof CustomEvent === 'function') {
-                window.dispatchEvent(
-                    new CustomEvent(
-                        'HighchartsModuleLoaded',
-                        { detail: { path: path, module: obj[path] }
-                    })
-                );
+                window.dispatchEvent(new CustomEvent(
+                    'HighchartsModuleLoaded',
+                    { detail: { path: path, module: obj[path] } }
+                ));
             }
         }
     }
@@ -49,8 +47,8 @@
          *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
          *
          * */
-        var setOptions = D.setOptions;
-        var createElement = U.createElement;
+        const { setOptions } = D;
+        const { createElement } = U;
         /* *
          *
          *  Theme
@@ -117,11 +115,6 @@
                     itemHoverStyle: {
                         fontWeight: '700',
                         color: '#fff'
-                    }
-                },
-                labels: {
-                    style: {
-                        color: '#707073'
                     }
                 },
                 plotOptions: {
@@ -233,8 +226,7 @@
                                     }
                                 }
                             }
-                        },
-                        verticalAlign: 'bottom'
+                        }
                     }
                 },
                 // scroll charts

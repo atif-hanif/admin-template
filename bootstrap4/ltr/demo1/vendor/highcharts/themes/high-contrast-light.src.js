@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v10.3.3 (2023-01-20)
+ * @license Highcharts JS v11.2.0 (2023-10-30)
  *
  * (c) 2009-2021 Highsoft AS
  *
@@ -26,12 +26,10 @@
             obj[path] = fn.apply(null, args);
 
             if (typeof CustomEvent === 'function') {
-                window.dispatchEvent(
-                    new CustomEvent(
-                        'HighchartsModuleLoaded',
-                        { detail: { path: path, module: obj[path] }
-                    })
-                );
+                window.dispatchEvent(new CustomEvent(
+                    'HighchartsModuleLoaded',
+                    { detail: { path: path, module: obj[path] } }
+                ));
             }
         }
     }
@@ -51,7 +49,7 @@
          *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
          *
          * */
-        var setOptions = D.setOptions;
+        const { setOptions } = D;
         /* *
          *
          *  Theme
@@ -77,6 +75,11 @@
                     '#1A704C',
                     '#B02FDD'
                 ],
+                credits: {
+                    style: {
+                        color: '#767676'
+                    }
+                },
                 navigator: {
                     series: {
                         color: '#5f98cf',

@@ -12,6 +12,7 @@
 	<link href="vendor/animated-event-calendar/dist/simple-calendar.css" rel="stylesheet">
 	<link href="vendor/datatables/datatables.min.css" rel="stylesheet">
 	<link href="vendor/datatables/buttons/css/buttons.dataTables.min.css" rel="stylesheet" />
+	<link href="vendor/sweetalert/sweetalert2.min.css" rel="stylesheet" />
 	<link href="css/fonts.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
@@ -38,7 +39,7 @@
 			</div>
 			<ul class="sidebar-menu menu-scroll position-relative">
 				<li class="nav-item">
-					<a class="nav-link active" href="index.html">
+					<a class="nav-link" href="index.html">
 						<i class='bx bxs-dashboard'></i>
 						<span class="title">Dashboard</span>
 					</a>
@@ -137,6 +138,43 @@
 						</li>
 					</ul>
 				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#">
+						<i class='bx bx-file'></i>
+						<span class="title">Tables</span>
+						<span class="arrow">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="sidebar-link dropdown-item" href="bootstrap-table.html">Bootstrap Table</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="datatables.html">DataTables</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#">
+						<i class='bx bxs-chart'></i>
+						<span class="title">Charts</span>
+						<span class="arrow">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="sidebar-link dropdown-item" href="highcharts.html">Highcharts</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="apexcharts.html">Apexcharts</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="googlecharts.html">Google Charts</a>
+						</li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -145,7 +183,7 @@
 	<!-- Start Main -->
 	<div class="container-wide">
 		<header class="header">
-			<nav class="navbar navbar-expand-md navbar-dark top-nav">
+			<nav class="navbar navbar-expand-md navbar-dark top-nav py-3">
 				<ul class="navbar-nav me-auto">
 					<li class="nav-item active">
 						<a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
@@ -205,7 +243,7 @@
 							<div class="media align-items-center">
 								<div class="media-card d-inline-block align-self-center w-50">
 									<h6 class="text-white">Total Sales</h6>
-									<h4 class="text-white mb-0">100K</h4>
+									<h4 class="text-white mb-0">150K</h4>
 								</div>
 								<div class="media-avatar d-inline-block text-center w-50">
 									<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
@@ -222,7 +260,7 @@
 							<div class="media align-items-center">
 								<div class="media-card d-inline-block align-self-center w-50">
 									<h6 class="text-white">Total Revenue</h6>
-									<h4 class="text-white mb-0">1500K</h4>
+									<h4 class="text-white mb-0">250K</h4>
 								</div>
 								<div class="media-avatar d-inline-block text-center w-50">
 									<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
@@ -238,8 +276,8 @@
 						<div class="card-body bg-warning">
 							<div class="media align-items-center">
 								<div class="media-card d-inline-block align-self-center w-50">
-									<h6 class="text-white">Total Products</h6>
-									<h4 class="text-white mb-0">2450K</h4>
+									<h6 class="text-white">Total Projects</h6>
+									<h4 class="text-white mb-0">80K</h4>
 								</div>
 								<div class="media-avatar d-inline-block text-center w-50">
 									<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
@@ -256,7 +294,7 @@
 							<div class="media align-items-center">
 								<div class="media-card d-inline-block align-self-center w-50">
 									<h6 class="text-white">Total Orders</h6>
-									<h4 class="text-white mb-0">650k</h4>
+									<h4 class="text-white mb-0">50K</h4>
 								</div>
 								<div class="media-avatar d-inline-block text-center w-50">
 									<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" style="fill: rgba(255, 252, 255, 1);">
@@ -420,7 +458,7 @@
 						</div>
 						<div class="card-body task-body">
 							<div class="table-responsive">
-								<table class="table mb-2">
+								<table class="table mb-2 table-bordered table-striped">
 									<thead>
 										<tr>
 											<th scope="col">Team Member</th>
@@ -431,7 +469,9 @@
 									</thead>
 									<tbody>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Alice Mayer</span> </th>
+											<th>
+												<span class="ms-2">Alice Mayer</span>
+											</th>
 											<td class="align-middle"> <span>Stakeholder Meeting</span> </td>
 											<td class="align-middle">
 												<h6 class="mb-0">
@@ -439,16 +479,18 @@
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Kate Moss</span> </th>
+											<th>
+												<span class="ms-2">Bruno Nash</span>
+											</th>
 											<td class="align-middle"> <span>Project Meeting</span> </td>
 											<td class="align-middle">
 												<h6 class="mb-0">
@@ -456,16 +498,18 @@
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Danny McChain</span> </th>
+											<th>
+												<span class="ms-2">Cedric Kelly</span>
+											</th>
 											<td class="align-middle"> <span>Client Meeting</span> </td>
 											<td class="align-middle">
 												<h6 class="mb-0">
@@ -473,84 +517,102 @@
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Alexa Chung</span> </th>
-											<td class="align-middle"> <span>Complete Project</span> </td>
+											<th>
+												<span class="ms-2">Doris Wilder</span>
+											</th>
+											<td class="align-middle">
+												<span>Complete Project</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-danger text-white">High priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th class=""> <span class="ms-2">Ben Smith</span> </th>
-											<td class="align-middle"> <span>Client Meeting</span> </td>
+											<th>
+												<span class="ms-2">Fiona Green</span>
+											</th>
+											<td class="align-middle">
+												<span>Client Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-success text-white">Low priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Annie Hall</span> </th>
-											<td class="align-middle"> <span>Stakeholder Meeting</span> </td>
+											<th>
+												<span class="ms-2">Gavin Joyce</span>
+											</th>
+											<td class="align-middle">
+												<span>Stakeholder Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-warning text-white">Medium priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Kate Moss</span> </th>
-											<td class="align-middle"> <span>Project Meeting</span> </td>
+											<th>
+												<span class="ms-2">Haley Kennedy</span>
+											</th>
+											<td class="align-middle">
+												<span>Project Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-success text-white">Low priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Alexa Chung</span> </th>
+											<th>
+												<span class="ms-2">Jackson Bradshaw</span>
+											</th>
 											<td class="align-middle"> <span>Complete Project</span> </td>
 											<td class="align-middle">
 												<h6 class="mb-0">
@@ -558,112 +620,136 @@
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Alice Mayer</span> </th>
-											<td class="align-middle"> <span>Stakeholder Meeting</span> </td>
+											<th>
+												<span class="ms-2">Lael Greer</span>
+											</th>
+											<td class="align-middle">
+												<span>Stakeholder Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-danger text-white">High priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Kate Moss</span> </th>
-											<td class="align-middle"> <span>Project Meeting</span> </td>
+											<th>
+												<span class="ms-2">Michael Silva</span>
+											</th>
+											<td class="align-middle">
+												<span>Project Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-success text-white">Low priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Danny McChain</span> </th>
-											<td class="align-middle"> <span>Client Meeting</span> </td>
+											<th>
+												<span class="ms-2">Olivia Liang</span>
+											</th>
+											<td class="align-middle">
+												<span>Client Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-warning text-white">Middle priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Alexa Chung</span> </th>
-											<td class="align-middle"> <span>Complete Project</span> </td>
+											<th>
+												<span class="ms-2">Prescott Bartlett</span>
+											</th>
+											<td class="align-middle">
+												<span>Complete Project</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-danger text-white">High priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th class=""> <span class="ms-2">Ben Smith</span> </th>
-											<td class="align-middle"> <span>Client Meeting</span> </td>
+											<th class="">
+												<span class="ms-2">Quinn Flynn</span>
+											</th>
+											<td class="align-middle">
+												<span>Client Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-success text-white">Low priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
 										</tr>
 										<tr class="fw-normal">
-											<th> <span class="ms-2">Alice Mayer</span> </th>
-											<td class="align-middle"> <span>Stakeholder Meeting</span> </td>
+											<th>
+												<span class="ms-2">Rhona Davidson</span>
+											</th>
+											<td class="align-middle">
+												<span>Stakeholder Meeting</span>
+											</td>
 											<td class="align-middle">
 												<h6 class="mb-0">
 													<span class="badge bg-danger text-white">High priority</span>
 												</h6>
 											</td>
 											<td class="align-middle">
-												<a href="#!" data-mdb-toggle="tooltip" title="Done">
+												<a href="#!" data-mdb-toggle="tooltip" title="Edit">
 													<i class="fa-solid fa-pen-to-square text-success mr-3"></i>
 												</a>
-												<a href="#!" data-mdb-toggle="tooltip" title="Remove">
+												<a href="#!" data-mdb-toggle="tooltip" title="Delete">
 													<i class="fa-solid fa-trash text-danger"></i>
 												</a>
 											</td>
@@ -682,19 +768,17 @@
 				<div class="col-sm-12">
 					<div class="card">
 						<div class="card-header custom-card-header">
-							<h5 class="card-title mb-0">Product Sales</h5>
+							<h5 class="card-title mb-0">Projects</h5>
 						</div>
 						<div class="card-body">
-							<div class="table-responsive">
-								<table id="myTable" class="display table table-bordered cell-bordered">
+							<div class="table-responsive-md">
+								<table id="myTable" class="display table table-bordered cell-bordered table-striped table-hover">
 									<thead>
 										<tr>
 											<th>ID</th>
-											<th>Product</th>
-											<th>Customer</th>
+											<th>Projects</th>
+											<th>Customers</th>
 											<th>Date</th>
-											<th>Amount</th>
-											<th>Payment Mode</th>
 											<th>Status</th>
 											<th>Actions</th>
 										</tr>
@@ -705,43 +789,31 @@
 												<p class="mb-0">1</p>
 											</td>
 											<td>
-												<p class="mb-0">Headsets</p>
+												<p class="mb-0">CRM</p>
 											</td>
 											<td>
 												<p class="mb-0">Archie Parker</p>
 											</td>
 											<td>
-												<p class="mb-0">30 August 2021</p>
+												<p class="mb-0">30 January 2023</p>
 											</td>
 											<td>
-												<p class="mb-0">$265</p>
+												<p class="text-success rounded-pill mb-0">Completed</p>
 											</td>
-											<td>
-												<p class="mb-0">Online Payment</p>
-											</td>
-											<td>
-												<p class="text-success rounded-pill mb-0">Shipped</p>
-											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="modal" data-target="#myModal" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
 										<tr>
 											<td>
 												<p class="mb-0">2</p>
 											</td>
 											<td>
-												<p class="mb-0">Pen Drive</p>
+												<p class="mb-0">ERP</p>
 											</td>
 											<td>
-												<p class="mb-0">Alfie Mason</p>
+												<p class="mb-0">Breddie Ronan</p>
 											</td>
 											<td>
-												<p class="mb-0">27 January 2021</p>
-											</td>
-											<td>
-												<p class="mb-0">$500</p>
-											</td>
-											<td>
-												<p class="mb-0">Cash on Delivery</p>
+												<p class="mb-0">27 February 2023</p>
 											</td>
 											<td>
 												<p class="text-warning rounded-pill mb-0">Pending</p>
@@ -753,22 +825,16 @@
 												<p class="mb-0">3</p>
 											</td>
 											<td>
-												<p class="mb-0">Leather Watch</p>
+												<p class="mb-0">Worflow</p>
 											</td>
 											<td>
-												<p class="mb-0">Aharlie Kane</p>
+												<p class="mb-0">Ceorge Carson</p>
 											</td>
 											<td>
-												<p class="mb-0">06 October 2021</p>
+												<p class="mb-0">06 March 2023</p>
 											</td>
 											<td>
-												<p class="mb-0">$750</p>
-											</td>
-											<td>
-												<p class="mb-0">Cash on Delivery</p>
-											</td>
-											<td>
-												<p class="ttext-danger rounded-pill mb-0">Cancelled</p>
+												<p class="text-danger rounded-pill mb-0">Cancelled</p>
 											</td>
 											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
@@ -777,19 +843,13 @@
 												<p class="mb-0">4</p>
 											</td>
 											<td>
-												<p class="mb-0">Digital Camera</p>
+												<p class="mb-0">E-Commerce Website</p>
 											</td>
 											<td>
-												<p class="mb-0">Athan Jacoby</p>
+												<p class="mb-0">Darry Parker</p>
 											</td>
 											<td>
-												<p class="mb-0">10 July 2021</p>
-											</td>
-											<td>
-												<p class="mb-0">$1,230</p>
-											</td>
-											<td>
-												<p class="mb-0">Cash on Delivery</p>
+												<p class="mb-0">10 April 2023</p>
 											</td>
 											<td>
 												<p class="text-warning rounded-pill mb-0">Pending</p>
@@ -801,22 +861,16 @@
 												<p class="mb-0">5</p>
 											</td>
 											<td>
-												<p class="mb-0">Earphones</p>
+												<p class="mb-0">Ticket Portal</p>
 											</td>
 											<td>
-												<p class="mb-0">Bashid Samim</p>
+												<p class="mb-0">Finn Camacho</p>
 											</td>
 											<td>
-												<p class="mb-0">25 June 2021</p>
+												<p class="mb-0">25 May 2023</p>
 											</td>
 											<td>
-												<p class="mb-0">$200</p>
-											</td>
-											<td>
-												<p class="mb-0">Online Payment</p>
-											</td>
-											<td>
-												<p class="text-success rounded-pill mb-0">Shipped</p>
+												<p class="text-success rounded-pill mb-0">Completed</p>
 											</td>
 											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
@@ -825,43 +879,13 @@
 												<p class="mb-0">6</p>
 											</td>
 											<td>
-												<p class="mb-0">Shoes</p>
+												<p class="mb-0">UI/UX Design</p>
 											</td>
 											<td>
-												<p class="mb-0">Breddie Ronan</p>
+												<p class="mb-0">Gavin Cortez</p>
 											</td>
 											<td>
-												<p class="mb-0">22 February 2021</p>
-											</td>
-											<td>
-												<p class="mb-0">$300</p>
-											</td>
-											<td>
-												<p class="mb-0">Cash on Delivery</p>
-											</td>
-											<td>
-												<p class="text-warning rounded-pill mb-0">Pending</p>
-											</td>
-											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
-										</tr>
-										<tr>
-											<td>
-												<p class="mb-0">7</p>
-											</td>
-											<td>
-												<p class="mb-0">Laptop Bag</p>
-											</td>
-											<td>
-												<p class="mb-0">Ceorge Carson</p>
-											</td>
-											<td>
-												<p class="mb-0">05 January 2022</p>
-											</td>
-											<td>
-												<p class="mb-0">$470</p>
-											</td>
-											<td>
-												<p class="mb-0">Online Payment</p>
+												<p class="mb-0">22 June 2023</p>
 											</td>
 											<td>
 												<p class="text-danger rounded-pill mb-0">Cancelled</p>
@@ -870,25 +894,127 @@
 										</tr>
 										<tr>
 											<td>
+												<p class="mb-0">7</p>
+											</td>
+											<td>
+												<p class="mb-0">Social Media Marketing</p>
+											</td>
+											<td>
+												<p class="mb-0">Hermione Butler</p>
+											</td>
+											<td>
+												<p class="mb-0">05 July 2023</p>
+											</td>
+											<td>
+												<p class="text-success rounded-pill mb-0">Completed</p>
+											</td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
+										</tr>
+										<tr>
+											<td>
 												<p class="mb-0">8</p>
 											</td>
 											<td>
-												<p class="mb-0">LED</p>
+												<p class="mb-0">Email Marketing</p>
 											</td>
 											<td>
-												<p class="mb-0">Darry Parker</p>
+												<p class="mb-0">Jena Gaines</p>
 											</td>
 											<td>
-												<p class="mb-0">01 February 2022</p>
+												<p class="mb-0">01 August 2023</p>
 											</td>
 											<td>
-												<p class="mb-0">$1500</p>
+												<p class="text-warning rounded-pill mb-0">Pending</p>
+											</td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="mb-0">9</p>
 											</td>
 											<td>
-												<p class="mb-0">Online Payment</p>
+												<p class="mb-0">Search Engine Optimization</p>
 											</td>
 											<td>
-												<p class="text-success rounded-pill mb-0">Shipped</p>
+												<p class="mb-0">Martena Mccray</p>
+											</td>
+											<td>
+												<p class="mb-0">12 September 2023</p>
+											</td>
+											<td>
+												<p class="text-danger rounded-pill mb-0">Cancelled</p>
+											</td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="mb-0">10</p>
+											</td>
+											<td>
+												<p class="mb-0">Mobile App</p>
+											</td>
+											<td>
+												<p class="mb-0">Olivia Liang</p>
+											</td>
+											<td>
+												<p class="mb-0">16 October 2023</p>
+											</td>
+											<td>
+												<p class="text-success rounded-pill mb-0">Completed</p>
+											</td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="mb-0">11</p>
+											</td>
+											<td>
+												<p class="mb-0">Website Desgin</p>
+											</td>
+											<td>
+												<p class="mb-0">Paul Byrd</p>
+											</td>
+											<td>
+												<p class="mb-0">20 November 2023</p>
+											</td>
+											<td>
+												<p class="text-warning rounded-pill mb-0">Pending</p>
+											</td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="mb-0">12</p>
+											</td>
+											<td>
+												<p class="mb-0">API Integration</p>
+											</td>
+											<td>
+												<p class="mb-0">Quinn Flynn</p>
+											</td>
+											<td>
+												<p class="mb-0">13 December 2023</p>
+											</td>
+											<td>
+												<p class="text-danger rounded-pill mb-0">Cancelled</p>
+											</td>
+											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="mb-0">13</p>
+											</td>
+											<td>
+												<p class="mb-0">Customized Software</p>
+											</td>
+											<td>
+												<p class="mb-0">Rhona Davidson</p>
+											</td>
+											<td>
+												<p class="mb-0">15 January 2024</p>
+											</td>
+											<td>
+												<p class="text-info rounded-pill mb-0">In Progress</p>
 											</td>
 											<td><i class="fa-solid fa-pen-to-square text-primary mr-2" data-toggle="tooltip" data-placement="bottom" title="Edit"></i> <i class="fa-solid fa-trash text-danger" data-toggle="tooltip" data-placement="bottom" title="Delete"></i></td>
 										</tr>
@@ -916,12 +1042,12 @@
 	<div class="modal right fade chat-modal" id="myModal2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<!-- Modal Header -->
+				
 				<div class="modal-header">
 					<h4 class="modal-title">Chat</h4>
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
-				<!-- Modal body -->
+				
 				<div class="modal-body">
 					<ul class="contacts">
 						<li class="name-first-letter">A</li>
@@ -1058,12 +1184,12 @@
 	<div class="modal right fade" id="myModal1">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<!-- Modal Header -->
+				
 				<div class="modal-header notification-header">
 					<h4 class="modal-title notification-title">Notification</h4>
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
-				<!-- Modal body -->
+				
 				<div class="modal-body">
 					<ul class="notification-nav">
 						<li class="nav-item">
@@ -1176,7 +1302,7 @@
 						</li>
 					</ul>
 				</div>
-				<!-- Modal footer -->
+				
 				<div class="modal-footer"> <a href="#" class="btn btn-danger btn-lg d-block mx-auto notification-btn">View all notifications</a> </div>
 			</div>
 		</div>
@@ -1187,13 +1313,13 @@
 		<div class="modal-dialog modal-lg modal-dialog-centered">
 			<div class="modal-content">
 		  
-				<!-- Modal Header -->
+				
 				<div class="modal-header">
 					<h4 class="modal-title">Add Todo List</h4>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 			
-				<!-- Modal body -->
+				
 				<div class="modal-body">
 					<form>
 						<div class="row">
@@ -1213,16 +1339,74 @@
 					</form>
 				</div>
 			
-				<!-- Modal footer -->
+				
 				<div class="modal-footer">
-					<button type="button" class="btn btn-purple" data-dismiss="modal"><i class="fa-regular fa-square-plus pr-2"></i>Add</button>
+					<button type="button" class="btn btn-green" data-dismiss="modal"><i class="fa-regular fa-square-plus pr-2"></i>Add</button>
 				</div>
 			
 		  	</div>
 		</div>
 	</div>
 
-	<a id="back-to-top" href="#" class="btn btn-primary btn-purple btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+	<a id="back-to-top" href="#" class="btn btn-primary btn-blue btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+
+	<!-- Start Modal -->
+	<div class="modal" id="myModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Edit</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+		
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="project">Projects:</label>
+								<input type="text" class="form-control" placeholder="Enter Project Name" id="project">
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="customers">Customers:</label>
+								<input type="text" class="form-control" placeholder="Enter Customer Name" id="customers">
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="date">Date:</label>
+								<input type="date" class="form-control" id="date">
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="status">Status:</label>
+								<select class="form-control" id="status">
+									<option>Select Status</option>
+									<option>Completed</option>
+									<option>Pending</option>
+									<option>Cancelled</option>
+									<option>In Progress</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-blue" data-dismiss="modal"><i class="fa-solid fa-xmark pr-2"></i>Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Modal -->
 
 	<!-- Scripts -->  
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
@@ -1240,6 +1424,7 @@
 	<script src="vendor/datatables/jszip/jszip.min.js"></script>
 	<script src="vendor/datatables/pdfmake/pdfmake.min.js"></script>
 	<script src="vendor/datatables/pdfmake/vfs_fonts.js"></script>
+	<script src="vendor/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/home.js"></script>
 
