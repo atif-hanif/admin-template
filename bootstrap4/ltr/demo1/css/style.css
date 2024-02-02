@@ -228,7 +228,7 @@ a:hover {
 	font-size: 16px;
 	line-height: 40px;
 	position: absolute;
-	right: 30px;
+	right: 15px;
 	-webkit-transition: all 0.05s ease-in;
 	-o-transition: all 0.05s ease-in;
 	transition: all 0.05s ease-in;
@@ -853,13 +853,13 @@ a:hover {
 
 /* Firefox */
 * {
-    scrollbar-width: auto;
+    scrollbar-width: thin;
     scrollbar-color: var(--primary-color) var(--white-color);
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 *::-webkit-scrollbar-track {
@@ -1182,6 +1182,14 @@ a[aria-expanded=false] .fa-angle-down {
 
 /* End Scrollspy */
 
+#fr-logo {
+    display: none;
+}
+
+.tox-notifications-container {
+    display: none !important;
+}
+
 /* Start Footer */
 
 .footer {
@@ -1202,7 +1210,6 @@ a[aria-expanded=false] .fa-angle-down {
     margin-bottom: 0px;
     color: var(--primary-color);
 }
-
 
 /* End Footer */
 
