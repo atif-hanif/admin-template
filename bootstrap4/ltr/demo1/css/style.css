@@ -1190,6 +1190,24 @@ a[aria-expanded=false] .fa-angle-down {
     display: none !important;
 }
 
+/* Start Calendar */
+
+#external-events {
+    border: 1px solid #ccc;
+    background: #eee;
+}
+  
+#external-events .fc-event {
+    margin: 1em 0;
+    cursor: move;
+}
+
+.fc-event {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 3px 5px;
+}
+
 /* Start Footer */
 
 .footer {

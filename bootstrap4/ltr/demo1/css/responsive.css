@@ -93,7 +93,20 @@
         left: 100%;
         top: 38%;
         background: #1d1b31;
+    }
 
+    .fc .fc-toolbar {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .fc-toolbar-chunk {
+        margin-bottom: 10px;
+    }
+
+    .fc .fc-toolbar.fc-header-toolbar {
+        margin-bottom: 0px;
     }
 }
 
