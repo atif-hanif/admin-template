@@ -150,14 +150,8 @@
 						<nav aria-label="breadcrumb" class="second">
 							<ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4 mb-0">
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="black-text text-uppercase " href="javascript:void(0)">
+									<a class="black-text text-uppercase " href="calendar.html">
 										<span class="align-middle">Calendar</span>
-									</a>
-									<i class="fa-solid fa-angles-right"></i>
-								</li>
-								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="full-calendar.html">
-										<span class="align-middle">Full Calendar</span>
 									</a>
 								</li>
 							</ol>
@@ -168,30 +162,39 @@
 
 			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
 				<div class="col-sm-12">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+					<div class="card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Full Calendar</h5>
+							<h5 class="mb-0">Calendar</h5>
 						</div>
 						<div class="card-body">
                             <div class="row">
-                                <div class="col-md-2">
-                                    <div id="external-events" class="py-3 px-2">
-                                        <p><strong>Draggable Events</strong></p>
-                                        <p class="fc-event mb-0">My Event 1</p>
-                                        <p class="fc-event mb-0">My Event 2</p>
-                                        <p class="fc-event mb-0">My Event 3</p>
-                                        <p class="fc-event mb-0">My Event 4</p>
-                                        <p class="fc-event mb-0">My Event 5</p>
-                                        <div class="form-group form-check mt-3">
-                                            <label class="form-check-label">
-                                              <input class="form-check-input" type="checkbox" id="drop-remove"> Remove after drop
-                                            </label>
-                                        </div>
-                                    </div>
+                                <div class="col-xl-3">
+									<div class="card h-100">
+										<div class="card-body">
+											<button class="btn btn-blue d-block mx-auto" type="button" data-toggle="modal" data-target="#add_event">Create New Event</button>
+											<div id="external-events" class="mt-3">
+												<p><strong>Draggable Events</strong></p>
+												<p class="fc-event text-white px-2 py-1 rounded">My Event 1</p>
+												<p class="fc-event text-white px-2 py-1 rounded">My Event 2</p>
+												<p class="fc-event text-white px-2 py-1 rounded">My Event 3</p>
+												<p class="fc-event text-white px-2 py-1 rounded">My Event 4</p>
+												<p class="fc-event text-white px-2 py-1 rounded">My Event 5</p>
+												<div class="form-group form-check mt-3">
+													<label class="form-check-label">
+													  <input class="form-check-input" type="checkbox" id="drop-remove"> Remove after drop
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
                                 </div>
-                                <div class="col-md-10">
-                                    <div id="calendar-container">
-                                        <div id="calendar"></div>
+                                <div class="col-xl-9 mt-3 mt-xl-0">
+									<div class="card">
+										<div class="card-body">
+											<div id="calendar-container">
+												<div id="calendar"></div>
+											</div>
+										</div>
                                     </div>
                                 </div>
                             </div>
@@ -210,6 +213,48 @@
 		</div>
 	</footer>
 	<!-- End Footer -->
+
+	<!-- Start Add Modal -->
+	<div class="modal fade edit-form" id="add_event">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Add Event</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				
+				<div class="modal-body">
+					<form id="myForm">
+						<div class="modal-body">
+							<div class="alert alert-danger " role="alert" id="danger_alert" style="display: none;">
+								End date should be greater than start date.
+							  </div>
+							<div class="form-group">
+								<label for="event_title">Event name <span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="event_title" placeholder="Enter event name" required>
+							</div>
+							<div class="form-group">
+								<label for="start_date">Start date <span class="text-danger">*</span></label>
+								<input type="date" class="form-control" id="start_date" placeholder="start_date" required>
+							</div>
+							<div class="form-group">
+								<label for="end_date">End date - <small class="text-muted">Optional</small></label>
+								<input type="date" class="form-control" id="end_date" placeholder="end_date">
+							</div>
+							<div class="form-group">
+								<label for="event_color">Color</label>
+								<input type="color" class="form-control" id="event_color" value="#3788d8">
+							  </div>
+						</div>
+						<div class="modal-footer text-right">
+							<button type="submit" class="btn btn-blue" id="submit_button">Submit</button>
+						  </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Add Modal -->
 
 	<!-- Chat Modal -->
 	<div class="modal right fade chat-modal" id="myModal2">
@@ -515,52 +560,246 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-green" data-dismiss="modal">Add</button>
 				</div>
-			
 		  	</div>
 		</div>
 	  </div>
 
 	<!-- Scripts -->  
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+	<script src="vendor/moment/moment.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/fullcalendar/dist/index.global.min.js"></script>
+	<script src="vendor/uuidv4/uuidv4.min.js"></script>
 	<script src="js/script.js"></script>
 
     <script> 
-        document.addEventListener('DOMContentLoaded', function() {
-        var Calendar = FullCalendar.Calendar;
-        var Draggable = FullCalendar.Draggable;
+		document.addEventListener('DOMContentLoaded', function () {
+			var Calendar = FullCalendar.Calendar;
+			var Draggable = FullCalendar.Draggable;
 
-        var containerEl = document.getElementById('external-events');
-        var calendarEl = document.getElementById('calendar');
-        var checkbox = document.getElementById('drop-remove');
+			var containerEl = document.getElementById('external-events');
+			var calendarEl = document.getElementById('calendar');
+			var checkbox = document.getElementById('drop-remove');
+			const eventModal = new bootstrap.Modal(document.getElementById('add_event'));
+			const dangerAlert = document.getElementById('danger_alert');
+			const close = document.querySelector('.btn-close');
+		
+			new Draggable(containerEl, {
+				itemSelector: '.fc-event',
+				eventData: function(eventEl) {
+					return {
+						title: eventEl.innerText
+					};
+				}
+			});
 
-        new Draggable(containerEl, {
-            itemSelector: '.fc-event',
-            eventData: function(eventEl) {
-                return {
-                    title: eventEl.innerText
-                };
-            }
-        });
+			const myEvents = JSON.parse(localStorage.getItem('events'));
 
-        var calendar = new Calendar(calendarEl, {
-            headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            },
-            editable: true,
-            droppable: true,
-            drop: function(info) {
-                if (checkbox.checked) {
-                    info.draggedEl.parentNode.removeChild(info.draggedEl);
-                }
-            }
-        });
+			const calendar = new FullCalendar.Calendar(calendarEl, {
+				headerToolbar: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+				},
+				droppable: true,
+				allDay: true,
+				editable: true,
+				selectable: true,
+				unselectAuto: true,
+				displayEventTime: false,
+				events: myEvents,
+				drop: function(info) {
+					if (checkbox.checked) {
+						info.draggedEl.parentNode.removeChild(info.draggedEl);
+					}
+				},
 
-        calendar.render();
-        });
+				eventRender: function(info) {
+					info.el.addEventListener('contextmenu', function(e) {
+						e.preventDefault();
+						let existingMenu = document.querySelector('.context-menu');
+						existingMenu && existingMenu.remove();
+						let menu = document.createElement('div');
+						menu.className = 'context-menu';
+						menu.innerHTML = `<ul>
+						<li><i class="fas fa-edit"></i>Edit</li>
+						<li><i class="fas fa-trash-alt"></i>Delete</li>
+						</ul>`;
+
+						const eventIndex = myEvents.findIndex(event => event.id === info.event.id);
+
+						document.body.appendChild(menu);
+						menu.style.top = e.pageY + 'px';
+						menu.style.left = e.pageX + 'px';
+
+						// Edit context menu
+
+						menu.querySelector('li:first-child').addEventListener('click', function() {
+							menu.remove();
+
+							const editModal = new bootstrap.Modal(document.getElementById('add_event'));
+							const modalTitle = document.getElementById('modal-title');
+							const titleInput = document.getElementById('event_title');
+							const startDateInput = document.getElementById('start_date');
+							const endDateInput = document.getElementById('end_date');
+							const colorInput = document.getElementById('event_color');
+							const submitButton = document.getElementById('submit_button');
+							const cancelButton = document.getElementById('cancel-button');
+							modalTitle.innerHTML = 'Edit Event';
+							titleInput.value = info.event.title;
+							startDateInput.value = moment(info.event.start).format('YYYY-MM-DD');
+							endDateInput.value = moment(info.event.end, 'YYYY-MM-DD').subtract(1, 'day').format('YYYY-MM-DD');
+							colorInput.value = info.event.backgroundColor;
+							submitButton.innerHTML = 'Save Changes';
+
+							editModal.show();
+
+							submitButton.classList.remove('btn-blue')
+							submitButton.classList.add('btn-success')
+
+							// Edit button
+
+							submitButton.addEventListener('click', function() {
+								const updatedEvents = {
+									id: info.event.id,
+									title: titleInput.value,
+									start: startDateInput.value,
+									end: moment(endDateInput.value, 'YYYY-MM-DD').add(1, 'day').format('YYYY-MM-DD'),
+									backgroundColor: colorInput.value
+								}
+
+								if ( updatedEvents.end <= updatedEvents.start) { // add if statement to check end date
+									dangerAlert.style.display = 'block';
+									return;
+								}
+							
+								const eventIndex = myEvents.findIndex(event => event.id === updatedEvents.id);
+								myEvents.splice(eventIndex, 1, updatedEvents);
+							
+								localStorage.setItem('events', JSON.stringify(myEvents));
+							
+								// Update the event in the calendar
+								const calendarEvent = calendar.getEventById(info.event.id);
+								calendarEvent.setProp('title', updatedEvents.title);
+								calendarEvent.setStart(updatedEvents.start);
+								calendarEvent.setEnd(updatedEvents.end);
+								calendarEvent.setProp('backgroundColor', updatedEvents.backgroundColor);
+
+								editModal.hide();
+
+							})
+
+						});
+
+						// Delete menu
+						menu.querySelector('li:last-child').addEventListener('click', function() {
+							const deleteModal = new bootstrap.Modal(document.getElementById('delete-modal'));
+							const modalBody = document.getElementById('delete-modal-body');
+							const cancelModal = document.getElementById('cancel-button');
+							modalBody.innerHTML = `Are you sure you want to delete <b>"${info.event.title}"</b>`
+							deleteModal.show();
+
+							const deleteButton = document.getElementById('delete-button');
+							deleteButton.addEventListener('click', function () {
+								myEvents.splice(eventIndex, 1);
+								localStorage.setItem('events', JSON.stringify(myEvents));
+								calendar.getEventById(info.event.id).remove();
+								deleteModal.hide();
+								menu.remove();
+
+							});
+
+							cancelModal.addEventListener('click', function () { 
+								deleteModal.hide();
+							})
+
+						});
+						document.addEventListener('click', function() {
+							menu.remove();
+						});
+					});
+				},
+
+				eventDrop: function(info) { 
+					let myEvents = JSON.parse(localStorage.getItem('events')) || [];
+					const eventIndex = myEvents.findIndex(event => event.id === info.event.id);
+					const updatedEvent = {
+						...myEvents[eventIndex],
+						id: info.event.id, 
+						title: info.event.title,
+						start: moment(info.event.start).format('YYYY-MM-DD'),
+						end: moment(info.event.end).format('YYYY-MM-DD'),
+						backgroundColor: info.event.backgroundColor
+					};
+					myEvents.splice(eventIndex, 1, updatedEvent); // Replace old event data with updated event data
+					localStorage.setItem('events', JSON.stringify(myEvents));
+					console.log(updatedEvent);
+				}
+
+			});
+
+			calendar.on('select', function(info) {
+
+				const startDateInput = document.getElementById('start_date');
+				const endDateInput = document.getElementById('end_date');
+				startDateInput.value = info.startStr;
+				const endDate = moment(info.endStr, 'YYYY-MM-DD').subtract(1, 'day').format('YYYY-MM-DD');
+				endDateInput.value = endDate;
+				if(startDateInput.value === endDate) {
+				endDateInput.value = '';
+				}
+			});
+
+			calendar.render();
+
+			const form = document.querySelector('form');
+
+			form.addEventListener('submit', function(event) {
+				event.preventDefault(); // prevent default form submission
+
+				// retrieve the form input values
+				const title = document.querySelector('#event_title').value;
+				const startDate = document.querySelector('#start_date').value;
+				const endDate = document.querySelector('#end_date').value;
+				const color = document.querySelector('#event_color').value;
+				const endDateFormatted = moment(endDate, 'YYYY-MM-DD').add(1, 'day').format('YYYY-MM-DD');
+				const eventId = uuidv4();
+
+				console.log(eventId);
+
+				if (endDateFormatted <= startDate) { // add if statement to check end date
+					dangerAlert.style.display = 'block';
+					return;
+				}
+
+				const newEvent = {
+					id: eventId,
+					title: title,
+					start: startDate,
+					end: endDateFormatted,
+					allDay: false,
+					backgroundColor: color
+				};
+
+				// add the new event to the myEvents array
+				//myEvents.push(newEvent);
+
+				// render the new event on the calendar
+				calendar.addEvent(newEvent);
+
+				// save events to local storage
+				localStorage.setItem('events', JSON.stringify(myEvents));
+
+				eventModal.hide();
+				form.reset();
+			});
+
+			eventModal._element.addEventListener('hide.modal', function () {
+				dangerAlert.style.display = 'none';
+				form.reset(); 
+			});
+
+		});
     </script>
 
 </body>

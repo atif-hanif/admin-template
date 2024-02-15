@@ -4,7 +4,6 @@
     --header-height: 3rem;
     --nav-width: 224px;
     --primary-color: #0766AD;
-    --secondary-color: #29ADB2;
     --active-color: #0766AD;
     --white-color: #FFFFFF;
     --black-color: #000000;
@@ -12,7 +11,7 @@
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100;
-    --submenu-active: #29ADB2;
+    --submenu-active: #0766AD;
 }
 
 *,
@@ -25,6 +24,7 @@ body {
     position: relative;
     /* margin: var(--header-height) 0 0 0;
     padding: 0 1rem; */
+    color: var(--black-color);
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     transition: .5s;
@@ -67,27 +67,6 @@ input[type=checkbox], input[type=radio] {
     color: var(--primary-color);
     background-color: var(--white-color);
     border-color: var(--primary-color);
-}
-
-.btn-green {
-    color: var(--white-color);
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-}
-
-.btn-green:hover {
-    color: var(--secondary-color);
-    background-color: var(--white-color);
-    border-color: var(--secondary-color);
-}
-
-.bg-green {
-    background-color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
-}
-
-.border-green {
-    border: 1px solid var(--secondary-color);
 }
 
 .bg-gradient {
@@ -236,7 +215,7 @@ a:hover {
 
 .sidebar-menu li.dropdown.open > a {
 	color: var(--white-color);
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .sidebar-menu li.dropdown.open > a > .arrow {
@@ -1191,22 +1170,124 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 /* Start Calendar */
-
-#external-events {
-    border: 1px solid #ccc;
-    background: #eee;
-}
   
 #external-events .fc-event {
     margin: 1em 0;
     cursor: move;
 }
 
-.fc-event {
+.fc-event, .fc-event-dot {
     background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 3px 5px;
 }
+
+.context-menu {
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+}
+
+/* .context-menu.show {
+    display: block;
+  } */
+
+.context-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.context-menu ul>li {
+    display: block;
+    ;
+    padding: 5px 15px;
+    list-style-type: none;
+    color: #333;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: 0.10s;
+    font-size: 13px;
+}
+
+.context-menu ul>li:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+.fc-h-event {
+    /* background-color: transparent; */
+    border: 1px solid transparent;
+    display: block;
+}
+
+/* End Calendar */
+
+/* Start File Manager */
+
+.fm-file-box {
+    font-size: 25px;
+    background: #e9ecef;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .25rem;
+}
+
+.fm-menu .list-group a {
+    color: var(--black-color);
+}
+
+.list-group-flush>.list-group-item {
+    border-width: 0 0 1px;
+}
+
+.list-group-item+.list-group-item {
+    border-top-width: 0;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.radius-15 {
+    border-radius: 15px;
+}
+
+.fm-icon-box {
+    font-size: 32px;
+    background: #ffffff;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .25rem;
+}
+
+.user-groups img {
+    margin-left: -14px;
+    border: 1px solid #e4e4e4;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+/* End File Manager */
 
 /* Start Footer */
 
