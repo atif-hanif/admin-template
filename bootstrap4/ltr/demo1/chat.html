@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Chat | Nova Admin Template</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="vendor/chat/chat.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body class="app">
+	<!-- Start Side Nav -->
+	<div class="sidebar">
+		<div class="sidebar-inner">
+			<div class="sidebar-logo">
+				<div class="d-flex align-items-center flex-nowrap">
+					<a class="sidebar-link text-decoration-none nav-logo" href="index.html">
+						<div class="d-flex align-items-center flex-nowrap">
+							<div class="logo-sm">
+								<img src="images/icon-logo.png" alt="logo" class="icon-logo">
+							</div>
+							<img src="images/nova-logo.png" alt="logo" class="main-logo">
+						</div>
+					</a>
+					<div class="mobile-toggle sidebar-toggle mt-n2">
+						<a href="#" class="text-decoration-none"> <i class="far fa-times-circle"></i> </a>
+					</div>
+				</div>
+			</div>
+			<ul class="sidebar-menu scrollable position-relative">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">
+						<i class='bx bxs-dashboard'></i>
+						<span class="title">Dashboard</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown open">
+					<a class="nav-link active" href="#">
+						<i class='bx bxl-bootstrap'></i>
+						<span class="title">Bootstrap</span>
+						<span class="arrow">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="sidebar-link dropdown-item" href="accordion.html">Accordion</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="alerts.html">Alerts</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="badges.html">Badges</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="breadcrumb.html">Breadcrumb</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="buttons.html">Buttons</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="button-group.html">Button Group</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="cards.html">Cards</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="carousel.html">Carousel</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="collapse.html">Collapse</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="dropdown.html">Dropdown</a>
+						</li>
+                        <li>
+							<a class="sidebar-link sub-menu dropdown-item" href="forms.html">Forms</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- End Side Nav -->
+
+	<!-- Start Main -->
+	<div class="container-wide">
+		<header class="header">
+			<nav class="navbar navbar-expand-md navbar-dark top-nav py-3">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item active">
+						<a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
+							<i class="fa-solid fa-chevrons-left"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav d-none d-md-flex align-items-center ml-auto">
+					<li class="nav-item">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="" placeholder="Search">
+							<a href="#" class="search_icon">
+								<i class="fa-solid fa-magnifying-glass search-icon"></i>
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="toggleFullScreen();">
+							<i class="fa-solid fa-expand full-screen-icon" id="fullscreen"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Email">
+							<i class="fa-solid fa-envelope envelope-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-circle-half-stroke mode-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#chat">
+							<i class="fa-solid fa-message chat-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#notification">
+							<i class="fa-solid fa-bell notification-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="container-fluid main-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card breadcrumb-card">
+						<nav aria-label="breadcrumb" class="second">
+							<ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4 mb-0">
+								<li class="breadcrumb-item font-weight-bold">
+									<a class="black-text text-uppercase" href="chat.html">
+										<span class="align-middle">Chat</span>
+									</a>
+								</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
+				<div class="col-sm-12">
+					<div class="card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Chat</h5>
+						</div>
+						<div class="chat-sidebar">
+                            <div class="inside p-3">
+                                <a href="#">
+                                    <img class="avatar-xl" src="images/avatar/user-9.webp" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
+                                </a>
+                                <div class="data ml-3">
+                                    <h5><a href="#">Keith Morris</a></h5>
+                                    <div class="online-status d-inline-block align-middle">
+                                        <i class="fa-solid fa-circle-small"></i>
+                                    </div>
+                                    <span class="d-inline-block">Active now</span>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-justified mt-2">
+                                <li class="nav-item">
+                                    <a href="#message" data-toggle="tab" class="nav-link text-center active">
+                                        <span data-toggle="tooltip" data-placement="bottom" title="Message">
+                                            <i class="fa-light fa-message d-block py-1"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#notifications" data-toggle="tab" class="nav-link text-center">
+                                        <span data-toggle="tooltip" data-placement="bottom" title="Notifications">
+                                            <i class="fa-regular fa-bell d-block py-1"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contacts" data-toggle="tab" class="nav-link text-center">
+                                        <span data-toggle="tooltip" data-placement="bottom" title="Contacts">
+                                            <i class="fa-light fa-user d-block py-1"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#settings" data-toggle="tab" class="nav-link text-center">
+                                        <span data-toggle="tooltip" data-placement="bottom" title="Settings">
+                                            <i class="fa-regular fa-gear d-block py-1"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content p-3">
+                                <!-- Start of Discussions -->
+                                <div id="message" class="tab-pane fade active show">
+                                    <div class="search">
+                                        <form>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <button class="btn btn-blue" type="button" id="conversations">
+                                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                                    </button>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Search for conversations...">
+                                            </div>
+                                        </form>
+                                        <button class="btn btn-blue d-block mx-auto w-100" data-toggle="modal" data-target="#startnewchat">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </div>
+                                    <div class="list-group sort">
+                                        <button class="btn filterDiscussionsBtn active show" data-toggle="list" data-filter="all">All</button>
+                                        <button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="read">Read</button>
+                                        <button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="unread">Unread</button>
+                                    </div>						
+                                    <div class="discussions">
+                                        <h1>Discussions</h1>
+                                        <div class="list-group" id="chats" role="tablist">
+                                            <a href="#list-chat" class="filterDiscussions all unread single active" id="list-chat-list" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="new bg-yellow">
+                                                    <span>+7</span>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Janette Dalton</h5>
+                                                    <span>Mon</span>
+                                                    <p>A new feature has been updated to your account. Check it out...</p>
+                                                </div>
+                                            </a>									
+                                            <a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="new bg-pink">
+                                                    <span>+10</span>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Michael Knudsen</h5>
+                                                    <span>Sun</span>
+                                                    <p>How can i improve my chances of getting a deposit?</p>
+                                                </div>
+                                            </a>									
+                                            <a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list2" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lean" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Lean Avent</h5>
+                                                    <span>Tus</span>
+                                                    <p>Hey Chris, could i ask you to help me out with variation...</p>
+                                                </div>
+                                            </a>
+                                            <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list2" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="Mariette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Mariette Toles</h5>
+                                                    <span>5 mins</span>
+                                                    <p>By injected humour, or randomised words which...</p>
+                                                </div>
+                                            </a>
+                                            <a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list3" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Harmony" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Harmony Otero</h5>
+                                                    <span>Mon</span>
+                                                    <p>No more running out of the office at 4pm on Fridays!</p>
+                                                </div>
+                                            </a>
+                                            <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list3" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Keith Morris</h5>
+                                                    <span>Fri</span>
+                                                    <p>All your favourite books at your reach! We are now mobile.</p>
+                                                </div>
+                                            </a>
+                                            <a href="#list-request" class="filterDiscussions all unread single" id="list-request-list" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Louis" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="new bg-gray">
+                                                    <span>?</span>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Louis Martinez</h5>
+                                                    <span>Feb 10</span>
+                                                    <p>Hi Keith, I'd like to add you as a contact.</p>
+                                                </div>
+                                            </a>
+                                            <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list4" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Ryan" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Ryan Foster</h5>
+                                                    <span>Feb 9</span>
+                                                    <p>Dear Deborah, your Thai massage is today at 5pm.</p>
+                                                </div>
+                                            </a>
+                                            <a href="#list-chat" class="filterDiscussions all unread single" id="list-chat-list5" data-toggle="list" role="tab">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Mildred" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="new bg-green">
+                                                    <span>+9</span>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Mildred Bennett</h5>
+                                                    <span>Thu</span>
+                                                    <p>Unfortunately your session today has been cancelled!</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Discussions -->
+                                <!-- Start of Notifications -->
+                                <div id="notifications" class="tab-pane fade">
+                                    <div class="search">
+                                        <form class="form-inline position-relative">
+                                            <input type="search" class="form-control" id="notice" placeholder="Filter notifications...">
+                                            <button type="button" class="btn btn-link loop"><i class="material-icons filter-list">filter_list</i></button>
+                                        </form>
+                                    </div>
+                                    <div class="list-group sort">
+                                        <button class="btn filterNotificationsBtn active show" data-toggle="list" data-filter="all">All</button>
+                                        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="latest">Latest</button>
+                                        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="oldest">Oldest</button>
+                                    </div>						
+                                    <div class="notifications">
+                                        <h1>Notifications</h1>
+                                        <div class="list-group" id="alerts" role="tablist">
+                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Janette has accepted your friend request on Swipe.</p>
+                                                    <span>Oct 17, 2018</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Michael, you have a new friend suggestion today.</p>
+                                                    <span>Jun 21, 2018</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="Mariette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Mariette have just sent you a new message.</p>
+                                                    <span>Feb 15, 2018</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Louis" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Louis has a birthday today. Wish her all the best.</p>
+                                                    <span>Mar 23, 2018</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Harmony has accepted your friend request on Swipe.</p>
+                                                    <span>Jan 5, 2018</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Keith have just sent you a new message.</p>
+                                                    <span>Dec 22, 2017</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Michael, you have a new friend suggestion today.</p>
+                                                    <span>Nov 29, 2017</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Ryan have just sent you a new message.</p>
+                                                    <span>Sep 31, 2017</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <p>Mildred has a birthday today. Wish him all the best.</p>
+                                                    <span>Jul 19, 2017</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Notifications -->
+                                <!-- Start of Contacts -->
+                                <div id="contacts" class="tab-pane fade">
+                                    <div class="search">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="input-group search">
+                                                        <div class="input-group-prepend">
+                                                            <button type="button" class="btn btn-primary"><i class="material-icons">search</i></button>
+                                                        </div>
+                                                        <input type="text" class="form-control" placeholder="Search">
+                                                    </div>
+                                                    <button class="btn create w-25 float-right" data-toggle="modal" data-target="#exampleModalCenter"><i class="material-icons">person_add</i></button>
+                                                </div>
+                                            </div>
+                                            
+                                        </form>
+                                        
+                                    </div>
+
+                                    <div class="list-group sort">
+                                        <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button>
+                                        <button class="btn filterMembersBtn" data-toggle="list" data-filter="online">Online</button>
+                                        <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
+                                    </div>						
+                                    <div class="contacts">
+                                        <h1>Contacts</h1>
+                                        <div class="list-group" id="contacts" role="tablist">
+                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Janette Dalton</h5>
+                                                    <p>Sofia, Bulgaria</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Michael Knudsen</h5>
+                                                    <p>Washington, USA</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lean" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Lean Avent</h5>
+                                                    <p>Shanghai, China</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="Mariette" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Mariette Toles</h5>
+                                                    <p>Helena, Montana</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Harmony" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons online">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Harmony Otero</h5>
+                                                    <p>Indore, India</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Keith Morris</h5>
+                                                    <p>Chisinau, Moldova</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Louis" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Louis Martinez</h5>
+                                                    <p>Vienna, Austria</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Ryan" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Ryan Foster</h5>
+                                                    <p>Oslo, Norway</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Mildred" alt="avatar">
+                                                <div class="status">
+                                                    <i class="material-icons offline">fiber_manual_record</i>
+                                                </div>
+                                                <div class="data">
+                                                    <h5>Mildred Bennett</h5>
+                                                    <p>London, United Kingdom</p>
+                                                </div>
+                                                <div class="person-add">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Contacts -->
+                                <!-- Start of Settings -->
+                                <div id="settings" class="tab-pane fade">			
+                                    <div class="settings">
+                                        <div class="profile">
+                                            <img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar">
+                                            <h1><a href="#">Michael Knudsen</a></h1>
+                                            <span>Helena, Montana</span>
+                                            <div class="stats">
+                                                <div class="item">
+                                                    <h2>122</h2>
+                                                    <h3>Fellas</h3>
+                                                </div>
+                                                <div class="item">
+                                                    <h2>305</h2>
+                                                    <h3>Chats</h3>
+                                                </div>
+                                                <div class="item">
+                                                    <h2>1538</h2>
+                                                    <h3>Posts</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="categories" id="accordionSettings">
+                                            <h1>Settings</h1>
+                                            <!-- Start of My Account -->
+                                            <div class="category">
+                                                <a href="#" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <i class="material-icons md-30 online">person_outline</i>
+                                                    <div class="data">
+                                                        <h5>My Account</h5>
+                                                        <p>Update your profile details</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                                <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
+                                                    <div class="content">
+                                                        <div class="upload">
+                                                            <div class="data">
+                                                                <img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="image">
+                                                                <label>
+                                                                    <input type="file">
+                                                                    <span class="btn button">Upload avatar</span>
+                                                                </label>
+                                                            </div>
+                                                            <p>For best results, use an image at least 256px by 256px in either .jpg or .png format!</p>
+                                                        </div>
+                                                        <form>
+                                                            <div class="parent">
+                                                                <div class="field">
+                                                                    <label for="firstName">First name <span>*</span></label>
+                                                                    <input type="text" class="form-control" id="firstName" placeholder="First name" value="Michael" required>
+                                                                </div>
+                                                                <div class="field">
+                                                                    <label for="lastName">Last name <span>*</span></label>
+                                                                    <input type="text" class="form-control" id="lastName" placeholder="Last name" value="Knudsen" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="field">
+                                                                <label for="email">Email <span>*</span></label>
+                                                                <input type="email" class="form-control" id="email" placeholder="Enter your email address" value="michael@gmail.com" required>
+                                                            </div>
+                                                            <div class="field">
+                                                                <label for="password">Password</label>
+                                                                <input type="password" class="form-control" id="password" placeholder="Enter a new password" value="password" required>
+                                                            </div>
+                                                            <div class="field">
+                                                                <label for="location">Location</label>
+                                                                <input type="text" class="form-control" id="location" placeholder="Enter your location" value="Helena, Montana" required>
+                                                            </div>
+                                                            <button class="btn btn-link w-100">Delete Account</button>
+                                                            <button type="submit" class="btn button w-100">Apply</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of My Account -->
+                                            <!-- Start of Chat History -->
+                                            <div class="category">
+                                                <a href="#" class="title collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                    <i class="material-icons md-30 online">mail_outline</i>
+                                                    <div class="data">
+                                                        <h5>Chats</h5>
+                                                        <p>Check your chat history</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                                <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionSettings">
+                                                    <div class="content layer">
+                                                        <div class="history">
+                                                            <p>When you clear your conversation history, the messages will be deleted from your own device.</p>
+                                                            <p>The messages won't be deleted or cleared on the devices of the people you chatted with.</p>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="same-address">
+                                                                <label class="custom-control-label" for="same-address">Hide will remove your chat history from the recent list.</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="save-info">
+                                                                <label class="custom-control-label" for="save-info">Delete will remove your chat history from the device.</label>
+                                                            </div>
+                                                            <button type="submit" class="btn button w-100">Clear blah-blah</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Chat History -->
+                                            <!-- Start of Notifications Settings -->
+                                            <div class="category">
+                                                <a href="#" class="title collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                    <i class="material-icons md-30 online">notifications_none</i>
+                                                    <div class="data">
+                                                        <h5>Notifications</h5>
+                                                        <p>Turn notifications on or off</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                                <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionSettings">
+                                                    <div class="content no-layer">
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Desktop Notifications</h5>
+                                                                <p>You can set up Swipe to receive notifications when you have new messages.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Unread Message Badge</h5>
+                                                                <p>If enabled shows a red badge on the Swipe app icon when you have unread messages.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Taskbar Flashing</h5>
+                                                                <p>Flashes the Swipe app on mobile in your taskbar when you have new notifications.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Notification Sound</h5>
+                                                                <p>Set the app to alert you via notification sound when you have unread messages.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Vibrate</h5>
+                                                                <p>Vibrate when receiving new messages (Ensure system vibration is also enabled).</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Turn On Lights</h5>
+                                                                <p>When someone send you a text message you will receive alert via notification light.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Notifications Settings -->
+                                            <!-- Start of Connections -->
+                                            <div class="category">
+                                                <a href="#" class="title collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                                    <i class="material-icons md-30 online">sync</i>
+                                                    <div class="data">
+                                                        <h5>Connections</h5>
+                                                        <p>Sync your social accounts</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                                <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionSettings">
+                                                    <div class="content">
+                                                        <div class="app">
+                                                            <img src="dist/img/integrations/slack.svg" alt="app">
+                                                            <div class="permissions">
+                                                                <h5>Skrill</h5>
+                                                                <p>Read, Write, Comment</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="app">
+                                                            <img src="dist/img/integrations/dropbox.svg" alt="app">
+                                                            <div class="permissions">
+                                                                <h5>Dropbox</h5>
+                                                                <p>Read, Write, Upload</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="app">
+                                                            <img src="dist/img/integrations/drive.svg" alt="app">
+                                                            <div class="permissions">
+                                                                <h5>Google Drive</h5>
+                                                                <p>No permissions set</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="app">
+                                                            <img src="dist/img/integrations/trello.svg" alt="app">
+                                                            <div class="permissions">
+                                                                <h5>Trello</h5>
+                                                                <p>No permissions set</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Connections -->
+                                            <!-- Start of Appearance Settings -->
+                                            <div class="category">
+                                                <a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                                    <i class="material-icons md-30 online">colorize</i>
+                                                    <div class="data">
+                                                        <h5>Appearance</h5>
+                                                        <p>Customize the look of Swipe</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                                <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordionSettings">
+                                                    <div class="content no-layer">
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Turn Off Lights</h5>
+                                                                <p>The dark mode is applied to core areas of the app that are normally displayed as light.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round mode"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Appearance Settings -->
+                                            <!-- Start of Language -->
+                                            <div class="category">
+                                                <a href="#" class="title collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                                    <i class="material-icons md-30 online">language</i>
+                                                    <div class="data">
+                                                        <h5>Language</h5>
+                                                        <p>Select preferred language</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                                <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#accordionSettings">
+                                                    <div class="content layer">
+                                                        <div class="language">
+                                                            <label for="country">Language</label>
+                                                            <select class="custom-select" id="country" required>
+                                                                <option value="">Select an language...</option>
+                                                                <option>English, UK</option>
+                                                                <option>English, US</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Language -->
+                                            <!-- Start of Privacy & Safety -->
+                                            <div class="category">
+                                                <a href="#" class="title collapsed" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                                    <i class="material-icons md-30 online">lock_outline</i>
+                                                    <div class="data">
+                                                        <h5>Privacy & Safety</h5>
+                                                        <p>Control your privacy settings</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                                <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#accordionSettings">
+                                                    <div class="content no-layer">
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Keep Me Safe</h5>
+                                                                <p>Automatically scan and delete direct messages you receive from everyone that contain explict content.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>My Friends Are Nice</h5>
+                                                                <p>If enabled scans direct messages from everyone unless they are listed as your friend.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Everyone can add me</h5>
+                                                                <p>If enabled anyone in or out your friends of friends list can send you a friend request.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Friends of Friends</h5>
+                                                                <p>Only your friends or your mutual friends will be able to send you a friend reuqest.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox" checked>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Data to Improve</h5>
+                                                                <p>This settings allows us to use and process information for analytical purposes.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="set">
+                                                            <div class="details">
+                                                                <h5>Data to Customize</h5>
+                                                                <p>This settings allows us to use your information to customize Swipe for you.</p>
+                                                            </div>
+                                                            <label class="switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Privacy & Safety -->
+                                            <!-- Start of Logout -->
+                                            <div class="category">
+                                                <a href="sign-in.html" class="title collapsed">
+                                                    <i class="material-icons md-30 online">power_settings_new</i>
+                                                    <div class="data">
+                                                        <h5>Power Off</h5>
+                                                        <p>Log out of your account</p>
+                                                    </div>
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>
+                                            </div>
+                                            <!-- End of Logout -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Settings -->
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Main -->
+
+	<!-- Start Footer -->
+	<footer class="footer">
+		<div class="copyrights">
+			<p class="text-center">© Copyrights 2023. All Rights Reserved.</p>
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<!-- Start Chat Modal -->
+	<div class="modal right fade chat-modal" id="chat">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Chat</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<ul class="contacts">
+						<li class="name-first-letter">A</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-1.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Alexander</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-7.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Amelia</span>
+									<p>7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">B</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-2.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Bradley</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-8.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Bella</span>
+									<p>left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">C</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-3.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Charles</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-9.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Camila</span>
+									<p>left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">D</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-4.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>David</span>
+									<p> 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-10.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Daisy</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">E</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-5.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Ethan</span>
+									<p>left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-11.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Emma</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">F</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-6.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Finn</span>
+									<p>left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-12.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Floara</span>
+									<p>left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Chat Modal -->
+
+	<!-- Start Notification Modal -->
+	<div class="modal right fade" id="notification">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header notification-header">
+					<h4 class="modal-title notification-title">Notification</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<ul class="notification-nav">
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6>
+										<small class="d-block date-time">01 October 2021 - 02:26 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6>
+										<small class="d-block date-time">01 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6>
+										<small class="d-block date-time">02 October 2021 - 10:00 AM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6>
+										<small class="d-block date-time">02 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> JC </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jackie send you photo</h6>
+										<small class="d-block date-time">03 October 2021 - 02:30 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> SB </div>
+									<div class="media-body">
+										<h6 class="mb-0">Shane created task</h6>
+										<small class="d-block date-time">03 October 2021 - 08:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> AD </div>
+									<div class="media-body">
+										<h6 class="mb-0">Alexa sent an email</h6>
+										<small class="d-block date-time">04 October 2021 - 10:00 AM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> ZS </div>
+									<div class="media-body">
+										<h6 class="mb-0">Zoe added a photo</h6>
+										<small class="d-block date-time">04 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6>
+										<small class="d-block date-time">01 October 2021 - 02:26 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6>
+										<small class="d-block date-time">01 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6>
+										<small class="d-block date-time">02 October 2021 - 10:00 AM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6>
+										<small class="d-block date-time">02 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn btn-blue btn-lg d-block mx-auto">View all notifications</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Notification Modal -->
+
+    <!-- Start Create Chat -->
+    <div class="modal fade" id="startnewchat" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="requests">
+                <div class="title">
+                    <h1>Start new chat</h1>
+                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+                </div>
+                <div class="content">
+                    <form>
+                        <div class="form-group">
+                            <label for="participant">Recipient:</label>
+                            <input type="text" class="form-control" id="participant" placeholder="Add recipient..." required>
+                            <div class="user" id="recipient">
+                                <img class="avatar-sm" src="dist/img/avatars/avatar-female-5.jpg" alt="avatar">
+                                <h5>Keith Morris</h5>
+                                <button class="btn"><i class="material-icons">close</i></button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="topic">Topic:</label>
+                            <input type="text" class="form-control" id="topic" placeholder="What's the topic?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea class="text-control" id="message" placeholder="Send your welcome message...">Hmm, are you friendly?</textarea>
+                        </div>
+                        <button type="submit" class="btn button w-100">Start New Chat</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Create Chat -->
+
+	<!-- Start Back to Top -->
+	<a id="back-to-top" href="#" class="btn btn-primary btn-blue btn-lg back-to-top" role="button">
+		<i class="fas fa-chevron-up"></i>
+
+	<!-- Scripts -->  
+	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+	<script src="vendor/moment/moment.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/chat/chat.js"></script>
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>

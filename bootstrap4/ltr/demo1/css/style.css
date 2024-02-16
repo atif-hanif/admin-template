@@ -57,6 +57,10 @@ input[type=checkbox], input[type=radio] {
     z-index: 200;
 }
 
+.bg-blue {
+    background-color: var(--primary-color);
+}
+
 .btn-blue {
     color: var(--white-color);
     background-color: var(--primary-color);
@@ -70,9 +74,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .bg-gradient {
-    /* background: linear-gradient(270deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%); */
-    /* background: linear-gradient(90deg, rgba(151,108,212,1) 0%, rgba(43,28,64,1) 100%); */
-    background: linear-gradient(90deg, rgba(134,90,196,1) 0%, rgba(145,44,164,1) 100%);
+    background: linear-gradient(90deg, rgba(7, 102, 173,1) 0%, rgba(84, 177, 248,1) 100%);
 }
 
 a {
@@ -638,7 +640,7 @@ a:hover {
     padding-bottom: 0px;
     font-size: 15px;
     font-weight: bold;
-    color: #563A7E;
+    color: var(--primary-color);
 }
 
 .media-body p {
@@ -647,29 +649,28 @@ a:hover {
 
 .notification-btn {
     text-align: center;
-    background-color: #563A7E;
+    background-color: var(--primary-color);
     margin-bottom: 0px !important;
-    padding: 10px;
-    border-color: #563A7E;
+    border-color: var(--primary-color);
 }
 
 .btn-check:active+.notification-btn, .btn-check:checked+.notification-btn, .notification-btn.active,
 .notification-btn:active, .show>.notification-btn.dropdown-toggle {
     color: #fff;
-    background-color: #563A7E;
-    border-color: #563A7E;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .notification-btn:hover {
     color: #fff;
-    background-color: #563A7E;
-    border-color: #563A7E;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .notification-btn.foucs, .notification-btn:focus, .btn-danger:active:focus {
     color: #fff;
-    background-color: #563A7E;
-    border-color: #563A7E;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 0 rgb(225 83 97 / 50%);
 }
 
@@ -679,7 +680,7 @@ a:hover {
 }
 
 .notification-title, .btn-close {
-    color: #563A7E;
+    color: var(--primary-color);
 }
 
 .notification-nav li a {
@@ -1178,6 +1179,7 @@ a[aria-expanded=false] .fa-angle-down {
 
 .fc-event, .fc-event-dot {
     background-color: var(--primary-color);
+    color: var(--white-color);
 }
 
 .context-menu {
@@ -1223,6 +1225,10 @@ a[aria-expanded=false] .fa-angle-down {
     /* background-color: transparent; */
     border: 1px solid transparent;
     display: block;
+}
+
+.fc-daygrid-block-event .fc-event-time, .fc-daygrid-block-event .fc-event-title {
+    padding: 2px 5px;
 }
 
 /* End Calendar */
@@ -1288,6 +1294,12 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 /* End File Manager */
+
+/* Start Chat */
+
+
+
+/* End Chat */
 
 /* Start Footer */
 
