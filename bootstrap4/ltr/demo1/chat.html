@@ -9,6 +9,7 @@
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
 	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet">
 	<link href="vendor/chat/chat.css" rel="stylesheet">
 	<link href="css/fonts.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -167,832 +168,901 @@
 						<div class="card-header custom-card-header">
 							<h5 class="mb-0">Chat</h5>
 						</div>
-						<div class="chat-sidebar">
-                            <div class="inside p-3">
-                                <a href="#">
-                                    <img class="avatar-xl" src="images/avatar/user-9.webp" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-                                </a>
-                                <div class="data ml-3">
-                                    <h5><a href="#">Keith Morris</a></h5>
-                                    <div class="online-status d-inline-block align-middle">
-                                        <i class="fa-solid fa-circle-small"></i>
-                                    </div>
-                                    <span class="d-inline-block">Active now</span>
-                                </div>
-                            </div>
-                            <ul class="nav nav-pills nav-justified mt-2">
-                                <li class="nav-item">
-                                    <a href="#message" data-toggle="tab" class="nav-link text-center active">
-                                        <span data-toggle="tooltip" data-placement="bottom" title="Message">
-                                            <i class="fa-light fa-message d-block py-1"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#notifications" data-toggle="tab" class="nav-link text-center">
-                                        <span data-toggle="tooltip" data-placement="bottom" title="Notifications">
-                                            <i class="fa-regular fa-bell d-block py-1"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#contacts" data-toggle="tab" class="nav-link text-center">
-                                        <span data-toggle="tooltip" data-placement="bottom" title="Contacts">
-                                            <i class="fa-light fa-user d-block py-1"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#settings" data-toggle="tab" class="nav-link text-center">
-                                        <span data-toggle="tooltip" data-placement="bottom" title="Settings">
-                                            <i class="fa-regular fa-gear d-block py-1"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="tab-content p-3">
-                                <!-- Start of Discussions -->
-                                <div id="message" class="tab-pane fade active show">
-                                    <div class="search">
-                                        <form>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <button class="btn btn-blue" type="button" id="conversations">
-                                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                                    </button>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Search for conversations...">
-                                            </div>
-                                        </form>
-                                        <button class="btn btn-blue d-block mx-auto w-100" data-toggle="modal" data-target="#startnewchat">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                    </div>
-                                    <div class="list-group sort">
-                                        <button class="btn filterDiscussionsBtn active show" data-toggle="list" data-filter="all">All</button>
-                                        <button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="read">Read</button>
-                                        <button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="unread">Unread</button>
-                                    </div>						
-                                    <div class="discussions">
-                                        <h1>Discussions</h1>
-                                        <div class="list-group" id="chats" role="tablist">
-                                            <a href="#list-chat" class="filterDiscussions all unread single active" id="list-chat-list" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="new bg-yellow">
-                                                    <span>+7</span>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Janette Dalton</h5>
-                                                    <span>Mon</span>
-                                                    <p>A new feature has been updated to your account. Check it out...</p>
-                                                </div>
-                                            </a>									
-                                            <a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="new bg-pink">
-                                                    <span>+10</span>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Michael Knudsen</h5>
-                                                    <span>Sun</span>
-                                                    <p>How can i improve my chances of getting a deposit?</p>
-                                                </div>
-                                            </a>									
-                                            <a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list2" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lean" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Lean Avent</h5>
-                                                    <span>Tus</span>
-                                                    <p>Hey Chris, could i ask you to help me out with variation...</p>
-                                                </div>
-                                            </a>
-                                            <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list2" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="Mariette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Mariette Toles</h5>
-                                                    <span>5 mins</span>
-                                                    <p>By injected humour, or randomised words which...</p>
-                                                </div>
-                                            </a>
-                                            <a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list3" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Harmony" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Harmony Otero</h5>
-                                                    <span>Mon</span>
-                                                    <p>No more running out of the office at 4pm on Fridays!</p>
-                                                </div>
-                                            </a>
-                                            <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list3" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Keith Morris</h5>
-                                                    <span>Fri</span>
-                                                    <p>All your favourite books at your reach! We are now mobile.</p>
-                                                </div>
-                                            </a>
-                                            <a href="#list-request" class="filterDiscussions all unread single" id="list-request-list" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Louis" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="new bg-gray">
-                                                    <span>?</span>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Louis Martinez</h5>
-                                                    <span>Feb 10</span>
-                                                    <p>Hi Keith, I'd like to add you as a contact.</p>
-                                                </div>
-                                            </a>
-                                            <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list4" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Ryan" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Ryan Foster</h5>
-                                                    <span>Feb 9</span>
-                                                    <p>Dear Deborah, your Thai massage is today at 5pm.</p>
-                                                </div>
-                                            </a>
-                                            <a href="#list-chat" class="filterDiscussions all unread single" id="list-chat-list5" data-toggle="list" role="tab">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Mildred" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="new bg-green">
-                                                    <span>+9</span>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Mildred Bennett</h5>
-                                                    <span>Thu</span>
-                                                    <p>Unfortunately your session today has been cancelled!</p>
-                                                </div>
-                                            </a>
+                        <div class="chat-layout">
+                            <div class="chat-sidebar">  
+                                <div class="inside p-3">
+                                    <img class="avatar-xl" src="images/avatar/user-9.webp" alt="avatar">
+                                    <div class="data ml-3">
+                                        <h5><a href="#">Emma</a></h5>
+                                        <div class="online-status d-inline-block align-middle">
+                                            <i class="fa-solid fa-circle-small online"></i>
                                         </div>
+                                        <span class="d-inline-block">Active now</span>
                                     </div>
                                 </div>
-                                <!-- End of Discussions -->
-                                <!-- Start of Notifications -->
-                                <div id="notifications" class="tab-pane fade">
-                                    <div class="search">
-                                        <form class="form-inline position-relative">
-                                            <input type="search" class="form-control" id="notice" placeholder="Filter notifications...">
-                                            <button type="button" class="btn btn-link loop"><i class="material-icons filter-list">filter_list</i></button>
-                                        </form>
-                                    </div>
-                                    <div class="list-group sort">
-                                        <button class="btn filterNotificationsBtn active show" data-toggle="list" data-filter="all">All</button>
-                                        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="latest">Latest</button>
-                                        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="oldest">Oldest</button>
-                                    </div>						
-                                    <div class="notifications">
-                                        <h1>Notifications</h1>
-                                        <div class="list-group" id="alerts" role="tablist">
-                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Janette has accepted your friend request on Swipe.</p>
-                                                    <span>Oct 17, 2018</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Michael, you have a new friend suggestion today.</p>
-                                                    <span>Jun 21, 2018</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="Mariette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Mariette have just sent you a new message.</p>
-                                                    <span>Feb 15, 2018</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Louis" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Louis has a birthday today. Wish her all the best.</p>
-                                                    <span>Mar 23, 2018</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Harmony has accepted your friend request on Swipe.</p>
-                                                    <span>Jan 5, 2018</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Keith have just sent you a new message.</p>
-                                                    <span>Dec 22, 2017</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Michael, you have a new friend suggestion today.</p>
-                                                    <span>Nov 29, 2017</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Ryan have just sent you a new message.</p>
-                                                    <span>Sep 31, 2017</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <p>Mildred has a birthday today. Wish him all the best.</p>
-                                                    <span>Jul 19, 2017</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of Notifications -->
-                                <!-- Start of Contacts -->
-                                <div id="contacts" class="tab-pane fade">
-                                    <div class="search">
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="input-group search">
-                                                        <div class="input-group-prepend">
-                                                            <button type="button" class="btn btn-primary"><i class="material-icons">search</i></button>
-                                                        </div>
-                                                        <input type="text" class="form-control" placeholder="Search">
+                                <ul class="nav nav-pills nav-justified mt-2">
+                                    <li class="nav-item">
+                                        <a href="#message" data-toggle="tab" class="nav-link text-center active">
+                                            <span data-toggle="tooltip" data-placement="bottom" title="Message">
+                                                <i class="fa-light fa-message d-block py-1"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#contacts" data-toggle="tab" class="nav-link text-center">
+                                            <span data-toggle="tooltip" data-placement="bottom" title="Contacts">
+                                                <i class="fa-light fa-user d-block py-1"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#settings" data-toggle="tab" class="nav-link text-center">
+                                            <span data-toggle="tooltip" data-placement="bottom" title="Settings">
+                                                <i class="fa-regular fa-gear d-block py-1"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content p-3">
+                                    <!-- Start Message -->
+                                    <div id="message" class="tab-pane fade active show">
+                                        <div class="search">
+                                            <form class="form-search">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-blue" type="button" id="conversations">
+                                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                                        </button>
                                                     </div>
-                                                    <button class="btn create w-25 float-right" data-toggle="modal" data-target="#exampleModalCenter"><i class="material-icons">person_add</i></button>
+                                                    <input type="text" class="form-control" placeholder="Search for conversation">
                                                 </div>
-                                            </div>
-                                            
-                                        </form>
-                                        
-                                    </div>
-
-                                    <div class="list-group sort">
-                                        <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button>
-                                        <button class="btn filterMembersBtn" data-toggle="list" data-filter="online">Online</button>
-                                        <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
-                                    </div>						
-                                    <div class="contacts">
-                                        <h1>Contacts</h1>
-                                        <div class="list-group" id="contacts" role="tablist">
-                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Janette Dalton</h5>
-                                                    <p>Sofia, Bulgaria</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Michael Knudsen</h5>
-                                                    <p>Washington, USA</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lean" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Lean Avent</h5>
-                                                    <p>Shanghai, China</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="Mariette" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Mariette Toles</h5>
-                                                    <p>Helena, Montana</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Harmony" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons online">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Harmony Otero</h5>
-                                                    <p>Indore, India</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Keith Morris</h5>
-                                                    <p>Chisinau, Moldova</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Louis" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Louis Martinez</h5>
-                                                    <p>Vienna, Austria</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Ryan" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Ryan Foster</h5>
-                                                    <p>Oslo, Norway</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                                <img class="avatar-md" src="dist/img/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Mildred" alt="avatar">
-                                                <div class="status">
-                                                    <i class="material-icons offline">fiber_manual_record</i>
-                                                </div>
-                                                <div class="data">
-                                                    <h5>Mildred Bennett</h5>
-                                                    <p>London, United Kingdom</p>
-                                                </div>
-                                                <div class="person-add">
-                                                    <i class="material-icons">person</i>
-                                                </div>
-                                            </a>
+                                            </form>
+                                            <button class="btn btn-blue new-chat" data-toggle="modal" data-target="#startnewchat">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- End of Contacts -->
-                                <!-- Start of Settings -->
-                                <div id="settings" class="tab-pane fade">			
-                                    <div class="settings">
-                                        <div class="profile">
-                                            <img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar">
-                                            <h1><a href="#">Michael Knudsen</a></h1>
-                                            <span>Helena, Montana</span>
-                                            <div class="stats">
-                                                <div class="item">
-                                                    <h2>122</h2>
-                                                    <h3>Fellas</h3>
-                                                </div>
-                                                <div class="item">
-                                                    <h2>305</h2>
-                                                    <h3>Chats</h3>
-                                                </div>
-                                                <div class="item">
-                                                    <h2>1538</h2>
-                                                    <h3>Posts</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="categories" id="accordionSettings">
-                                            <h1>Settings</h1>
-                                            <!-- Start of My Account -->
-                                            <div class="category">
-                                                <a href="#" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    <i class="material-icons md-30 online">person_outline</i>
+                                        <div class="list-group sort">
+                                            <button class="btn filterMessagesBtn active show mr-2" data-toggle="list" data-filter="all">All</button>
+                                            <button class="btn filterMessagesBtn mr-2" data-toggle="list" data-filter="read">Read</button>
+                                            <button class="btn filterMessagesBtn" data-toggle="list" data-filter="unread">Unread</button>
+                                        </div>						
+                                        <div class="message">
+                                            <h3>Message</h3>
+                                            <div class="list-group" id="chats" role="tablist">
+                                                <a href="#list-chat" class="filterMessages all unread single active" id="list-chat-list" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-7.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small online"></i>
+                                                    </div>
+                                                    <div class="new bg-yellow">
+                                                        <span>+7</span>
+                                                    </div>
                                                     <div class="data">
-                                                        <h5>My Account</h5>
-                                                        <p>Update your profile details</p>
+                                                        <h5>Jennifer</h5>
+                                                        <span>Feb 5</span>
+                                                        <p>A new feature has been updated to your account. Check it out...</p>
                                                     </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                                </a>									
+                                                <a href="#list-empty" class="filterMessages all unread single" id="list-empty-list" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-1.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="new bg-pink">
+                                                        <span>+10</span>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Alexander</h5>
+                                                        <span>Feb 18</span>
+                                                        <p>How can i improve my chances of getting a deposit?</p>
+                                                    </div>
+                                                </a>									
+                                                <a href="#list-chat" class="filterMessages all read single" id="list-chat-list2" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-8.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Amelia</h5>
+                                                        <span>Jan 20</span>
+                                                        <p>Hey Chris, could i ask you to help me out with variation...</p>
+                                                    </div>
                                                 </a>
-                                                <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
-                                                    <div class="content">
-                                                        <div class="upload">
-                                                            <div class="data">
-                                                                <img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="image">
-                                                                <label>
-                                                                    <input type="file">
-                                                                    <span class="btn button">Upload avatar</span>
+                                                <a href="#list-empty" class="filterMessages all read single" id="list-empty-list2" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-2.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Bradley</h5>
+                                                        <span>Dec 16, 2023</span>
+                                                        <p>By injected humour, or randomised words which...</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#list-chat" class="filterMessages all read single" id="list-chat-list3" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-10.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small online"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Camila</h5>
+                                                        <span>Nov 13, 2023</span>
+                                                        <p>No more running out of the office at 4pm on Fridays!</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#list-empty" class="filterMessages all read single" id="list-empty-list3" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-11.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Daisy</h5>
+                                                        <span>Feb 16</span>
+                                                        <p>All your favourite books at your reach! We are now mobile.</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#list-request" class="filterMessages all unread single" id="list-request-list" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-12.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Floara</h5>
+                                                        <span>Jan 10</span>
+                                                        <p>Hi Keith, I'd like to add you as a contact.</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#list-empty" class="filterMessages all read single" id="list-empty-list4" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-3.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Finn</h5>
+                                                        <span>Nov 9, 2023</span>
+                                                        <p>Dear Deborah, your Thai massage is today at 5pm.</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#list-chat" class="filterMessages all unread single" id="list-chat-list5" data-toggle="list" role="tab">
+                                                    <img class="avatar-xl" src="images/avatar/user-4.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="new bg-green">
+                                                        <span>+9</span>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Ethan</h5>
+                                                        <span>Feb 8</span>
+                                                        <p>Unfortunately your session today has been cancelled!</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Message -->
+
+                                    <!-- Start Contacts -->
+                                    <div id="contacts" class="tab-pane fade">
+                                        <div class="search">
+                                            <form class="form-search">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-blue" type="button" id="conversations">
+                                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                                        </button>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Search for people">
+                                                </div>
+                                            </form>
+                                            <button class="btn btn-blue" data-toggle="modal" data-target="#addpeople">
+                                                <i class="fa-regular fa-user-plus"></i>
+                                            </button>
+                                        </div>
+    
+                                        <div class="list-group sort">
+                                            <button class="btn filterMembersBtn active show mr-2" data-toggle="list" data-filter="all">All</button>
+                                            <button class="btn filterMembersBtn mr-2" data-toggle="list" data-filter="online">Online</button>
+                                            <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
+                                        </div>						
+                                        <div class="contacts">
+                                            <h3>Contacts</h3>
+                                            <div class="list-group" id="contacts" role="tablist">
+                                                <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-7.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small online"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Jennifer</h5>
+                                                        <p>Sofia, Bulgaria</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-1.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small online"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Alexander</h5>
+                                                        <p>Washington, USA</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-8.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small online"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Amelia</h5>
+                                                        <p>Shanghai, China</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-2.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small online"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Bradley</h5>
+                                                        <p>Helena, Montana</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-10.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small online"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Camila</h5>
+                                                        <p>Ottawa, Canada</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-11.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Daisy</h5>
+                                                        <p>Chisinau, Moldova</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-12.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Floara</h5>
+                                                        <p>Vienna, Austria</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-3.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Finn</h5>
+                                                        <p>Oslo, Norway</p>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="filterMembers all offline contact" data-toggle="list">
+                                                    <img class="avatar-xl" src="images/avatar/user-4.webp" alt="avatar">
+                                                    <div class="status">
+                                                        <i class="fa-solid fa-circle-small offline"></i>
+                                                    </div>
+                                                    <div class="data">
+                                                        <h5>Ethan</h5>
+                                                        <p>London, United Kingdom</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Contacts -->
+
+                                    <!-- Start Settings -->
+                                    <div id="settings" class="tab-pane fade">			
+                                        <div class="settings">
+                                            <div class="profile">
+                                                <img class="avatar-xl" src="images/avatar/user-9.webp" alt="avatar">
+                                                <h1>Emma Watson</h1>
+                                                <span>Helena, Montana</span>
+                                                <div class="stats">
+                                                    <div class="item">
+                                                        <h2>122</h2>
+                                                        <h3>Fellas</h3>
+                                                    </div>
+                                                    <div class="item">
+                                                        <h2>305</h2>
+                                                        <h3>Chats</h3>
+                                                    </div>
+                                                    <div class="item">
+                                                        <h2>1538</h2>
+                                                        <h3>Posts</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="categories" id="accordionSettings">
+                                                <h3>Settings</h3>
+                                                <!-- Start My Account -->
+                                                <div class="category">
+                                                    <a href="#" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        <i class="fa-solid fa-user"></i>
+                                                        <div class="data">
+                                                            <h5>My Account</h5>
+                                                            <p>Update your profile details</p>
+                                                        </div>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </a>
+                                                    <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
+                                                        <div class="content">
+                                                            <div class="upload">
+                                                                <div class="data">
+                                                                    <img class="avatar-xl" src="images/avatar/user-9.webp" alt="image">
+                                                                    <label>
+                                                                        <input type="file">
+                                                                        <span class="btn button btn-blue file-upload"><i class="fa-regular fa-upload pr-2"></i>Upload avatar</span>
+                                                                    </label>
+                                                                </div>
+                                                                <p>For best results, use an image at least 256px by 256px in either .jpg or .png format!</p>
+                                                            </div>
+                                                            <form>
+                                                                <div class="parent">
+                                                                    <div class="field">
+                                                                        <label for="firstName">First name <span>*</span></label>
+                                                                        <input type="text" class="form-control" id="firstName" placeholder="First name" value="Michael" required>
+                                                                    </div>
+                                                                    <div class="field">
+                                                                        <label for="lastName">Last name <span>*</span></label>
+                                                                        <input type="text" class="form-control" id="lastName" placeholder="Last name" value="Knudsen" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="field">
+                                                                    <label for="email">Email <span>*</span></label>
+                                                                    <input type="email" class="form-control" id="email" placeholder="Enter your email address" value="michael@gmail.com" required>
+                                                                </div>
+                                                                <div class="field">
+                                                                    <label for="password">Password</label>
+                                                                    <input type="password" class="form-control" id="password" placeholder="Enter a new password" value="password" required>
+                                                                </div>
+                                                                <div class="field">
+                                                                    <label for="location">Location</label>
+                                                                    <input type="text" class="form-control" id="location" placeholder="Enter your location" value="Helena, Montana" required>
+                                                                </div>
+                                                                <button class="btn btn-link w-100 font-weight-bold">Delete Account</button>
+                                                                <button type="submit" class="btn button btn-blue w-100">Apply</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End My Account -->
+
+                                                <!-- Start Chat History -->
+                                                <div class="category">
+                                                    <a href="#" class="title collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                        <i class="fa-solid fa-message"></i>
+                                                        <div class="data">
+                                                            <h5>Chats</h5>
+                                                            <p>Check your chat history</p>
+                                                        </div>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </a>
+                                                    <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionSettings">
+                                                        <div class="content layer">
+                                                            <div class="history">
+                                                                <p>When you clear your conversation history, the messages will be deleted from your own device.</p>
+                                                                <p>The messages won't be deleted or cleared on the devices of the people you chatted with.</p>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="same-address">
+                                                                    <label class="custom-control-label" for="same-address">Hide will remove your chat history from the recent list.</label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="save-info">
+                                                                    <label class="custom-control-label" for="save-info">Delete will remove your chat history from the device.</label>
+                                                                </div>
+                                                                <button type="submit" class="btn button btn-blue w-100">Clear</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Chat History -->
+
+                                                <!-- Start Connections -->
+                                                <div class="category">
+                                                    <a href="#" class="title collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                                        <i class="fa-solid fa-rotate"></i>
+                                                        <div class="data">
+                                                            <h5>Connections</h5>
+                                                            <p>Sync your social accounts</p>
+                                                        </div>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </a>
+                                                    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionSettings">
+                                                        <div class="content">
+                                                            <div class="app">
+                                                                <i class="fa-brands fa-facebook pr-2"></i>
+                                                                <div class="permissions align-items-center">
+                                                                    <h5 class="mb-0">Facebook</h5>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" checked>
+                                                                    <span class="slider round"></span>
                                                                 </label>
                                                             </div>
-                                                            <p>For best results, use an image at least 256px by 256px in either .jpg or .png format!</p>
-                                                        </div>
-                                                        <form>
-                                                            <div class="parent">
-                                                                <div class="field">
-                                                                    <label for="firstName">First name <span>*</span></label>
-                                                                    <input type="text" class="form-control" id="firstName" placeholder="First name" value="Michael" required>
+                                                            <div class="app">
+                                                                <i class="fa-brands fa-twitter pr-2"></i>
+                                                                <div class="permissions">
+                                                                    <h5 class="mb-0">Twitter</h5>
                                                                 </div>
-                                                                <div class="field">
-                                                                    <label for="lastName">Last name <span>*</span></label>
-                                                                    <input type="text" class="form-control" id="lastName" placeholder="Last name" value="Knudsen" required>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" checked>
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="app">
+                                                                <i class="fa-brands fa-linkedin pr-2"></i>
+                                                                <div class="permissions">
+                                                                    <h5 class="mb-0">Linkedin</h5>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="app">
+                                                                <i class="fa-brands fa-instagram pr-2"></i>
+                                                                <div class="permissions">
+                                                                    <h5 class="mb-0">Instagram</h5>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Connections -->
+
+                                                <!-- Start Appearance Settings -->
+                                                <div class="category">
+                                                    <a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                                        <i class="fa-solid fa-eye-dropper"></i>
+                                                        <div class="data">
+                                                            <h5>Appearance</h5>
+                                                            <p>Customize the look of Swipe</p>
+                                                        </div>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </a>
+                                                    <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordionSettings">
+                                                        <div class="content no-layer">
+                                                            <div class="set">
+                                                                <div class="details">
+                                                                    <h5>Turn Off Lights</h5>
+                                                                    <p>The dark mode is applied to core areas of the app that are normally displayed as light.</p>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <span class="slider round mode"></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Appearance Settings -->
+
+                                                <!-- Start Language -->
+                                                <div class="category">
+                                                    <a href="#" class="title collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                                        <i class="fa-solid fa-globe"></i>
+                                                        <div class="data">
+                                                            <h5>Language</h5>
+                                                            <p>Select preferred language</p>
+                                                        </div>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </a>
+                                                    <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#accordionSettings">
+                                                        <div class="content layer">
+                                                            <div class="language">
+                                                                <label for="country">Language</label>
+                                                                <select class="custom-select" id="country" required>
+                                                                    <option value="">Select an language...</option>
+                                                                    <option>English, UK</option>
+                                                                    <option>English, US</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Language -->
+
+                                                <!-- Start Privacy & Safety -->
+                                                <div class="category">
+                                                    <a href="#" class="title collapsed" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                                        <i class="fa-solid fa-lock"></i>
+                                                        <div class="data">
+                                                            <h5>Privacy & Safety</h5>
+                                                            <p>Control your privacy settings</p>
+                                                        </div>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </a>
+                                                    <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#accordionSettings">
+                                                        <div class="content no-layer">
+                                                            <div class="set">
+                                                                <div class="details">
+                                                                    <h5>Keep Me Safe</h5>
+                                                                    <p>Automatically scan and delete direct messages you receive from everyone that contain explict content.</p>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="set">
+                                                                <div class="details">
+                                                                    <h5>My Friends Are Nice</h5>
+                                                                    <p>If enabled scans direct messages from everyone unless they are listed as your friend.</p>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" checked>
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="set">
+                                                                <div class="details">
+                                                                    <h5>Everyone can add me</h5>
+                                                                    <p>If enabled anyone in or out your friends of friends list can send you a friend request.</p>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" checked>
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="set">
+                                                                <div class="details">
+                                                                    <h5>Friends of Friends</h5>
+                                                                    <p>Only your friends or your mutual friends will be able to send you a friend reuqest.</p>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" checked>
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="set">
+                                                                <div class="details">
+                                                                    <h5>Data to Improve</h5>
+                                                                    <p>This settings allows us to use and process information for analytical purposes.</p>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="set">
+                                                                <div class="details">
+                                                                    <h5>Data to Customize</h5>
+                                                                    <p>This settings allows us to use your information to customize Swipe for you.</p>
+                                                                </div>
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End of Privacy & Safety -->
+                                                <!-- Start of Logout -->
+                                                <div class="category">
+                                                    <a href="sign-in.html" class="title collapsed">
+                                                        <i class="material-icons md-30 online">power_settings_new</i>
+                                                        <div class="data">
+                                                            <h5>Power Off</h5>
+                                                            <p>Log out of your account</p>
+                                                        </div>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </a>
+                                                </div>
+                                                <!-- End of Logout -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End of Settings -->
+                                </div>
+                            </div>
+                            <div class="chat-content">
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class="babble tab-pane fade active show" id="list-chat" role="tabpanel" aria-labelledby="list-chat-list">
+                                        <div class="chat" id="chat1">
+                                            <div class="top p-3">
+                                                <div class="inside">
+                                                    <img class="avatar-xl" src="images/avatar/user-0.webp" alt="avatar">
+                                                    <div class="data ml-3">
+                                                        <h5>Sarah</h5>
+                                                        <div class="online-status d-inline-block align-middle">
+                                                            <i class="fa-solid fa-circle-small online"></i>
+                                                        </div>
+                                                        <span class="d-inline-block">Active now</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content" id="content">
+                                                <div class="container">
+                                                    <div class="col-md-12">
+                                                        <div class="date">
+                                                            <hr>
+                                                            <span>Yesterday</span>
+                                                            <hr>
+                                                        </div>
+                                                        <div class="message">
+                                                            <img class="avatar-md" src="images/avatar/user-7.webp" alt="avatar">
+                                                            <div class="text-main">
+                                                                <div class="text-group">
+                                                                    <div class="text">
+                                                                        <p>We've got some killer ideas kicking about already.</p>
+                                                                    </div>
+                                                                </div>
+                                                                <span>09:46 AM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message me">
+                                                            <div class="text-main">
+                                                                <div class="text-group me">
+                                                                    <div class="text me">
+                                                                        <p>Can't wait! How are we coming along with the client?</p>
+                                                                    </div>
+                                                                </div>
+                                                                <span>11:32 AM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message">
+                                                            <img class="avatar-md" src="images/avatar/user-7.webp" alt="avatar">
+                                                            <div class="text-main">
+                                                                <div class="text-group">
+                                                                    <div class="text">
+                                                                        <p>Coming along nicely, we've got a draft for the client quarries completed.</p>
+                                                                    </div>
+                                                                </div>
+                                                                <span>02:56 PM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message me">
+                                                            <div class="text-main">
+                                                                <div class="text-group me">
+                                                                    <div class="text me">
+                                                                        <p>Roger that boss!</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="text-group me">
+                                                                    <div class="text me">
+                                                                        <p>I have already started gathering some stuff for the mood boards, excited to start!</p>
+                                                                    </div>
+                                                                </div>
+                                                                <span>10:21 PM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message">
+                                                            <img class="avatar-md" src="images/avatar/user-7.webp" alt="avatar">
+                                                            <div class="text-main">
+                                                                <div class="text-group">
+                                                                    <div class="text">
+                                                                        <p>Great start guys, I've added some notes to the task. We may need to make some adjustments to the last couple of items - but no biggie!</p>
+                                                                    </div>
+                                                                </div>
+                                                                <span>11:07 PM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="date">
+                                                            <hr>
+                                                            <span>Today</span>
+                                                            <hr>
+                                                        </div>
+                                                        <div class="message me">
+                                                            <div class="text-main">
+                                                                <div class="text-group me">
+                                                                    <div class="text me">
+                                                                        <p>Well done all. See you all at 2 for the kick-off meeting.</p>
+                                                                    </div>
+                                                                </div>
+                                                                <span>10:21 PM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message">
+                                                            <img class="avatar-md" src="images/avatar/user-7.webp" alt="avatar">
+                                                            <div class="text-main">
+                                                                <div class="text-group">
+                                                                    <div class="text">
+                                                                        <div class="attachment">
+                                                                            <button class="btn attach">
+                                                                                <i class="fa-solid fa-file-pdf"></i>
+                                                                            </button>
+                                                                            <div class="file">
+                                                                                <h5><a href="#">Conference.pdf</a></h5>
+                                                                                <span>50KB Document</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <span>11:07 PM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message me">
+                                                            <div class="text-main">
+                                                                <div class="text-group me">
+                                                                    <div class="text me">
+                                                                        <p>Hope you're all ready to tackle this great project. Let's smash some Brand Concept & Design!</p>
+                                                                    </div>
+                                                                </div>
+                                                                <span><i class="material-icons">check</i>10:21 PM</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message">
+                                                            <img class="avatar-md" src="images/avatar/user-7.webp" alt="avatar">
+                                                            <div class="text-main">
+                                                                <div class="text-group">
+                                                                    <div class="text typing">
+                                                                        <div class="wave">
+                                                                            <span class="dot"></span>
+                                                                            <span class="dot"></span>
+                                                                            <span class="dot"></span>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="field">
-                                                                <label for="email">Email <span>*</span></label>
-                                                                <input type="email" class="form-control" id="email" placeholder="Enter your email address" value="michael@gmail.com" required>
-                                                            </div>
-                                                            <div class="field">
-                                                                <label for="password">Password</label>
-                                                                <input type="password" class="form-control" id="password" placeholder="Enter a new password" value="password" required>
-                                                            </div>
-                                                            <div class="field">
-                                                                <label for="location">Location</label>
-                                                                <input type="text" class="form-control" id="location" placeholder="Enter your location" value="Helena, Montana" required>
-                                                            </div>
-                                                            <button class="btn btn-link w-100">Delete Account</button>
-                                                            <button type="submit" class="btn button w-100">Apply</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End of My Account -->
-                                            <!-- Start of Chat History -->
-                                            <div class="category">
-                                                <a href="#" class="title collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                    <i class="material-icons md-30 online">mail_outline</i>
-                                                    <div class="data">
-                                                        <h5>Chats</h5>
-                                                        <p>Check your chat history</p>
-                                                    </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                </a>
-                                                <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionSettings">
-                                                    <div class="content layer">
-                                                        <div class="history">
-                                                            <p>When you clear your conversation history, the messages will be deleted from your own device.</p>
-                                                            <p>The messages won't be deleted or cleared on the devices of the people you chatted with.</p>
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                                                <label class="custom-control-label" for="same-address">Hide will remove your chat history from the recent list.</label>
-                                                            </div>
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="save-info">
-                                                                <label class="custom-control-label" for="save-info">Delete will remove your chat history from the device.</label>
-                                                            </div>
-                                                            <button type="submit" class="btn button w-100">Clear blah-blah</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- End of Chat History -->
-                                            <!-- Start of Notifications Settings -->
-                                            <div class="category">
-                                                <a href="#" class="title collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                                    <i class="material-icons md-30 online">notifications_none</i>
-                                                    <div class="data">
-                                                        <h5>Notifications</h5>
-                                                        <p>Turn notifications on or off</p>
-                                                    </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                </a>
-                                                <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionSettings">
-                                                    <div class="content no-layer">
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Desktop Notifications</h5>
-                                                                <p>You can set up Swipe to receive notifications when you have new messages.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Unread Message Badge</h5>
-                                                                <p>If enabled shows a red badge on the Swipe app icon when you have unread messages.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Taskbar Flashing</h5>
-                                                                <p>Flashes the Swipe app on mobile in your taskbar when you have new notifications.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Notification Sound</h5>
-                                                                <p>Set the app to alert you via notification sound when you have unread messages.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Vibrate</h5>
-                                                                <p>Vibrate when receiving new messages (Ensure system vibration is also enabled).</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Turn On Lights</h5>
-                                                                <p>When someone send you a text message you will receive alert via notification light.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="bottom">
+                                                            <form class="position-relative w-100">
+                                                                <textarea class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
+                                                                <button type="submit" class="btn send">
+                                                                    <i class="fa-light fa-paper-plane-top"></i>
+                                                                </button>
+                                                            </form>
+                                                            <label>
+                                                                <input type="file">
+                                                                <span class="btn attach d-sm-block d-none">
+                                                                    <i class="fa-regular fa-paperclip"></i>
+                                                                </span>
+                                                            </label> 
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- End of Notifications Settings -->
-                                            <!-- Start of Connections -->
-                                            <div class="category">
-                                                <a href="#" class="title collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                                    <i class="material-icons md-30 online">sync</i>
-                                                    <div class="data">
-                                                        <h5>Connections</h5>
-                                                        <p>Sync your social accounts</p>
+                                        </div>
+                                    </div>
+                                    <div class="babble tab-pane fade" id="list-empty" role="tabpanel" aria-labelledby="list-empty-list">
+                                        <div class="chat" id="chat2">
+                                            <div class="top p-3">
+                                                <div class="inside">
+                                                    <img class="avatar-xl" src="images/avatar/user-0.webp" alt="avatar">
+                                                    <div class="data ml-3">
+                                                        <h5>Sarah</h5>
+                                                        <div class="online-status d-inline-block align-middle">
+                                                            <i class="fa-solid fa-circle-small offline"></i>
+                                                        </div>
+                                                        <span class="d-inline-block">Inactive</span>
                                                     </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                </a>
-                                                <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionSettings">
-                                                    <div class="content">
-                                                        <div class="app">
-                                                            <img src="dist/img/integrations/slack.svg" alt="app">
-                                                            <div class="permissions">
-                                                                <h5>Skrill</h5>
-                                                                <p>Read, Write, Comment</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="app">
-                                                            <img src="dist/img/integrations/dropbox.svg" alt="app">
-                                                            <div class="permissions">
-                                                                <h5>Dropbox</h5>
-                                                                <p>Read, Write, Upload</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="app">
-                                                            <img src="dist/img/integrations/drive.svg" alt="app">
-                                                            <div class="permissions">
-                                                                <h5>Google Drive</h5>
-                                                                <p>No permissions set</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="app">
-                                                            <img src="dist/img/integrations/trello.svg" alt="app">
-                                                            <div class="permissions">
-                                                                <h5>Trello</h5>
-                                                                <p>No permissions set</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
+                                                </div>
+                                            </div>
+                                            <div class="content empty">
+                                                <div class="container">
+                                                    <div class="col-md-12">
+                                                        <div class="no-messages">
+                                                            <i class="fa-solid fa-messages fa-3x mb-3"></i>
+                                                            <p>No message found. Send the first message.</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- End of Connections -->
-                                            <!-- Start of Appearance Settings -->
-                                            <div class="category">
-                                                <a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                                    <i class="material-icons md-30 online">colorize</i>
-                                                    <div class="data">
-                                                        <h5>Appearance</h5>
-                                                        <p>Customize the look of Swipe</p>
-                                                    </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                </a>
-                                                <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordionSettings">
-                                                    <div class="content no-layer">
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Turn Off Lights</h5>
-                                                                <p>The dark mode is applied to core areas of the app that are normally displayed as light.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round mode"></span>
-                                                            </label>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="bottom">
+                                                            <form class="position-relative w-100">
+                                                                <textarea class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
+                                                                <button type="submit" class="btn send">
+                                                                    <i class="fa-light fa-paper-plane-top"></i>
+                                                                </button>
+                                                            </form>
+                                                            <label>
+                                                                <input type="file">
+                                                                <span class="btn attach d-sm-block d-none">
+                                                                    <i class="fa-regular fa-paperclip"></i>
+                                                                </span>
+                                                            </label> 
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- End of Appearance Settings -->
-                                            <!-- Start of Language -->
-                                            <div class="category">
-                                                <a href="#" class="title collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                                    <i class="material-icons md-30 online">language</i>
-                                                    <div class="data">
-                                                        <h5>Language</h5>
-                                                        <p>Select preferred language</p>
-                                                    </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                </a>
-                                                <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#accordionSettings">
-                                                    <div class="content layer">
-                                                        <div class="language">
-                                                            <label for="country">Language</label>
-                                                            <select class="custom-select" id="country" required>
-                                                                <option value="">Select an language...</option>
-                                                                <option>English, UK</option>
-                                                                <option>English, US</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End of Language -->
-                                            <!-- Start of Privacy & Safety -->
-                                            <div class="category">
-                                                <a href="#" class="title collapsed" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-                                                    <i class="material-icons md-30 online">lock_outline</i>
-                                                    <div class="data">
-                                                        <h5>Privacy & Safety</h5>
-                                                        <p>Control your privacy settings</p>
-                                                    </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                </a>
-                                                <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#accordionSettings">
-                                                    <div class="content no-layer">
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Keep Me Safe</h5>
-                                                                <p>Automatically scan and delete direct messages you receive from everyone that contain explict content.</p>
+                                        </div>
+                                        <div class="call" id="call2">
+                                            <div class="content">
+                                                <div class="container">
+                                                    <div class="col-md-12">
+                                                        <div class="inside">
+                                                            <div class="panel">
+                                                                <div class="participant">
+                                                                    <img class="avatar-xxl" src="dist/img/avatars/avatar-female-2.jpg" alt="avatar">
+                                                                    <span>Connecting</span>
+                                                                </div>							
+                                                                <div class="options">
+                                                                    <button class="btn option"><i class="material-icons md-30">mic</i></button>
+                                                                    <button class="btn option"><i class="material-icons md-30">videocam</i></button>
+                                                                    <button class="btn option call-end"><i class="material-icons md-30">call_end</i></button>
+                                                                    <button class="btn option"><i class="material-icons md-30">person_add</i></button>
+                                                                    <button class="btn option"><i class="material-icons md-30">volume_up</i></button>
+                                                                </div>
+                                                                <button class="btn back" name="2"><i class="material-icons md-24">chat</i></button>
                                                             </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>My Friends Are Nice</h5>
-                                                                <p>If enabled scans direct messages from everyone unless they are listed as your friend.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Everyone can add me</h5>
-                                                                <p>If enabled anyone in or out your friends of friends list can send you a friend request.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Friends of Friends</h5>
-                                                                <p>Only your friends or your mutual friends will be able to send you a friend reuqest.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox" checked>
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Data to Improve</h5>
-                                                                <p>This settings allows us to use and process information for analytical purposes.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="set">
-                                                            <div class="details">
-                                                                <h5>Data to Customize</h5>
-                                                                <p>This settings allows us to use your information to customize Swipe for you.</p>
-                                                            </div>
-                                                            <label class="switch">
-                                                                <input type="checkbox">
-                                                                <span class="slider round"></span>
-                                                            </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- End of Privacy & Safety -->
-                                            <!-- Start of Logout -->
-                                            <div class="category">
-                                                <a href="sign-in.html" class="title collapsed">
-                                                    <i class="material-icons md-30 online">power_settings_new</i>
-                                                    <div class="data">
-                                                        <h5>Power Off</h5>
-                                                        <p>Log out of your account</p>
+                                        </div>
+                                    </div>
+                                    <div class="babble tab-pane fade" id="list-request" role="tabpanel" aria-labelledby="list-request-list">
+                                        <div class="chat" id="chat3">
+                                            <div class="top p-3">
+                                                <div class="inside">
+                                                    <img class="avatar-xl" src="images/avatar/user-12.webp" alt="avatar">
+                                                    <div class="data ml-3">
+                                                        <h5>Sarah</h5>
+                                                        <div class="online-status d-inline-block align-middle">
+                                                            <i class="fa-solid fa-circle-small offline"></i>
+                                                        </div>
+                                                        <span class="d-inline-block">Inactive</span>
                                                     </div>
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                </a>
+                                                </div>
                                             </div>
-                                            <!-- End of Logout -->
+                                            <div class="content empty">
+                                                <div class="container">
+                                                    <div class="col-md-12">
+                                                        <div class="no-messages request">
+                                                            <img class="avatar-xl" src="images/avatar/user-0.webp" alt="avatar">
+                                                            <h5>Floara would like to add you as a contact. <span>Hi Emma, I'd like to add you as a contact.</span></h5>
+                                                            <div class="options">
+                                                                <button type="button" class="btn button btn-success">
+                                                                    <i class="fa-solid fa-check"></i>
+                                                                </button>
+                                                                <button type="button" class="btn button btn-danger">
+                                                                    <i class="fa-solid fa-xmark"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="bottom">
+                                                            <form class="position-relative w-100">
+                                                                <textarea class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
+                                                                <button type="submit" class="btn send">
+                                                                    <i class="fa-light fa-paper-plane-top"></i>
+                                                                </button>
+                                                            </form>
+                                                            <label>
+                                                                <input type="file">
+                                                                <span class="btn attach d-sm-block d-none">
+                                                                    <i class="fa-regular fa-paperclip"></i>
+                                                                </span>
+                                                            </label> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End of Settings -->
                             </div>
                         </div>
 					</div>
@@ -1172,6 +1242,9 @@
 						</li>
 					</ul>
 				</div>
+                <div class="modal-footer">
+					<a href="chat.html" class="btn btn-blue btn-lg d-block mx-auto">View All Chats</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -1322,7 +1395,7 @@
 					</ul>
 				</div>
 				<div class="modal-footer">
-					<a href="#" class="btn btn-blue btn-lg d-block mx-auto">View all notifications</a>
+					<a href="#" class="btn btn-blue btn-lg d-block mx-auto">View All Notifications</a>
 				</div>
 			</div>
 		</div>
@@ -1335,34 +1408,81 @@
             <div class="requests">
                 <div class="title">
                     <h1>Start new chat</h1>
-                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark"></i></button>
                 </div>
                 <div class="content">
                     <form>
                         <div class="form-group">
                             <label for="participant">Recipient:</label>
-                            <input type="text" class="form-control" id="participant" placeholder="Add recipient..." required>
-                            <div class="user" id="recipient">
-                                <img class="avatar-sm" src="dist/img/avatars/avatar-female-5.jpg" alt="avatar">
-                                <h5>Keith Morris</h5>
-                                <button class="btn"><i class="material-icons">close</i></button>
-                            </div>
+                            <select class="form-control participant" name="participant[]" multiple="multiple" id="participant" placeholder="Select">
+                                <option value="user-1">Alexander</option>
+                                <option value="user-2">Bradley</option>
+                                <option value="user-3">Charles</option>
+                                <option value="user-4">David</option>
+                                <option value="user-5">Ethan</option>
+                                <option value="user-6">Finn</option>
+                                <option value="user-7">Amelia</option>
+                                <option value="user-8">Bella</option>
+                                <option value="user-9">Camila</option>
+                                <option value="user-10">Daisy</option>
+                                <option value="user-11">Emma</option>
+                                <option value="user-12">Floara</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="topic">Topic:</label>
-                            <input type="text" class="form-control" id="topic" placeholder="What's the topic?" required>
+                            <input type="text" class="form-control" id="topic">
                         </div>
                         <div class="form-group">
                             <label for="message">Message:</label>
-                            <textarea class="text-control" id="message" placeholder="Send your welcome message...">Hmm, are you friendly?</textarea>
+                            <textarea class="form-control" id="message" rows="5"></textarea>
                         </div>
-                        <button type="submit" class="btn button w-100">Start New Chat</button>
+                        <button type="submit" class="btn btn-blue w-50 d-block mx-auto">Start New Chat</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Create Chat -->
+
+    <!-- Start of Add Friends -->
+    <div class="modal fade" id="addpeople" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="requests">
+                <div class="title">
+                    <h1>Add your friends</h1>
+                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark"></i></button>
+                </div>
+                <div class="content">
+                    <form>
+                        <div class="form-group">
+                            <label for="user">Recipient:</label>
+                            <select class="form-control user" name="users[]" multiple="multiple" id="user" placeholder="Select">
+                                <option value="user-1">Alexander</option>
+                                <option value="user-2">Bradley</option>
+                                <option value="user-3">Charles</option>
+                                <option value="user-4">David</option>
+                                <option value="user-5">Ethan</option>
+                                <option value="user-6">Finn</option>
+                                <option value="user-7">Amelia</option>
+                                <option value="user-8">Bella</option>
+                                <option value="user-9">Camila</option>
+                                <option value="user-10">Daisy</option>
+                                <option value="user-11">Emma</option>
+                                <option value="user-12">Floara</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="welcome">Message:</label>
+                            <textarea class="form-control" id="welcome" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn button btn-blue w-100">Send Friend Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Add Friends -->
 
 	<!-- Start Back to Top -->
 	<a id="back-to-top" href="#" class="btn btn-primary btn-blue btn-lg back-to-top" role="button">
@@ -1372,8 +1492,54 @@
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
 	<script src="vendor/moment/moment.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/select2/select2.full.min.js"></script>
     <script src="vendor/chat/chat.js"></script>
 	<script src="js/script.js"></script>
+
+    <script>
+        function formatParticipant (participant) {
+            if (!participant.id) {
+            return participant.text;
+            }
+            var baseUrl = "images/avatar";
+            var $participant = $(
+            //   '<span><img src="' + baseUrl + '/' + bank.element.value.toLowerCase() + '.png" class="img-flag" /> ' + bank.text + '</span>'
+            '<span><img class="img-user" /> <span></span></span>'
+            );
+            $participant.find("span").text(participant.text);
+            $participant.find("img").attr("src", baseUrl + "/" + participant.element.value.toLowerCase() + ".webp");
+            return $participant;
+        };
+
+        $(document).ready(function () {
+            $("#participant").select2({
+                templateResult: formatParticipant,
+                templateSelection: formatParticipant
+            });
+        });
+
+        function formatUser (user) {
+            if (!user.id) {
+            return user.text;
+            }
+            var baseUrl = "images/avatar";
+            var $user = $(
+            //   '<span><img src="' + baseUrl + '/' + bank.element.value.toLowerCase() + '.png" class="img-flag" /> ' + bank.text + '</span>'
+            '<span><img class="img-user" /> <span></span></span>'
+            );
+            $user.find("span").text(user.text);
+            $user.find("img").attr("src", baseUrl + "/" + user.element.value.toLowerCase() + ".webp");
+            return $user;
+        };
+
+        $(document).ready(function () {
+            $("#user").select2({
+                templateResult: formatUser,
+                templateSelection: formatUser
+            });
+        });
+
+    </script>
 
 </body>
 

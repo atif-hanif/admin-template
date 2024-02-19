@@ -10,9 +10,9 @@ $(".menu a i").on("click", function() {
 		$(".filterMembers").not("." + t).hide("3000"), $(".filterMembers").filter("." + t).show("3000")
 	})
 }), $(document).ready(function() {
-	$(".filterDiscussions").not(".all").hide("3000"), $(".filterDiscussions").not(".all").hide("3000"), $(".filterDiscussionsBtn").click(function() {
+	$(".filterMessages").not(".all").hide("3000"), $(".filterMessages").not(".all").hide("3000"), $(".filterMessagesBtn").click(function() {
 		var t = $(this).attr("data-filter");
-		$(".filterDiscussions").not("." + t).hide("3000"), $(".filterDiscussions").filter("." + t).show("3000")
+		$(".filterMessages").not("." + t).hide("3000"), $(".filterMessages").filter("." + t).show("3000")
 	})
 }), $(document).ready(function() {
 	$(".filterNotifications").not(".all").hide("3000"), $(".filterNotifications").not(".all").hide("3000"), $(".filterNotificationsBtn").click(function() {

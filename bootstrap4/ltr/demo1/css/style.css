@@ -12,6 +12,8 @@
     --normal-font-size: 1rem;
     --z-fixed: 100;
     --submenu-active: #0766AD;
+    --online: #008000;
+    --offline: #ff0000;
 }
 
 *,
@@ -89,6 +91,15 @@ a:hover {
 .list-group-item.active {
     border-color: var(--active-color);
     background-color: var(--active-color);
+}
+
+.select2-container {
+    display: block;
+    width: 100% !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #ced4da;
 }
 
 .header {
@@ -333,7 +344,7 @@ a:hover {
     left: 0;
     width: 2px;
     height: 32px;
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
 }
 
 .sidebar-menu > li.dropdown ul.dropdown-menu > li:before {
