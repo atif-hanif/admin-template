@@ -1309,8 +1309,134 @@ a[aria-expanded=false] .fa-angle-down {
 /* Start Chat */
 
 
-
 /* End Chat */
+
+/* Start Notes */
+
+.card-footer {
+    background-color: #fff;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.note-has-grid .nav-link {
+    padding: .5rem
+}
+
+.note-has-grid .single-note-item .card {
+    border-radius: 0px
+}
+
+.note-has-grid .single-note-item .favourite-note {
+    cursor: pointer
+}
+
+.note-has-grid .single-note-item .side-stick {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(82, 95, 127, .5)
+}
+
+.note-has-grid .single-note-item .category-dropdown.dropdown-toggle:after {
+    display: none
+}
+
+.note-has-grid .single-note-item .category [class*=category-] {
+    height: 15px;
+    width: 15px;
+    display: none
+}
+
+.note-has-grid .single-note-item .category [class*=category-]::after {
+    content: "\f0d7";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 12px;
+    color: #fff;
+    position: absolute
+}
+    
+.note-has-grid .single-note-item.b .side-stick {
+    background-color: #2cd07e;
+}
+
+.note-has-grid .single-note-item.s .side-stick {
+    background-color: #2cabe3;
+}
+
+.note-has-grid .single-note-item.i .side-stick {
+    background-color: #ff5050;
+}
+
+.note-has-grid .single-note-item.b .category .category-business {
+    display: inline-block;
+}
+
+.note-has-grid .single-note-item.note-favourite .favourite-note i {
+    color: #ffc107;
+}
+    
+
+.note-has-grid .single-note-item.s .category .category-social {
+    display: inline-block;
+}
+        
+.note-has-grid .single-note-item.i .category .category-important {
+    display: inline-block;
+}
+
+.note-has-grid .single-note-item.all-category .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite .more-options {
+    display: block;
+}
+
+.note-has-grid .single-note-item.all-category.b .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite.b .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite.i .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite.s .more-options,
+.note-has-grid .single-note-item.all-category.i .more-options,
+.note-has-grid .single-note-item.all-category.s .more-options {
+    display: block;
+}
+
+.note-category.s {
+    background-color: #2cabe3;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    padding: 3px;
+    text-transform: capitalize;
+}
+
+.note-category.i {
+    background-color: #ff5050;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    padding: 3px;
+    text-transform: capitalize;
+}
+
+.note-category.b {
+    background-color: #2cd07e;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    padding: 3px;
+    text-transform: capitalize;
+}
+
+.remove-note:hover, .favourite-note:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* End Notes */
 
 /* Start Footer */
 

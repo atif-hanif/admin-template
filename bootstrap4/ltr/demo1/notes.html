@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Notes | Nova Admin Template</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="vendor/sweetalert/sweetalert2.min.css" rel="stylesheet" />
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body class="app">
+	<!-- Start Side Nav -->
+	<div class="sidebar">
+		<div class="sidebar-inner">
+			<div class="sidebar-logo">
+				<div class="d-flex align-items-center flex-nowrap">
+					<a class="sidebar-link text-decoration-none nav-logo" href="index.html">
+						<div class="d-flex align-items-center flex-nowrap">
+							<div class="logo-sm">
+								<img src="images/icon-logo.png" alt="logo" class="icon-logo">
+							</div>
+							<img src="images/nova-logo.png" alt="logo" class="main-logo">
+						</div>
+					</a>
+					<div class="mobile-toggle sidebar-toggle mt-n2">
+						<a href="#" class="text-decoration-none"> <i class="far fa-times-circle"></i> </a>
+					</div>
+				</div>
+			</div>
+			<ul class="sidebar-menu scrollable position-relative">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">
+						<i class='bx bxs-dashboard'></i>
+						<span class="title">Dashboard</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown open">
+					<a class="nav-link active" href="#">
+						<i class='bx bxl-bootstrap'></i>
+						<span class="title">Bootstrap</span>
+						<span class="arrow">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="sidebar-link dropdown-item" href="accordion.html">Accordion</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="alerts.html">Alerts</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="badges.html">Badges</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="breadcrumb.html">Breadcrumb</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="buttons.html">Buttons</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="button-group.html">Button Group</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="cards.html">Cards</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="carousel.html">Carousel</a>
+						</li>
+						<li>
+							<a class="sidebar-link dropdown-item" href="collapse.html">Collapse</a>
+						</li>
+                        <li>
+							<a class="sidebar-link dropdown-item" href="dropdown.html">Dropdown</a>
+						</li>
+                        <li>
+							<a class="sidebar-link sub-menu dropdown-item" href="forms.html">Forms</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- End Side Nav -->
+
+	<!-- Start Main -->
+	<div class="container-wide">
+		<header class="header">
+			<nav class="navbar navbar-expand-md navbar-dark top-nav py-3">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item active">
+						<a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
+							<i class="fa-solid fa-chevrons-left"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav d-none d-md-flex align-items-center ml-auto">
+					<li class="nav-item">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="" placeholder="Search">
+							<a href="#" class="search_icon">
+								<i class="fa-solid fa-magnifying-glass search-icon"></i>
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="toggleFullScreen();">
+							<i class="fa-solid fa-expand full-screen-icon" id="fullscreen"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Email">
+							<i class="fa-solid fa-envelope envelope-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-circle-half-stroke mode-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#chat">
+							<i class="fa-solid fa-message chat-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#notification">
+							<i class="fa-solid fa-bell notification-icon"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="container-fluid main-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card breadcrumb-card">
+						<nav aria-label="breadcrumb" class="second">
+							<ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4 mb-0">
+                                <li class="breadcrumb-item font-weight-bold">
+									<a class="black-text text-uppercase " href="javascript:void(0)">
+										<span class="align-middle">Home</span>
+									</a>
+									<i class="fa-solid fa-angles-right"></i>
+								</li>
+								<li class="breadcrumb-item font-weight-bold">
+									<a class="black-text text-uppercase" href="notes.html">
+										<span class="align-middle">Notes</span>
+									</a>
+								</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
+				<div class="col-sm-12">
+					<div class="card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+						<div class="card-header custom-card-header">
+							<h5 class="mb-0">Notes</h5>
+						</div>
+                        <div class="card-body">
+							<div class="page-content note-has-grid">
+								<ul class="nav nav-pills bg-white mb-3 rounded-pill align-items-center">
+									<li class="nav-item">
+										<a href="javascript:void(0)" class="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2 active" id="all-category">
+											<span class="d-none d-md-block">All Notes</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="javascript:void(0)" class="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="business">
+											<span class="d-none d-md-block">Business</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="javascript:void(0)" class="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="social">
+											<span class="d-none d-md-block">Social</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="javascript:void(0)" class="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="important">
+											<span class="d-none d-md-block">Important</span>
+										</a>
+									</li>
+									<li class="nav-item ml-auto">
+										<button type="button" class="btn btn-blue rounded-pill" id="add-notes">
+											<span class="d-none d-md-block font-14">Add Notes</span>
+										</button>
+									</li>
+								</ul>
+								<div class="tab-content bg-transparent">
+									<div id="note-full-container" class="note-has-grid row">
+										<div class="col-12 col-md-6 col-lg-4 single-note-item all-category s mb-3" style>
+											<div class="card h-100">
+												<div class="card-body">
+													<span class="side-stick"></span>
+													<p class="note-category s rounded-pill">S</p>
+													<h5 class="note-title text-truncate">Book a Ticket for Movie</h5>
+													<p class="note-content mb-0">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
+												</div>
+												<div class="card-footer">
+													<div class="w-75 d-inline-block">
+														<p class="note-date mb-0">11 March 2009</p>
+													</div>
+													<div class="d-inline-block float-right text-right w-25">
+														<div class="dropdown">
+															<button type="button" class="btn p-0" data-toggle="dropdown">
+																<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item favourite-note" href="javascript:void(0)">
+																	<i class="fa fa-star pr-2"></i>
+																	Favorite
+																</a>
+																<a class="dropdown-item remove-note" href="javascript:void(0)">
+																	<i class="fa fa-trash pr-2"></i>
+																	Delete
+																</a>
+																<!-- <a class="dropdown-item update-note" href="javascript:void(0)">
+																	<i class="fa fa-edit pr-2"></i>
+																	Edit
+																</a> -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-12 col-md-6 col-lg-4 single-note-item all-category i mb-3" style>
+											<div class="card h-100">
+												<div class="card-body">
+													<span class="side-stick"></span>
+													<p class="note-category i rounded-pill">I</p>
+													<h5 class="note-title text-truncate">Go for lunch</h5>
+													<p class="note-content mb-0">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
+												</div>
+												<div class="card-footer">
+													<div class="w-75 d-inline-block">
+														<p class="note-date mb-0">01 April 2002</p>
+													</div>
+													<div class="d-inline-block float-right text-right w-25">
+														<div class="dropdown">
+															<button type="button" class="btn p-0" data-toggle="dropdown">
+																<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item favourite-note" href="javascript:void(0)">
+																	<i class="fa fa-star pr-2"></i>
+																	Favorite
+																</a>
+																<a class="dropdown-item remove-note" href="javascript:void(0)">
+																	<i class="fa fa-trash pr-2"></i>
+																	Delete
+																</a>
+																<!-- <a class="dropdown-item update-note" href="javascript:void(0)">
+																	<i class="fa fa-edit pr-2"></i>
+																	Edit
+																</a> -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-12 col-md-6 col-lg-4 single-note-item all-category s mb-3" style>
+											<div class="card h-100">
+												<div class="card-body">
+													<span class="side-stick"></span>
+													<p class="note-category s rounded-pill">S</p>
+													<h5 class="note-title text-truncate">Meeting with Mr.Jojo</h5>
+													<p class="note-content mb-0">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
+												</div>
+												<div class="card-footer">
+													<div class="w-75 d-inline-block">
+														<p class="note-date mb-0">19 October 2020</p>
+													</div>
+													<div class="d-inline-block float-right text-right w-25">
+														<div class="dropdown">
+															<button type="button" class="btn p-0" data-toggle="dropdown">
+																<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item favourite-note" href="javascript:void(0)">
+																	<i class="fa fa-star pr-2"></i>
+																	Favorite
+																</a>
+																<a class="dropdown-item remove-note" href="javascript:void(0)">
+																	<i class="fa fa-trash pr-2"></i>
+																	Delete
+																</a>
+																<!-- <a class="dropdown-item update-note" href="javascript:void(0)">
+																	<i class="fa fa-edit pr-2"></i>
+																	Edit
+																</a> -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-12 col-md-6 col-lg-4 single-note-item all-category b mb-3" style>
+											<div class="card h-100">
+												<div class="card-body">
+													<span class="side-stick"></span>
+													<p class="note-category b rounded-pill">B</p>
+													<h5 class="note-title text-truncate">Give Review for design</h5>
+													<p class="note-content mb-0">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
+												</div>
+												<div class="card-footer">
+													<div class="w-75 d-inline-block">
+														<p class="note-date mb-0">02 January 2000</p>
+													</div>
+													<div class="d-inline-block float-right text-right w-25">
+														<div class="dropdown">
+															<button type="button" class="btn p-0" data-toggle="dropdown">
+																<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item favourite-note" href="javascript:void(0)">
+																	<i class="fa fa-star pr-2"></i>
+																	Favorite
+																</a>
+																<a class="dropdown-item remove-note" href="javascript:void(0)">
+																	<i class="fa fa-trash pr-2"></i>
+																	Delete
+																</a>
+																<!-- <a class="dropdown-item update-note" href="javascript:void(0)">
+																	<i class="fa fa-edit pr-2"></i>
+																	Edit
+																</a> -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-12 col-md-6 col-lg-4 single-note-item all-category i mb-3" style>
+											<div class="card h-100">
+												<div class="card-body">
+													<span class="side-stick"></span>
+													<p class="note-category i rounded-pill">I</p>
+													<h5 class="note-title text-truncate">Launch single-note-item template template template</h5>
+													<p class="note-content mb-0">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
+												</div>
+												<div class="card-footer">
+													<div class="w-75 d-inline-block">
+														<p class="note-date mb-0">21 January 2015</p>
+													</div>
+													<div class="d-inline-block float-right text-right w-25">
+														<div class="dropdown">
+															<button type="button" class="btn p-0" data-toggle="dropdown">
+																<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item favourite-note" href="javascript:void(0)">
+																	<i class="fa fa-star pr-2"></i>
+																	Favorite
+																</a>
+																<a class="dropdown-item remove-note" href="javascript:void(0)">
+																	<i class="fa fa-trash pr-2"></i>
+																	Delete
+																</a>
+																<!-- <a class="dropdown-item update-note" href="javascript:void(0)">
+																	<i class="fa fa-edit pr-2"></i>
+																	Edit
+																</a> -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-12 col-md-6 col-lg-4 single-note-item all-category b mb-3" style>
+											<div class="card h-100">
+												<div class="card-body">
+													<span class="side-stick"></span>
+													<p class="note-category b rounded-pill">B</p>
+													<h5 class="note-title text-truncate">Give review for foods</h5>
+													<p class="note-content mb-0">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
+												</div>
+												<div class="card-footer">
+													<div class="w-75 d-inline-block">
+														<p class="note-date mb-0">18 December 2020</p>
+													</div>
+													<div class="d-inline-block float-right text-right w-25">
+														<div class="dropdown">
+															<button type="button" class="btn p-0" data-toggle="dropdown">
+																<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item favourite-note" href="javascript:void(0)">
+																	<i class="fa fa-star pr-2"></i>
+																	Favorite
+																</a>
+																<a class="dropdown-item remove-note" href="javascript:void(0)">
+																	<i class="fa fa-trash pr-2"></i>
+																	Delete
+																</a>
+																<!-- <a class="dropdown-item update-note" href="javascript:void(0)">
+																	<i class="fa fa-edit pr-2"></i>
+																	Edit
+																</a> -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="modal fade" id="addnotesmodal" tabindex="-1" role="dialog" aria-labelledby="addnotesmodalTitle" style="display: none;" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content border-0">
+											<div class="modal-header bg-info text-white">
+												<h5 class="modal-title text-white">Add Notes</h5>
+												<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">×</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<div class="notes-box">
+													<div class="notes-content">
+														<form action="javascript:void(0);" id="addnotesmodalTitle">
+															<div class="row">
+																<div class="col-md-12 mb-3">
+																	<div class="note-title">
+																		<label for="note-has-title">Note Title</label>
+																		<input type="text" id="note-has-title" class="form-control" minlength="25" placeholder="Title" />
+																	</div>
+																</div>
+																<div class="col-md-12 mb-3">
+																	<div class="note-description">
+																		<label for="note-has-description">Note Description</label>
+																		<textarea id="note-has-description" class="form-control" minlength="60" placeholder="Description" rows="3"></textarea>
+																	</div>
+																</div>
+																<div class="col-md-12">
+																	<div class="note-category">
+																		<label for="note_has_category">Note Category</label>
+																		<select id="note_has_category" class="form-control">
+																			<option selected>Select Category</option>
+																			<option value="b">Note Business</option>
+																			<option value="s">Note Social</option>
+																			<option value="i">Note Important</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button id="btn-n-update" class="float-left btn btn-success" style="display: none;">Update</button>
+												<button class="btn btn-danger" data-dismiss="modal">Discard</button>
+												<button id="btn-n-add" class="btn btn-info" disabled="disabled">Add</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Main -->
+
+	<!-- Start Footer -->
+	<footer class="footer">
+		<div class="copyrights">
+			<p class="text-center">© Copyrights 2023. All Rights Reserved.</p>
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<!-- Start Chat Modal -->
+	<div class="modal right fade chat-modal" id="chat">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Chat</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<ul class="contacts">
+						<li class="name-first-letter">A</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-1.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Alexander</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-7.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Amelia</span>
+									<p>7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">B</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-2.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Bradley</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-8.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Bella</span>
+									<p>left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">C</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-3.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Charles</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-9.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Camila</span>
+									<p>left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">D</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-4.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>David</span>
+									<p> 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-10.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Daisy</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">E</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-5.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Ethan</span>
+									<p>left 7 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-11.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Emma</span>
+									<p>is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="name-first-letter">F</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-6.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Finn</span>
+									<p>left 30 mins ago</p>
+								</div>
+							</div>
+						</li>
+						<li class="dlab-chat-user">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="images/avatar/user-12.webp" class="rounded-circle user_img" alt="Avatar">
+									<span class="online_icon offline"></span>
+								</div>
+								<div class="user_info">
+									<span>Floara</span>
+									<p>left 50 mins ago</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+                <div class="modal-footer">
+					<a href="chat.html" class="btn btn-blue btn-lg d-block mx-auto">View All Chats</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Chat Modal -->
+
+	<!-- Start Notification Modal -->
+	<div class="modal right fade" id="notification">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header notification-header">
+					<h4 class="modal-title notification-title">Notification</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<ul class="notification-nav">
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6>
+										<small class="d-block date-time">01 October 2021 - 02:26 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6>
+										<small class="d-block date-time">01 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6>
+										<small class="d-block date-time">02 October 2021 - 10:00 AM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6>
+										<small class="d-block date-time">02 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> JC </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jackie send you photo</h6>
+										<small class="d-block date-time">03 October 2021 - 02:30 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> SB </div>
+									<div class="media-body">
+										<h6 class="mb-0">Shane created task</h6>
+										<small class="d-block date-time">03 October 2021 - 08:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> AD </div>
+									<div class="media-body">
+										<h6 class="mb-0">Alexa sent an email</h6>
+										<small class="d-block date-time">04 October 2021 - 10:00 AM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> ZS </div>
+									<div class="media-body">
+										<h6 class="mb-0">Zoe added a photo</h6>
+										<small class="d-block date-time">04 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-one"> MK </div>
+									<div class="media-body">
+										<h6 class="mb-0">Martin send you photo</h6>
+										<small class="d-block date-time">01 October 2021 - 02:26 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-two"> KG </div>
+									<div class="media-body">
+										<h6 class="mb-0">Karter created task</h6>
+										<small class="d-block date-time">01 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-three"> JA </div>
+									<div class="media-body">
+										<h6 class="mb-0">Jennifer sent an email</h6>
+										<small class="d-block date-time">02 October 2021 - 10:00 AM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link d-flex">
+								<div class="timeline-panel">
+									<div class="media-img media-info-four"> EW </div>
+									<div class="media-body">
+										<h6 class="mb-0">Emma added a photo</h6>
+										<small class="d-block date-time">02 October 2021 - 05:00 PM</small>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<a href="chat.html/#notifications" class="btn btn-blue btn-lg d-block mx-auto">View all notifications</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Notification Modal -->
+
+    <!-- Start Create Chat -->
+    <div class="modal fade" id="startnewchat" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="requests">
+                <div class="title">
+                    <h1>Start new chat</h1>
+                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+                </div>
+                <div class="content">
+                    <form>
+                        <div class="form-group">
+                            <label for="participant">Recipient:</label>
+                            <input type="text" class="form-control" id="participant" placeholder="Add recipient..." required>
+                            <div class="user" id="recipient">
+                                <img class="avatar-sm" src="dist/img/avatars/avatar-female-5.jpg" alt="avatar">
+                                <h5>Keith Morris</h5>
+                                <button class="btn"><i class="material-icons">close</i></button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="topic">Topic:</label>
+                            <input type="text" class="form-control" id="topic" placeholder="What's the topic?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea class="text-control" id="message" placeholder="Send your welcome message...">Hmm, are you friendly?</textarea>
+                        </div>
+                        <button type="submit" class="btn button w-100">Start New Chat</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Create Chat -->
+
+	<!-- Start Back to Top -->
+	<a id="back-to-top" href="#" class="btn btn-primary btn-blue btn-lg back-to-top" role="button">
+		<i class="fas fa-chevron-up"></i>
+
+	<!-- Scripts -->  
+	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+	<script src="vendor/moment/moment.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="js/script.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#add-notes').on('click', function(event) {
+                $('#addnotesmodal').modal('show');
+                $('#btn-n-update').hide();
+                $('#btn-n-add').show();
+            })
+            // Button add
+
+            $("#btn-n-add").on('click', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth()); //January is 0!
+                var yyyy = today.getFullYear();
+                var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                today = dd + ' ' + monthNames[mm] + ' ' + yyyy;
+                var $_noteTitle = document.getElementById('note-has-title').value;
+                var $_noteDescription = document.getElementById('note-has-description').value;
+                var $_noteCategory = document.getElementById('note_has_category').value;
+
+                $html = '<div class="col-12 col-md-6 col-lg-4 single-note-item mb-3 ' +
+				$_noteCategory +
+				'" id="notes">' +
+				'<div class="card h-100">' +
+				'<div class="card-body">' +
+                '<span class="side-stick"></span>' +
+				'<p class="rounded-pill note-category ' +
+				$_noteCategory +
+				'">' + 
+				$_noteCategory +
+				'</p>' +
+                '<h5 class="note-title text-truncate">' +
+                $_noteTitle + '</h5>' +
+                '<p class="note-content mb-0">' +
+                $_noteDescription +
+                '</p>' +
+				'</div>' +
+				'<div class="card-footer">' +
+				'<div class="w-75 d-inline-block">' +
+				'<p class="note-date mb-0">' +
+                today +
+                '</p>' +
+				'</div>' +
+				'<div class="d-inline-block float-right text-right w-25">' +
+				'<div class="dropdown">' +
+				'<button type="button" class="btn p-0" data-toggle="dropdown">' +
+				'<i class="fa fa-ellipsis-v" aria-hidden="true"></i>' +
+				'</button>' +
+				'<div class="dropdown-menu">' +
+				'<a class="dropdown-item favourite-note" href="javascript:void(0)">' +
+				'<i class="fa fa-star pr-2"></i>' +
+				'Favorite' +
+				'</a>' +
+				'<a class="dropdown-item remove-note" href="javascript:void(0)">' +
+				'<i class="fa fa-trash pr-2"></i>' +
+				'Delete' +
+				'</a>' +
+				// '<a class="dropdown-item update-note" href="javascript:void(0)">' +
+				// '<i class="fa fa-edit pr-2"></i>' +
+				// 'Edit' +
+				// '</a>' +
+				'</div>' +
+				'</div>' +
+				'</div>' +
+                '</div>' +
+                '</div></div> ';
+                $("#note-full-container").prepend($html);
+                $('#addnotesmodal').modal('hide');
+                removeNote();
+                favouriteNote();
+                addLabelGroups();
+            });
+
+			function removeNote() {
+                $(".remove-note").off('click').on('click', function(event) {
+                    event.stopPropagation();
+                    // $(this).parents('.single-note-item').remove();
+					var noteItem = $(this).parents('.single-note-item');
+					Swal.fire({
+						title: "Are you sure?",
+						text: "You won't be able to revert this!",
+						icon: "warning",
+						showCancelButton: true,
+						confirmButtonColor: "#3085d6",
+						cancelButtonColor: "#d33",
+						confirmButtonText: "Yes, delete it!"
+						}).then((result) => {
+						if (result.isConfirmed) {
+							noteItem.remove();
+							Swal.fire({
+							title: "Deleted!",
+							text: "Your file has been deleted.",
+							icon: "success"
+							});
+						}
+					});
+                })
+            }
+
+			function updateNote() {
+				$(".update-note").off('click').on('click', function(event) {
+					//event.stopPropagation();
+					var noteItem = $(this).parents('.single-note-item');
+					var noteTitle = noteItem.find('.note-title').text();
+					var noteDescription = noteItem.find('.note-content').text();
+					var noteCategory = noteItem.find('.single-note-item').val();
+
+					$('#note-has-title').val(noteTitle);
+					$('#note-has-description').val(noteDescription);
+					$('#note_has_category').val(noteCategory);
+
+					$('#btn-n-update').show();
+					$('#btn-n-add').hide();
+
+					$('#addnotesmodal').modal('show');
+
+					// Save updated note
+					$("#btn-n-update").off('click').on('click', function(event) {
+						event.preventDefault();
+						/* Act on the event */
+						var updatedTitle = $('#note-has-title').val();
+						var updatedDescription = $('#note-has-description').val();
+						var updatedCategory = $('#note_has_category').val();
+
+						// Update the note content
+						noteItem.find('.note-title').text(updatedTitle);
+						noteItem.find('.note-content').text(updatedDescription);
+						noteItem.find('.single-note-item').text(updatedCategory);
+
+						$('#addnotesmodal').modal('hide');
+					});
+				});
+			}	
+
+            function favouriteNote() {
+                $(".favourite-note").off('click').on('click', function(event) {
+                    event.stopPropagation();
+                    $(this).parents('.single-note-item').toggleClass('note-favourite');
+                })
+            }
+
+            function addLabelGroups() {
+                $('.category-selector .badge-group-item').off('click').on('click', function(event) {
+                    event.preventDefault();
+                    /* Act on the event */
+                    var getclass = this.className;
+                    var getSplitclass = getclass.split(' ')[0];
+                    if($(this).hasClass('badge-business')) {
+                        $(this).parents('.single-note-item').removeClass('social');
+                        $(this).parents('.single-note-item').removeClass('important');
+                        $(this).parents('.single-note-item').toggleClass(getSplitclass);
+                    } else if($(this).hasClass('badge-social')) {
+                        $(this).parents('.single-note-item').removeClass('business');
+                        $(this).parents('.single-note-item').removeClass('important');
+                        $(this).parents('.single-note-item').toggleClass(getSplitclass);
+                    } else if($(this).hasClass('badge-important')) {
+                        $(this).parents('.single-note-item').removeClass('social');
+                        $(this).parents('.single-note-item').removeClass('business');
+                        $(this).parents('.single-note-item').toggleClass(getSplitclass);
+                    }
+                });
+            }
+            var $btns = $('.note-link').click(function() {
+                if(this.id == 'all-category') {
+                    var $el = $('.' + this.id).fadeIn();
+                    $('#note-full-container > div').not($el).hide();
+                }
+                if(this.id == 'important') {
+                    var $el = $('.' + this.id).fadeIn();
+                    $('#note-full-container > div').not($el).hide();
+                } else {
+                    var $el = $('.' + this.id).fadeIn();
+                    $('#note-full-container > div').not($el).hide();
+                }
+                $btns.removeClass('active');
+                $(this).addClass('active');
+            })
+
+            $('#addnotesmodal').on('hidden.bs.modal', function(event) {
+                event.preventDefault();
+                document.getElementById('note-has-title').value = '';
+                document.getElementById('note-has-description').value = '';
+                document.getElementById('note_has_category').value = '';
+            })
+            removeNote();
+            favouriteNote();
+            addLabelGroups();
+			updateNote();
+            $('#btn-n-add').attr('disabled', 'disabled');
+        })
+
+        $('#note-has-title').keyup(function() {
+            var empty = false;
+            $('#note-has-title').each(function() {
+                if($(this).val() == '') {
+                    empty = true;
+                }
+            });
+            if(empty) {
+                $('#btn-n-add').attr('disabled', 'disabled');
+            } else {
+                $('#btn-n-add').removeAttr('disabled');
+            }
+        });
+
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('note_has_category').addEventListener('change', function() {
+				var selectedOption = this.value;
+				var inputField = document.getElementById('notes');
+
+				// Remove existing classes
+				inputField.classList.remove('classForOption1', 'classForOption2', 'classForOption3');
+
+				// Add class based on selected option
+				if (note_has_category === 'option1') {
+					inputField.classList.add('b');
+				} else if (note_has_category === 'option2') {
+					inputField.classList.add('s');
+				} else if (note_has_category === 'option3') {
+					inputField.classList.add('i');
+				} else {
+					inputField.classList.add('bg');
+				}
+			});
+
+		});	
+
+	</script>
+
+</body>
+
+</html>
