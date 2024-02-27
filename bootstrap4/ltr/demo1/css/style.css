@@ -43,6 +43,10 @@ input[type=checkbox], input[type=radio] {
     background-color: var(--primary-color);
 }
 
+.bg-gray {
+    background-color: var(--background-color);
+}
+
 .text-blue {
     color: var(--active-color);
 }
@@ -190,7 +194,7 @@ a:hover {
 	/* height: calc(100vh - 65px); */
     height: 650px;
 	list-style: none;
-	margin: 0 10px;
+	margin: 0 5px;
 	overflow: auto;
 	padding: 0;
 	position: relative;
