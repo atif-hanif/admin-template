@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-	<title>Apexcharts | Nova Admin Template</title>
+	<title>Quill | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
 	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="vendor/apexcharts/dist/apexcharts.css" rel="stylesheet">
+    <link href="vendor/quill/atom-one-dark.min.css" rel="stylesheet">
+    <link href="vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="vendor/quill/quill.bubble.css" rel="stylesheet">
 	<link href="css/fonts.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
@@ -152,7 +154,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="nav-item dropdown open">
+				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#">
 						<i class='bx bxs-chart'></i>
 						<span class="title">Charts</span>
@@ -172,7 +174,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown open">
 					<a class="nav-link dropdown-toggle" href="#">
 						<i class='bx bx-code-alt'></i>
 						<span class="title">WYSIWYG Editor</span>
@@ -192,9 +194,6 @@
 						</li>
 						<li>
 							<a class="sidebar-link dropdown-item" href="tinymice.html">Tinymice</a>
-						</li>
-						<li>
-							<a class="sidebar-link dropdown-item" href="quill.html">Quill</a>
 						</li>
 					</ul>
 				</li>
@@ -289,13 +288,13 @@
 							<ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4 mb-0">
 								<li class="breadcrumb-item font-weight-bold">
 									<a class="black-text text-uppercase " href="javascript:void(0)">
-										<span class="align-middle">Charts</span>
+										<span class="align-middle">WYSIWYG Editor</span>
 									</a>
 									<i class="fa-solid fa-angles-right"></i>
 								</li>
 								<li class="breadcrumb-item font-weight-bold">
-									<a class="text-uppercase active-2" href="highcharts.html">
-										<span class="align-middle">Highcharts</span>
+									<a class="text-uppercase active-2" href="quill.html">
+										<span class="align-middle">Quill</span>
 									</a>
 								</li>
 							</ol>
@@ -305,90 +304,42 @@
 			</div>
 
 			<div class="row mt-sm-40 mt-md-40 mt-lg-40 mt-xl-40">
-				<div class="col-sm-12 col-md-12 col-lg-6">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+				<div class="col-sm-12">
+					<div class="card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Line Chart</h5>
+							<h5 class="mb-0">Snow</h5>
 						</div>
 						<div class="card-body">
-							<div id="line"></div>
+							<div id="snow">
+                                The quick brown fox jumps over a lazy dog is the most famous pangram in English, that is the most short sentence in which all the <strong>26 letters</strong> of the alphabet are used. For this reason, it is useful to test the graphic aspect of the fonts, because all the letters are immediately on hand.
+                            </div>
 						</div>
 					</div>
 				</div>
 
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3 mt-lg-0">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+				<div class="col-sm-12 mt-3">
+					<div class="card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Area Chart</h5>
+							<h5 class="mb-0">Bubble</h5>
 						</div>
 						<div class="card-body">
-							<div id="area"></div>
+							<div id="bubble">
+                                The quick brown fox jumps over a lazy dog is the most famous pangram in English, that is the most short sentence in which all the <strong>26 letters</strong> of the alphabet are used. For this reason, it is useful to test the graphic aspect of the fonts, because all the letters are immediately on hand.
+                            </div>
 						</div>
 					</div>
 				</div>
 
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
+				<div class="col-sm-12 mt-3">
+					<div class="card mb-3 mb-sm-3 mb-md-3 mb-lg-0">
 						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Column Chart</h5>
+							<h5 class="mb-0">Highlighter</h5>
 						</div>
 						<div class="card-body">
-                            <div id="column"></div>
-						</div>
-					</div>
-				</div>
-
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Stacked Column Chart</h5>
-						</div>
-						<div class="card-body">
-                            <div id="stacked_column"></div>
-						</div>
-					</div>
-				</div>
-
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Bar Chart</h5>
-						</div>
-						<div class="card-body">
-                            <div id="bar"></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Stacked Bar Chart</h5>
-						</div>
-						<div class="card-body">
-                            <div id="stacked_bar"></div>
-						</div>
-					</div>
-				</div>
-
-                <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Pie Chart</h5>
-						</div>
-						<div class="card-body">
-                            <div id="pie"></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-					<div class="card h-100 mb-3 mb-sm-3 mb-md-3 mb-lg-0">
-						<div class="card-header custom-card-header">
-							<h5 class="mb-0">Donut Chart</h5>
-						</div>
-						<div class="card-body">
-                            <div id="donut"></div>
+							<div id="highlighter">
+                                const language = "JavaScript";<br>
+                                console.log("I love " + language + "!");
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -736,9 +687,46 @@
 	<!-- Scripts -->  
 	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/apexcharts/dist/apexcharts.js"></script>
+    <script src="vendor/quill/highlight.min.js"></script>
+    <script src="vendor/quill/quill.js"></script>
 	<script src="js/script.js"></script>
-    <script src="js/apexharts.js"></script>
+
+    <script> 
+        const toolbarOptions1 = [
+            [{ 'size': ['small', false, 'large', 'huge'] }],  
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+            ['bold', 'italic', 'underline', 'strike'],        
+            ['blockquote', 'code-block'],
+            ['link', 'image', 'video', 'formula'],             
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
+            [{ 'script': 'sub'}, { 'script': 'super' }],      
+            [{ 'indent': '-1'}, { 'indent': '+1' }],          
+            [{ 'direction': 'rtl' }],                         
+            [{ 'color': [] }, { 'background': [] }],          
+            [{ 'font': [] }],
+            [{ 'align': [] }],
+            ['clean']                                         
+        ];
+
+        const quill1 = new Quill('#snow', {
+            modules: {
+                toolbar: toolbarOptions1
+            },
+            theme: 'snow'
+        });
+
+        const quill2 = new Quill('#bubble', {
+            theme: 'bubble',
+        });
+
+        const quill3 = new Quill('#highlighter', {
+            modules: {
+                syntax: true,              // Include syntax module
+                toolbar: [['code-block']]  // Include button in toolbar
+            },
+            theme: 'snow'
+		});
+    </script>
 
 </body>
 
