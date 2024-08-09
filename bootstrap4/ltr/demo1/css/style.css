@@ -351,7 +351,7 @@ a:hover {
     background-color: var(--white-color);
 }
 
-.sidebar-menu > li.dropdown ul.dropdown-menu > li:before {
+/* .sidebar-menu > li.dropdown ul.dropdown-menu > li:before {
     background: var(--submenu-active);
     left: -13px;
     top: 0;
@@ -393,7 +393,7 @@ a:hover {
     width: 11px;
     height: 2px;
     background: var(--submenu-active);
-}
+} */
 
 .subactive a {
     font-weight: 900;
@@ -888,6 +888,137 @@ a:hover {
 }
 
 /* End Top Nav */
+
+/* Start Login Page */
+
+.brand-wrapper {
+	margin-bottom: 19px;
+}
+
+.brand-wrapper .logo {
+	height: 75px;
+}
+
+.login-card {
+	border: 0;
+	border-radius: 30px;
+	box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+	overflow: hidden;
+}
+
+.login-card-img {
+	border-radius: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.login-card .card-body {
+	padding: 85px 60px 60px;
+}
+
+@media (max-width: 422px) {
+	.login-card .card-body {
+		padding: 35px 24px;
+	}
+}
+
+.login-card-description {
+	font-size: 25px;
+	color: var(--black-color);
+	font-weight: normal;
+	margin-bottom: 23px;
+}
+
+
+.login-card .form-control {
+	padding: 15px 25px;
+	margin-bottom: 20px;
+	min-height: 45px;
+	font-size: 13px;
+	line-height: 15;
+	font-weight: normal;
+}
+
+.login-card .form-control::-webkit-input-placeholder {
+	color: var(--black-color);
+}
+
+.login-card .form-control::-moz-placeholder {
+	color: var(--black-color);
+}
+
+.login-card .form-control:-ms-input-placeholder {
+	color: var(--black-color);
+}
+
+.login-card .form-control::-ms-input-placeholder {
+	color: var(--black-color);
+}
+
+.login-card .form-control::placeholder {
+	color: var(--black-color);
+}
+
+.login-card .login-btn {
+	padding: 13px 20px 12px;
+	background-color: var(--primary-color);
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #fff;
+	margin-bottom: 24px;
+}
+
+.login-card .login-btn:hover {
+	border: 1px solid var(--primary-color);
+	background-color: transparent;
+	color: var(--black-color);
+}
+
+.login-card .forgot-password-link {
+	color: var(--primary-color);
+	margin-bottom: 12px;
+}
+
+.login-card-footer-text {
+	color: var(--black-color);
+	margin-bottom: 60px;
+}
+
+.login-card-footer-text a {
+	color: var(--primary-color) !important;
+    font-weight: bold;
+}
+
+.login-box {
+    background-image: url(../images/pages/login.jpg);
+    background-position: top center;
+    background-size: cover;
+}
+
+.login-cover-body .login-btn {
+	padding: 13px 20px 12px;
+	background-color: var(--primary-color);
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #fff;
+	margin-bottom: 24px;
+}
+
+.login-cover-body .login-btn:hover {
+	border: 1px solid var(--primary-color);
+	background-color: transparent;
+	color: var(--black-color);
+}
+
+
+/* End Login Page */
 
 /* Start Main Content */
 
