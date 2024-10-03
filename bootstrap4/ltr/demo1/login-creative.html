@@ -5,13 +5,13 @@
 	<title>Login | Nova Admin Template</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
-	<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	<link href="css/fonts.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="assets/css/fonts.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/responsive.css" rel="stylesheet">
 </head>
 
 <body class="login-body">
@@ -22,27 +22,31 @@
             <div class="card login-card">
                 <div class="row no-gutters">
                     <div class="col-md-5">
-                        <img src="images/pages/login.jpg" alt="login" class="login-card-img">
+                        <img src="assets/images/pages/login.webp" alt="login" class="login-card-img">
                     </div>
                     <div class="col-md-7">
                         <div class="card-body">
                             <div class="brand-wrapper">
-                            <img src="images/nova-logo.png" alt="logo" class="logo">
+                            <img src="assets/images/nova-logo.png" alt="logo" class="logo">
                             </div>
                             <p class="login-card-description">Sign into your account</p>
-                            <form action="#!">
+                            <form class="needs-validation" novalidate>
                                 <div class="form-group">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required>
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label for="password" class="sr-only">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="***********" required>
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
                                 </div>
-                                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">
+                                <button type="submit" class="btn btn-block login-btn mb-4">Submit</button>
                             </form>
                             <a href="#!" class="forgot-password-link">Forgot password?</a>
-                            <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>
+                            <p class="login-card-footer-text mt-3">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>
                         </div>
                     </div>
                 </div>
@@ -52,8 +56,26 @@
 	<!-- End Main -->
 
 	<!-- Scripts -->  
-	<script src="vendor/jquery/jquery-3.6.0.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/vendor/jquery/jquery-3.6.0.min.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+                });
+            }, false);
+        })();
+    </script>
 
 </body>
 
